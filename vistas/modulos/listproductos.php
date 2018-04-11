@@ -1,116 +1,61 @@
 <style>
     #mdialTamanio{
-      width: 50% !important;
+        width: 50% !important;
     }
-  </style>
+</style>
 
 <div class="content-wrapper">
 
-  <section class="content-header">
-    
-    <h1>
-      
-      Listar Sepulturas
-    
-    </h1>
+    <section class="content-header">
 
-    <ol class="breadcrumb">
-      
-      <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
-      
-      <li class="active">Listar Sepulturas</li>
-    
-    </ol>
+        <h1>
 
-  </section>
+            Listar Sepulturas
 
-  <section class="content">
+        </h1>
 
-    <div class="box">
+        <ol class="breadcrumb">
 
-      <div class="box-body">
-        
-       <table class="table table-bordered table-striped dt-responsive tablas">
-         
-        <thead>
-         
-         <tr>
-           
-           <th style="width:10px">#</th>
-           <th>Tipo Producto</th>
-           <th>Cuartel-Cuerpo</th>
-           <th># Sepultura</th>
-           <th>Estado</th>
-           <th>Fallecidos en Producto</th>
+            <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
 
-         </tr> 
+            <li class="active">Listar Sepulturas</li>
 
-        </thead>
+        </ol>
 
-        <tbody>
-          
-          <tr>
-            <td>1</td>
-            <td>SEPULTURA DE FAMILIA</td>
-            <td>CASCADA NORTE</td>
-            <td>11</td>
-            <td><buttton class="btn btn-success">PERPETUO</button></td>
-            <td>
+    </section>
 
-              <div class="btn-group">
-                  
-                <button class="btn btn-info" data-toggle="modal" data-target="#modalFallecidos"><i class="fa fa-search-plus"></i></button>
+    <section class="content">
 
-              </div>  
+        <div class="box">
 
-            </td>
+            <div class="box-body">
 
-          </tr>
+                <table class="table table-bordered table-striped dt-responsive tablaSepulturas">
 
-           <tr>
-            <td>2</td>
-            <td>NICHO ADULTO</td>
-            <td>H-B</td>
-            <td>167</td>
-            <td><buttton class="btn btn-warning">TEMPORAL</buttton></td>
-            <td>
+                    <thead>
 
-              <div class="btn-group"> 
-                <button class="btn btn-info" data-toggle="modal" data-target="#modalFallecidos">
-                    <i class="fa fa-search-plus"></i>
-                </button>
+                    <tr>
 
-              </div>  
-            </td>
-          </tr>
+                        <th style="width:10px">#</th>
+                        <th>Tipo Producto</th>
+                        <th>Cuartel-Cuerpo</th>
+                        <th># Sepultura</th>
+                        <th>Estado</th>
+                        <th>Piso</th>
+                        <th>Corrida</th>
+                        <th>Ver Fallecidos</th>
 
-          <tr>
-            <td>3</td>
-            <td>NICHO ADULTO</td>
-            <td>H-B</td>
-            <td>168</td>
-            <td><buttton class="btn btn-danger">VENCIDO</buttton></td>
-            <td>
+                    </tr>
 
-              <div class="btn-group"> 
-                <button class="btn btn-info" data-toggle="modal" data-target="#modalFallecidos">
-                    <i class="fa fa-search-plus"></i>
-                </button>
+                    </thead>
 
-              </div>  
-            </td>
-          </tr>
+                </table>
 
+            </div>
 
-        </tbody>
+        </div>
 
-       </table>
-
-      </div>
-
-    </div>
-
-  </section>
+    </section>
 
 </div>
 
@@ -119,79 +64,93 @@ MODAL AGREGAR PRODUCTO
 ======================================-->
 
 <div id="modalFallecidos" class="modal fade" role="dialog">
-  
-  <div class="modal-dialog" id="mdialTamanio">
 
-    <div class="modal-content">
+    <div class="modal-dialog" id="mdialTamanio">
 
-        <!--=====================================
-        CABEZA DEL MODAL
-        ======================================-->
+        <div class="modal-content">
 
-        <div class="modal-header" style="background:#3c8dbc; color:white; width:100%">
+            <!--=====================================
+            CABEZA DEL MODAL
+            ======================================-->
 
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="modal-header" style="background:#3c8dbc; color:white; width:100%">
 
-          <h4 class="modal-title">Fallecidos en...</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-        </div>
+                <h4 class="modal-title">Fallecidos en...</h4>
 
-        <!--=====================================
-        CUERPO DEL MODAL
-        ======================================-->
+            </div>
 
-        <div class="modal-body">
+            <!--=====================================
+            CUERPO DEL MODAL
+            ======================================-->
 
-          <div class="box-body">
+            <div class="modal-body">
 
-            <!-- ENTRADA PARA EL CÓDIGO -->
-            
-            <table class="table table-bordered table-striped table-responsive" width="100%">
-         
-              <thead>
-               
-               <tr>
-                 <th style="width:10px">#</th>
-                 <th>Nombre Fallecido</th>
-                 <th>Edad</th>
-                 <th>Fecha Sepultación</th>
-                 <th>Inscripción</th>
-                 <th>Circunscripción</th>
-                 <th>Causa Muerte</th>
-               </tr> 
-              </thead>
-              
-              <tbody>          
-                <tr>
-                  <td>1</td>
-                  <td>Carlos Sepulveda Martinez</td>
-                  <td>73</td>
-                  <td>14/01/2017</td>
-                  <td>1089</td>
-                  <td>Valparaíso</td>
-                  <td>Falla Epatica</td>
-                </tr>
-              </tbody>
-            
-            </table>
+                <div class="box-body">
 
-          </div>
+                    <!-- ENTRADA PARA EL CÓDIGO -->
 
-        </div>
+                    <table class="table table-bordered table-striped table-responsive" width="100%">
 
-        <!--=====================================
-        PIE DEL MODAL
-        ======================================-->
+                        <thead>
 
-        <div class="modal-footer">
+                        <tr>
+                            <th style="width:10px">#</th>
+                            <th>Nombre Fallecido</th>
+                            <th>Edad</th>
+                            <th>Fecha Sepultación</th>
+                            <th>Inscripción</th>
+                            <th>Circunscripción</th>
+                            <th>Causa Muerte</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php
 
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+                        $item = "id_sepultura";
+                        $valor = $_GET["id_Sepultura"];
+
+
+                        $fallecido = ControladorDifuntos::ctrMostrarDifuntos($item, $valor);
+
+                        foreach ($fallecido as $key => $value) {
+
+                            echo ' <tr>
+
+                    <td>'.($key+1).'</td>
+                    <td class="text-uppercase">'.$value["nombre"].'</td>
+                    <td class="text-uppercase">'.$value["edad"].'</td>
+                    <td class="text-uppercase">'.$value["fecha_sepultacion"].'</td>
+                    <td class="text-uppercase">'.$value["inscripcion"].'</td>
+                    <td class="text-uppercase">'.$value["circunscripcion"].'</td>
+                    <td class="text-uppercase">'.$value["causa_muerte"].'</td>
+                    </tr>';
+
+                        }
+                        ?>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+            <!--=====================================
+            PIE DEL MODAL
+            ======================================-->
+
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+
+            </div>
 
         </div>
 
     </div>
-
-  </div>
 
 </div>
 

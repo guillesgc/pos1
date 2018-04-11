@@ -193,3 +193,30 @@
 [06-Apr-2018 16:44:43 UTC] Hello, errors!
 [06-Apr-2018 16:47:10 UTC] Hello, errors!
 [06-Apr-2018 16:47:40 UTC] Hello, errors!
+[11-Apr-2018 18:55:12 UTC] Hello, errors!
+[11-Apr-2018 18:55:26 UTC] Hello, errors!
+[11-Apr-2018 18:55:29 UTC] Hello, errors!
+[11-Apr-2018 18:55:39 UTC] Hello, errors!
+[11-Apr-2018 18:55:47 UTC] Hello, errors!
+[11-Apr-2018 18:55:53 UTC] Hello, errors!
+[11-Apr-2018 18:56:00 UTC] Hello, errors!
+[11-Apr-2018 18:56:17 UTC] Hello, errors!
+[11-Apr-2018 18:56:26 UTC] Hello, errors!
+[11-Apr-2018 18:56:38 UTC] Hello, errors!
+[11-Apr-2018 18:57:13 UTC] Hello, errors!
+[11-Apr-2018 18:57:14 UTC] PHP Notice:  Undefined index: id_Sepultura in C:\wamp64\www\pos1\vistas\modulos\listproductos.php on line 112
+[11-Apr-2018 18:57:14 UTC] PHP Stack trace:
+[11-Apr-2018 18:57:14 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[11-Apr-2018 18:57:14 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:39
+[11-Apr-2018 18:57:14 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[11-Apr-2018 18:57:14 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:167
+[11-Apr-2018 18:57:14 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\wamp64\www\pos1\vistas\modulos\listproductos.php on line 117
+[11-Apr-2018 18:57:14 UTC] PHP Stack trace:
+[11-Apr-2018 18:57:14 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[11-Apr-2018 18:57:14 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:39
+[11-Apr-2018 18:57:14 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[11-Apr-2018 18:57:14 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:167
+[11-Apr-2018 18:57:24 UTC] Hello, errors!
+[11-Apr-2018 18:57:35 UTC] Hello, errors!
+[11-Apr-2018 18:57:46 UTC] Hello, errors!
+[11-Apr-2018 19:08:45 UTC] Hello, errors!

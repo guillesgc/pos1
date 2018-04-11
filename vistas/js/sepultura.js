@@ -1,9 +1,5 @@
 
 
-
-
-
-
 /*=============================================
 ELIMINAR USUARIO
 =============================================*/
@@ -31,3 +27,134 @@ $(".tablas").on("click", ".btnEliminarSepultura", function(){
   })
 
 })
+
+
+/*=============================================
+CARGAR LA TABLA DINAMICA DE SEPULTURAS
+=============================================*/
+
+
+if($(".perfilUsuario").val() != "Administrador"){
+
+    var botonesTabla = '<div class="btn-group"><button class="btn btn-primary btnMostrarTarjeta" id_Sepultura data-toggle="modal" data-target="#modalFallecidos"><i class="fa fa-search-plus"></i></button>';
+
+
+}else{
+
+    var botonesTabla = '<div class="btn-group"><button class="btn btn-primary btnMostrarTarjeta" id_Sepultura data-toggle="modal" data-target="#modalFallecidos"><i class="fa fa-search-plus"></i></button></div>';
+
+}
+
+
+if(window.matchMedia("(max-width:767px)").matches){
+
+    var table = $('.tablaSepulturas').DataTable({
+
+        "ajax":"ajax/datatables-sepulturas.ajax.php",
+        "columnDefs": [
+
+            {
+                "targets": -1,
+                "data": null,
+                "defaultContent": botonesTabla
+
+            }
+
+        ],
+
+        "language": {
+
+            "sProcessing":     "Procesando...",
+            "sLengthMenu":     "Mostrar _MENU_ registros",
+            "sZeroRecords":    "No se encontraron resultados",
+            "sEmptyTable":     "Ningún dato disponible en esta tabla",
+            "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_",
+            "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0",
+            "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+            "sInfoPostFix":    "",
+            "sSearch":         "Buscar:",
+            "sUrl":            "",
+            "sInfoThousands":  ",",
+            "sLoadingRecords": "Cargando...",
+            "oPaginate": {
+                "sFirst":    "Primero",
+                "sLast":     "Último",
+                "sNext":     "Siguiente",
+                "sPrevious": "Anterior"
+            },
+            "oAria": {
+                "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+                "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+            }
+
+        }
+    })
+
+}else{
+
+    var table = $('.tablaSepulturas').DataTable({
+
+        "ajax":"ajax/datatables-sepulturas.ajax.php",
+        "columnDefs": [
+
+            {
+                "targets": -1,
+                "data": null,
+                "defaultContent": botonesTabla
+
+            }
+
+        ],
+
+        "language": {
+
+            "sProcessing":     "Procesando...",
+            "sLengthMenu":     "Mostrar _MENU_ registros",
+            "sZeroRecords":    "No se encontraron resultados",
+            "sEmptyTable":     "Ningún dato disponible en esta tabla",
+            "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_",
+            "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0",
+            "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+            "sInfoPostFix":    "",
+            "sSearch":         "Buscar:",
+            "sUrl":            "",
+            "sInfoThousands":  ",",
+            "sLoadingRecords": "Cargando...",
+            "oPaginate": {
+                "sFirst":    "Primero",
+                "sLast":     "Último",
+                "sNext":     "Siguiente",
+                "sPrevious": "Anterior"
+            },
+            "oAria": {
+                "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+                "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+            }
+
+        }
+
+
+    })
+
+}
+
+/*=============================================
+ACTIVAR LOS BOTONES CON LOS ID CORRESPONDIENTES
+=============================================*/
+
+$('.tablaSepulturas tbody').on( 'click', 'button', function () {
+
+    if(window.matchMedia("(min-width:992px)").matches){
+
+        var data = table.row( $(this).parents('tr') ).data();
+
+    }else{
+
+        var data = table.row( $(this).parents('tbody tr ul li')).data();
+
+    }
+
+    $(this).attr("id_sepultura", data[8])
+
+
+} );
