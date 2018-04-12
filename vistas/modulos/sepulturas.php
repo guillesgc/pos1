@@ -77,18 +77,35 @@
           $valor = null;
 
           $sepulturas = ControladorSepultura::ctrMostrarSepultura($item, $valor);
-
+          print_r($sepulturas);
           foreach ($sepulturas as $key => $value) {
-           
+
+              //AGREGAR CUARTEL CUERPO
+              $id_cc = $value["id_cuartel_cuerpo"];
+              $item = "id_cuartel_cuerpo";
+              $x = ControladorCcuerpo::ctrMostrarCcuerpo($item,$id_cc);
+
+              //AGREGAR ESTADO
+              $id_e = $value["estado"];
+              $item = "id_estado";
+              $y = ControladorEstado::ctrMostrarEstado($item,$id_e);
+              //print_r($y);
+
+              //AGREGAR CEMENTERIO
+              $id_c = $value["id_cementerio"];
+              $item = "id_cementerio";
+              $z = ControladorCementerio::ctrMostrarCementerio($item,$id_c);
+              //print_r($y);
+
             echo ' <tr>
 
                     <td>'.($key+1).'</td>
 
                     <td>'.$value["numero_sepultura"].'</td>
-                    <td>'.$value["id_cuartel_cuerpo"].'</td>
-                    <td>'.$value["estado"].'</td>
+                    <td>'.$x["nombre"].'</td>
+                    <td>'.$y["estado"].'</td>
                     <td>'.$value["capacidad"].'</td>
-                    <td>'.$value["id_cementerio"].'</td>
+                    <td>'.$z["cementerio"].'</td>
                     <td>'.$value["corrida"].'</td>
                     <td>'.$value["piso"].'</td>
 

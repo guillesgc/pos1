@@ -109,7 +109,7 @@ MODAL AGREGAR PRODUCTO
                         <?php
 
                         $item = "id_sepultura";
-                        $valor = $_GET["id_Sepultura"];
+                        $valor = $_GET["id_sepultura"];
 
 
                         $fallecido = ControladorDifuntos::ctrMostrarDifuntos($item, $valor);

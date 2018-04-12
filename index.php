@@ -19,6 +19,8 @@ require_once "controladores/agenda.controlador.php";
 require_once "controladores/item.controlador.php";
 require_once "controladores/calendario.controlador.php";
 require_once "controladores/utm.controlador.php";
+require_once "controladores/estado.controlador.php";
+require_once "controladores/cementerio.controlador.php";
 
 require_once "modelos/usuarios.modelo.php";
 require_once "modelos/categorias.modelo.php";
@@ -34,6 +36,8 @@ require_once "modelos/agenda.modelo.php";
 require_once "modelos/item.modelo.php";
 require_once "modelos/calendario.modelo.php";
 require_once "modelos/utm.modelo.php";
+require_once "modelos/estado.modelo.php";
+require_once "modelos/cementerio.modelo.php";
 
 $plantilla = new ControladorPlantilla();
 $plantilla -> ctrPlantilla();

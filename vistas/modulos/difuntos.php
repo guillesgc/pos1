@@ -57,12 +57,12 @@ ini_set('display_errors', '1');
            <th>Apellido Paterno</th>
            <th>Apellido Materno</th>
            <th>Rut</th>
+           <th>Tipo de Sepultura</th>
+           <th>Cuartel-Cuerpo</th>
            <th>Número de Sepultura</th>
            <th>Fecha Sepultación</th> 
            <th>Inscripción</th>
            <th>Circunscripción</th>
-           <th>Edad</th>
-           <th>Sexo</th>
            <th>Boletín</th>
            <th>Acciones</th>
 
@@ -78,9 +78,20 @@ ini_set('display_errors', '1');
           $valor = null;
 
           $difuntos = ControladorDifuntos::ctrMostrarDifuntosYNumSepultura($item, $valor);
-
+          //print_r($difuntos );
           foreach ($difuntos as $key => $value) {
-            
+              //AGREGAR TIPO SEPULTURA
+              $id_sep = $value["id_sepultura"];
+              $item = "id_tipo_sepultura";
+              $x = ControladorTsepultura::ctrMostrarTsepultura($item,$id_sep);
+
+              //AGREGAR CUARTEL CUERPO
+              $id_cc = $value["id_cuartel_cuerpo"];
+              //print_r($id_cc);
+              $item = "id_cuartel_cuerpo";
+              $y = ControladorCcuerpo::ctrMostrarCcuerpo($item,$id_cc);
+              //print_r($value["tipo_sep"]);
+              //print_r($x);
 
             echo '<tr>
 
@@ -94,6 +105,10 @@ ini_set('display_errors', '1');
 
                     <td>'.$value["rut"].'</td>
                     
+                    <td>'.$x["nombre"].'</td>
+                    
+                    <td>'.$y["nombre"].'</td>
+                    
                     <td>'.$value["numero_sepultura"].'</td>
 
                     <td>'.$value["fecha_sepultacion"].'</td>
@@ -101,10 +116,6 @@ ini_set('display_errors', '1');
                     <td>'.$value["inscripcion"].'</td>
 
                     <td class=text-uppercase>'.$value["circunscripcion"].'</td>
-
-                    <td>'.$value["edad"].'</td>
-
-                    <td>'.$value["sexo"].'</td>
 
                     <td>'.$value["id_boletin"].'</td>
 
