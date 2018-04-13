@@ -57,3 +57,13 @@ $(".tablas").on("click", ".btnEliminarCliente", function(){
   })
 
 })
+
+/*=============================================
+CREAR CREDITOS
+=============================================*/
+$(".tablas").on("click", ".btnCreditoCliente", function (){
+
+    var idCliente= $(this).attr("idCliente");
+
+    window.location = "index.php?ruta=creditos&idCliente="+idCliente;
+})

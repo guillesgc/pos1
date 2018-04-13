@@ -13,19 +13,19 @@ ini_set('display_errors', '1');
 <div class="content-wrapper">
 
   <section class="content-header">
-    
+
     <h1>
-      
+
       Administrar Difuntos
-    
+
     </h1>
 
     <ol class="breadcrumb">
-      
+
       <li><a href="inicio"><i class="fa fa-dashboard"></i> Inicio</a></li>
-      
+
       <li class="active">Administrar Difuntos</li>
-    
+
     </ol>
 
   </section>
@@ -35,9 +35,9 @@ ini_set('display_errors', '1');
     <div class="box">
 
       <div class="box-header with-border">
-  
+
         <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarDifunto">
-          
+
           Agregar Difunto
 
         </button>
@@ -45,13 +45,13 @@ ini_set('display_errors', '1');
       </div>
 
       <div class="box-body">
-        
-       <table class="table table-bordered table-striped dt-responsive tablas">
-         
+
+       <table class="table table-bordered table-striped dt-responsive tablaDifuntos">
+
         <thead>
-         
+
          <tr>
-           
+
            <th style="width:10px">#</th>
            <th>Nombres</th>
            <th>Apellido Paterno</th>
@@ -60,89 +60,15 @@ ini_set('display_errors', '1');
            <th>Tipo de Sepultura</th>
            <th>Cuartel-Cuerpo</th>
            <th>Número de Sepultura</th>
-           <th>Fecha Sepultación</th> 
+           <th>Fecha Sepultación</th>
            <th>Inscripción</th>
            <th>Circunscripción</th>
            <th>Boletín</th>
            <th>Acciones</th>
 
-         </tr> 
+         </tr>
 
         </thead>
-
-        <tbody>
-
-        <?php
-
-          $item = null;
-          $valor = null;
-
-          $difuntos = ControladorDifuntos::ctrMostrarDifuntosYNumSepultura($item, $valor);
-          //print_r($difuntos );
-          foreach ($difuntos as $key => $value) {
-              //AGREGAR TIPO SEPULTURA
-              $id_sep = $value["id_sepultura"];
-              $item = "id_tipo_sepultura";
-              $x = ControladorTsepultura::ctrMostrarTsepultura($item,$id_sep);
-
-              //AGREGAR CUARTEL CUERPO
-              $id_cc = $value["id_cuartel_cuerpo"];
-              //print_r($id_cc);
-              $item = "id_cuartel_cuerpo";
-              $y = ControladorCcuerpo::ctrMostrarCcuerpo($item,$id_cc);
-              //print_r($value["tipo_sep"]);
-              //print_r($x);
-
-            echo '<tr>
-
-                    <td>'.($key+1).'</td>
-
-                    <td class=text-uppercase>'.$value["nombre"].'</td>
-
-                    <td class=text-uppercase>'.$value["apellido_paterno"].'</td>
-
-                    <td class=text-uppercase>'.$value["apellido_materno"].'</td>
-
-                    <td>'.$value["rut"].'</td>
-                    
-                    <td>'.$x["nombre"].'</td>
-                    
-                    <td>'.$y["nombre"].'</td>
-                    
-                    <td>'.$value["numero_sepultura"].'</td>
-
-                    <td>'.$value["fecha_sepultacion"].'</td>
-
-                    <td>'.$value["inscripcion"].'</td>
-
-                    <td class=text-uppercase>'.$value["circunscripcion"].'</td>
-
-                    <td>'.$value["id_boletin"].'</td>
-
-                    <td>
-
-                      <div class="btn-group">
-                          
-                        <button class="btn btn-warning btnEditarDifunto" data-toggle="modal" data-target="#modalEditarDifunto" idDifunto="'.$value["id_difunto"].'"><i class="fa fa-pencil"></i></button>';
-                      
-
-                      if($_SESSION["perfil"] == "Administrador"){
-
-                          echo '<button class="btn btn-danger btnEliminarDifunto" idDifunto="'.$value["id_difunto"].'"><i class="fa fa-times"></i></button>';
-
-                      }
-
-                      echo '</div>  
-
-                    </td>
-
-                  </tr>';
-          
-            }
-
-        ?>
-   
-        </tbody>
 
        </table>
 
@@ -159,7 +85,7 @@ MODAL AGREGAR DIFUNTO
 ======================================-->
 
 <div id="modalAgregarDifunto" class="modal fade" role="dialog">
-  
+
   <div class="modal-dialog" id="mdialTamanio">
 
     <div class="modal-content">
@@ -187,14 +113,14 @@ MODAL AGREGAR DIFUNTO
           <div class="box-body">
 
             <!-- ENTRADA PARA EL NOMBRE -->
-            
+
            <div class="col-lg-6 col-xs-12">
 
             <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
 
                 <input type="text" class="form-control input-lg" name="nuevoDifunto" placeholder="Nombre Difunto" autocomplete="given_name" required>
 
@@ -205,14 +131,14 @@ MODAL AGREGAR DIFUNTO
           </div>
 
             <!-- ENTRADA PARA EL APELLIDO PATERNO -->
-            
+
             <div class="col-lg-6 col-xs-12">
 
             <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-user-plus"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
 
                 <input type="text" class="form-control input-lg" name="nuevoApaterno" placeholder="Apellido Paterno" autocomplete="family-name" required>
 
@@ -224,14 +150,14 @@ MODAL AGREGAR DIFUNTO
 
 
              <!-- ENTRADA PARA EL APELLIDO MATERNO -->
-            
+
             <div class="col-lg-6 col-xs-12">
 
             <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-user-plus"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
 
                 <input type="text"  class="form-control input-lg" name="nuevoAmaterno" placeholder="Apellido Materno" autocomplete="additional-name" required>
 
@@ -242,14 +168,14 @@ MODAL AGREGAR DIFUNTO
           </div>
 
             <!-- ENTRADA FECHA DEFUNCION -->
-            
+
             <div class="col-lg-6 col-xs-12">
 
             <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-calendar"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 
                 <input type="text" class="form-control input-lg" name="nuevaFdefuncion" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask placeholder="Fecha Defunción" autocomplete="family-name" required>
 
@@ -260,12 +186,12 @@ MODAL AGREGAR DIFUNTO
           </div>
 
           <!-- ENTRADA PARA CAUSA MUERTE -->
-            
+
             <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-heartbeat"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-heartbeat"></i></span>
 
                 <input type="text" class="form-control input-lg" name="nuevaCmuerte" placeholder="Causa Muerte" autocomplete="On" required>
 
@@ -357,13 +283,13 @@ MODAL AGREGAR DIFUNTO
 
 
             <!-- ENTRADA FECHA SEPULTACION -->
-            
+
           <div class="col-lg-4 col-xs-12">
 
             <div class="form-group">
-              
+
               <div class="input-group">
-              
+
                 <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 
                 <input type="text" class="form-control input-lg" name="nuevaFsepultacion" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask placeholder="Fecha Sepultación" autocomplete="On" required>
@@ -377,14 +303,14 @@ MODAL AGREGAR DIFUNTO
 
 
             <!-- ENTRADA PARA LA EDAD -->
-            
+
             <div class="col-lg-4 col-xs-12">
 
             <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-blind"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-blind"></i></span>
 
                 <input type="number" min="0" class="form-control input-lg" name="nuevaEdad" placeholder="Edad" autocomplete="On" required>
 
@@ -394,17 +320,17 @@ MODAL AGREGAR DIFUNTO
 
           </div>
 
-            
+
 
             <!-- ENTRADA PARA EL SEXO -->
-            
+
             <div class="col-lg-4 col-xs-12">
 
             <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-male"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-male"></i></span>
 
                 <select class="form-control input-lg" name="nuevoSexo" autocomplete="On">
 
@@ -424,14 +350,14 @@ MODAL AGREGAR DIFUNTO
 
 
              <!-- ENTRADA PARA INSCRIPCION -->
-            
+
             <div class="col-lg-6 col-xs-12">
 
             <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-sort-numeric-asc"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-sort-numeric-asc"></i></span>
 
                 <input type="number" min="1" class="form-control input-lg" name="nuevaInscripcion" placeholder="Inscripción"  required>
 
@@ -444,14 +370,14 @@ MODAL AGREGAR DIFUNTO
 
 
              <!-- ENTRADA PARA CIRCUNSCRIPCION -->
-            
+
             <div class="col-lg-6 col-xs-12">
 
             <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
 
                 <input type="text"  class="form-control input-lg" name="nuevaCircunscripcion" placeholder="Circunscripción" autocomplete="On" required>
 
@@ -464,14 +390,14 @@ MODAL AGREGAR DIFUNTO
 
 
              <!-- ENTRADA PARA BOLETIN -->
-            
+
             <div class="col-lg-6 col-xs-12">
 
             <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-sort-numeric-asc"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-sort-numeric-asc"></i></span>
 
                 <input type="number" min="1" class="form-control input-lg" name="nuevoBoletin" placeholder="Boletin" autocomplete="On" required>
 
@@ -483,15 +409,15 @@ MODAL AGREGAR DIFUNTO
 
 
         <!-- ENTRADA PARA CLIENTE
-           
+
            <div class="col-lg-6 col-xs-12">
 
            <div class="form-group">
-                  
+
                   <div class="input-group">
-                    
+
                     <span class="input-group-addon"><i class="fa fa-users"></i></span>
-                    
+
                     <select class="form-control" name="idCliente" autocomplete="On" required>
 
                     <option value="">Seleccionar cliente</option>
@@ -512,9 +438,9 @@ MODAL AGREGAR DIFUNTO
                     ?>
 
                     </select>
-                  
+
                   </div>
-                
+
                 </div>
 
               </div>
@@ -522,14 +448,14 @@ MODAL AGREGAR DIFUNTO
 
              -->
                <!-- ENTRADA PARA RUT -->
-           
+
            <div class="col-lg-6 col-xs-12">
 
               <div class="form-group">
-                
+
                 <div class="input-group">
-                
-                  <span class="input-group-addon"><i class="fa fa-id-card-o"></i></span> 
+
+                  <span class="input-group-addon"><i class="fa fa-id-card-o"></i></span>
 
                   <input type="text" class="form-control input-lg" name="nuevoRut" placeholder="Rut" autocomplete="On" required>
 
@@ -542,7 +468,7 @@ MODAL AGREGAR DIFUNTO
 
 
 
-  
+
           </div>
 
         </div>
@@ -581,7 +507,7 @@ MODAL EDITAR DIFUNTO
 ======================================-->
 
 <div id="modalEditarDifunto" class="modal fade" role="dialog">
-  
+
   <div class="modal-dialog" id="mdialTamanio">
 
     <div class="modal-content">
@@ -609,14 +535,14 @@ MODAL EDITAR DIFUNTO
           <div class="box-body">
 
             <!-- ENTRADA PARA EL NOMBRE -->
-            
+
            <div class="col-lg-6 col-xs-12">
 
             <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-user"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
 
                 <input type="text" class="form-control input-lg" name="editarDifunto" id="editarDifunto" placeholder="Nombre Difunto" required>
                 <input type="hidden" name="idDifunto" id="idDifunto">
@@ -628,14 +554,14 @@ MODAL EDITAR DIFUNTO
           </div>
 
             <!-- ENTRADA PARA EL APELLIDO PATERNO -->
-            
+
             <div class="col-lg-6 col-xs-12">
 
             <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-user-plus"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
 
                 <input type="text" class="form-control input-lg" name="editarApaterno" id="editarApaterno" placeholder="Apellido Paterno" required>
 
@@ -647,14 +573,14 @@ MODAL EDITAR DIFUNTO
 
 
              <!-- ENTRADA PARA EL APELLIDO MATERNO -->
-            
+
             <div class="col-lg-6 col-xs-12">
 
             <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-user-plus"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
 
                 <input type="text"  class="form-control input-lg" name="editarAmaterno"  id="editarAmaterno"placeholder="Apellido Materno" required>
 
@@ -665,14 +591,14 @@ MODAL EDITAR DIFUNTO
           </div>
 
             <!-- ENTRADA FECHA DEFUNCION -->
-            
+
             <div class="col-lg-6 col-xs-12">
 
             <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-calendar"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 
                 <input type="text" class="form-control input-lg" name="editarFdefuncion" id="editarFdefuncion" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask placeholder="Fecha Defunción" required>
 
@@ -683,12 +609,12 @@ MODAL EDITAR DIFUNTO
           </div>
 
           <!-- ENTRADA PARA CAUSA MUERTE -->
-            
+
             <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-heartbeat"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-heartbeat"></i></span>
 
                 <input type="text" class="form-control input-lg"  name="editarCmuerte" id="editarCmuerte" placeholder="Causa Muerte" required>
 
@@ -781,14 +707,14 @@ MODAL EDITAR DIFUNTO
 
 
             <!-- ENTRADA FECHA SEPULTACION -->
-            
+
           <div class="col-lg-4 col-xs-12">
 
             <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-calendar"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 
                 <input type="text" class="form-control input-lg" name="editarFsepultacion" id="editarFsepultacion" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask placeholder="Fecha Sepultación" required>
 
@@ -801,14 +727,14 @@ MODAL EDITAR DIFUNTO
 
 
             <!-- ENTRADA PARA LA EDAD -->
-            
+
             <div class="col-lg-4 col-xs-12">
 
             <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-blind"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-blind"></i></span>
 
                 <input type="number" min="0" class="form-control input-lg" name="editarEdad" id="editarEdad" placeholder="Edad" required>
 
@@ -818,20 +744,20 @@ MODAL EDITAR DIFUNTO
 
           </div>
 
-            
+
 
             <!-- ENTRADA PARA EL SEXO -->
-            
+
             <div class="col-lg-4 col-xs-12">
 
             <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-male"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-male"></i></span>
 
                 <select class="form-control input-lg" name="editarSexo" id="editarSexo">
-                  
+
                   <option value="">Selecionar Sexo</option>
 
                   <option value="1">Masculino</option>
@@ -848,14 +774,14 @@ MODAL EDITAR DIFUNTO
 
 
              <!-- ENTRADA PARA INSCRIPCION -->
-            
+
             <div class="col-lg-4 col-xs-12">
 
             <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-sort-numeric-asc"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-sort-numeric-asc"></i></span>
 
                 <input type="number" min="1" class="form-control input-lg" name="editarInscripcion" id="editarInscripcion" placeholder="Inscripción" required>
 
@@ -871,10 +797,10 @@ MODAL EDITAR DIFUNTO
           <div class="col-lg-4 col-xs-12">
 
             <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
 
                 <input type="text"  class="form-control input-lg" name="editarCircunscripcion" id="editarCircunscripcion" placeholder="Circunscripción" required>
 
@@ -886,15 +812,15 @@ MODAL EDITAR DIFUNTO
 
 
 
-             <!-- ENTRADA PARA BOLETIN 
-            
+             <!-- ENTRADA PARA BOLETIN
+
             <div class="col-lg-4 col-xs-12">
 
             <div class="form-group">
-              
+
               <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-sort-numeric-asc"></i></span> 
+
+                <span class="input-group-addon"><i class="fa fa-sort-numeric-asc"></i></span>
 
                 <input type="number" min="1" class="form-control input-lg" name="editarBoletin" id="editarBoletin" placeholder="Boletin" required>
 
@@ -906,15 +832,15 @@ MODAL EDITAR DIFUNTO
 
 
         <!-- ENTRADA PARA CLIENTE
-           
+
            <div class="col-lg-6 col-xs-12">
 
            <div class="form-group">
-                  
+
                   <div class="input-group">
-                    
+
                     <span class="input-group-addon"><i class="fa fa-users"></i></span>
-                    
+
                     <select class="form-control" name="idCliente" id="idCliente" required>
 
                     <option value="">Seleccionar cliente</option>
@@ -935,24 +861,24 @@ MODAL EDITAR DIFUNTO
                     //?>
 
                     </select>
-                  
+
                   </div>
-                
+
                 </div>
 
               </div>
 -->
 
 
-               <!-- ENTRADA PARA RUT 
-           
+               <!-- ENTRADA PARA RUT
+
            <div class="col-lg-6 col-xs-12">
 
               <div class="form-group">
-                
+
                 <div class="input-group">
-                
-                  <span class="input-group-addon"><i class="fa fa-id-card-o"></i></span> 
+
+                  <span class="input-group-addon"><i class="fa fa-id-card-o"></i></span>
 
                   <input type="text" class="form-control input-lg" name="editarRut" id="editarRut" placeholder="Rut" required>
 
@@ -965,7 +891,7 @@ MODAL EDITAR DIFUNTO
 
 
 
-  
+
           </div>
 
         </div>

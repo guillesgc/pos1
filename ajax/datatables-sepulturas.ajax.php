@@ -56,13 +56,13 @@ class TablaProductosS{
             echo '[
 			      "'.($i+1).'",
 			      "'.$nombre["nombre"].'",
-			      "'.$CCuerpo["nombre"].'",
+			      "'.$CCuerpo["nombre"].'", 
 			      "'.$productos[$i]["numero_sepultura"].'",
 			      "'.$estado["estado"].'",
 			      "'.$productos[$i]["corrida"].'",
 			      "'.$productos[$i]["piso"].'",
 			      "'.$productos[$i]["id_sepultura"].'"
-			    ],';
+			],';
 
         }
 

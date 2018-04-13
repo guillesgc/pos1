@@ -5,7 +5,7 @@ ELIMINAR USUARIO
 =============================================*/
 $(".tablas").on("click", ".btnEliminarSepultura", function(){
 
-  var idSepultura = $(this).attr("idSepultura");
+  var idSepultura = $(this).attr("id_sepultura");
 
   swal({
     title: '¿Está seguro de borrar la Sepultura?',
@@ -155,6 +155,7 @@ $('.tablaSepulturas tbody').on( 'click', 'button', function () {
     }
 
     $(this).attr("id_sepultura", data[8])
+    console.log("data[8]",data[8]);
 
 
 } );

@@ -77,7 +77,7 @@
           $valor = null;
 
           $sepulturas = ControladorSepultura::ctrMostrarSepultura($item, $valor);
-          print_r($sepulturas);
+          //    print_r($sepulturas);
           foreach ($sepulturas as $key => $value) {
 
               //AGREGAR CUARTEL CUERPO

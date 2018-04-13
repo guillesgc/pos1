@@ -1,13 +1,149 @@
+
+
+/*=============================================
+CARGAR LA TABLA DINAMICA DE DIFUNTOS
+=============================================*/
+
+
+
+if($(".perfilUsuario").val() != "Administrador"){
+
+    var botonesTabla = '<div class="btn-group"><button class="btn btn-warning btnEditarDifunto" data-toggle="modal" data-target="#modalEditarDifunto" idDifunto><i class="fa fa-pencil"></i></button><button class="btn btn-danger btnEliminarDifunto" idDifunto><i class="fa fa-times"></i></button></i></button></div>';
+
+
+}else{
+
+    var botonesTabla = '<div class="btn-group"><button class="btn btn-warning btnEditarDifunto" data-toggle="modal" data-target="#modalEditarDifunto" idDifunto><i class="fa fa-pencil"></i></button><button class="btn btn-danger btnEliminarDifunto" idDifunto><i class="fa fa-times"></i></button></i></button></div>';
+
+}
+
+
+if(window.matchMedia("(max-width:767px)").matches){
+
+    var table = $('.tablaDifuntos').DataTable({
+
+        "ajax":"ajax/datatable-difuntos.ajax.php",
+        "columnDefs": [
+
+            {
+                "targets": -1,
+                "data": null,
+                "defaultContent": botonesTabla
+
+            }
+
+        ],
+
+        "language": {
+
+            "sProcessing":     "Procesando...",
+            "sLengthMenu":     "Mostrar _MENU_ registros",
+            "sZeroRecords":    "No se encontraron resultados",
+            "sEmptyTable":     "Ningún dato disponible en esta tabla",
+            "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_",
+            "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0",
+            "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+            "sInfoPostFix":    "",
+            "sSearch":         "Buscar:",
+            "sUrl":            "",
+            "sInfoThousands":  ",",
+            "sLoadingRecords": "Cargando...",
+            "oPaginate": {
+                "sFirst":    "Primero",
+                "sLast":     "Último",
+                "sNext":     "Siguiente",
+                "sPrevious": "Anterior"
+            },
+            "oAria": {
+                "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+                "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+            }
+
+        }
+    })
+
+}else{
+
+    var table = $('.tablaDifuntos').DataTable({
+
+        "ajax":"ajax/datatable-difuntos.ajax.php",
+        "columnDefs": [
+
+            {
+                "targets": -1,
+                "data": null,
+                "defaultContent": botonesTabla
+
+            }
+
+        ],
+
+        "language": {
+
+            "sProcessing":     "Procesando...",
+            "sLengthMenu":     "Mostrar _MENU_ registros",
+            "sZeroRecords":    "No se encontraron resultados",
+            "sEmptyTable":     "Ningún dato disponible en esta tabla",
+            "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_",
+            "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0",
+            "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+            "sInfoPostFix":    "",
+            "sSearch":         "Buscar:",
+            "sUrl":            "",
+            "sInfoThousands":  ",",
+            "sLoadingRecords": "Cargando...",
+            "oPaginate": {
+                "sFirst":    "Primero",
+                "sLast":     "Último",
+                "sNext":     "Siguiente",
+                "sPrevious": "Anterior"
+            },
+            "oAria": {
+                "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+                "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+            }
+
+        }
+
+
+    })
+
+}
+
+/*=============================================
+ACTIVAR LOS BOTONES CON LOS ID CORRESPONDIENTES
+=============================================*/
+
+//$('.tablaDifuntos tbody').on( 'click', 'button', function () {
+//    if(window.matchMedia("(min-width:992px)").matches){
+
+//        var data = table.row( $(this).parents('tr') ).data();
+
+ //   }else{
+
+   //     var data = table.row( $(this).parents('tbody tr ul li')).data();
+
+    //}
+    //console.log("data",data);
+    //$(this).attr("id_difunto", data[0]);
+   // console.log("data[8]",data[0]);
+
+
+//} );
+
+
+
 /*=============================================
 EDITAR DIFUNTOS
 =============================================*/
-$(".tablas").on("click", ".btnEditarDifunto", function(){
-
-	var idDifunto = $(this).attr("idDifunto");
-
+$(".tablaDifuntos tbody").on("click", ".btnEditarDifunto", function(){
+    var data = table.row( $(this).parents('tr') ).data();
+    $(this).attr("idDifunto",data[0]);
+    //console.log("data",data[0]);
+	//var idDifunto =data[0];
 	var datos = new FormData();
-  datos.append("idDifunto", idDifunto);
-
+    datos.append("idDifunto", idDifunto);
+    console.log(datos);
     $.ajax({
         url:"ajax/difuntos.ajax.php",
         method: "POST",
@@ -18,7 +154,6 @@ $(".tablas").on("click", ".btnEditarDifunto", function(){
         dataType:"json",
         success:function(respuesta){
         console.log(respuesta);
-            //console.log("respuesta",respuesta);
             $("#idDifunto").val(respuesta["id_difunto"]);
 	        $("#editarDifunto").val(respuesta["nombre"]);
             $("#editarApaterno").val(respuesta["apellido_paterno"]);
