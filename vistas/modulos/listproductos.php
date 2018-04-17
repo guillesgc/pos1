@@ -30,7 +30,7 @@
 
             <div class="box-body">
 
-                <table class="table table-bordered table-striped dt-responsive tablaSepulturas">
+                <table class="table table-bordered table-striped dt-responsive tablaSepultura" width="100%">
 
                     <thead>
 
