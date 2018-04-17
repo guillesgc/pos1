@@ -18,6 +18,12 @@ class AjaxSepulturas{
 
 		$respuesta = ControladorSepultura::ctrMostrarSepultura($item, $valor);
 
+		// AGREGAR FUNCIÓN PARA OBTENER MUERTOS X SEPULTURA
+
+        $valor = $respuesta["id_sepultura"];
+        $respuesta2 = ControladorDifuntos::ctrMostrarDifuntosEnSepultura($item,$valor);
+
+        $respuesta1= array_merge($respuesta,$respuesta2);
 		echo json_encode($respuesta);
 
 

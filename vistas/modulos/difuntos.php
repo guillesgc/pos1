@@ -1,14 +1,8 @@
-<?php
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
-?>
-
-
 <style>
     #mdialTamanio{
       width: 50% !important;
     }
-  </style>
+</style>
 
 <div class="content-wrapper">
 
@@ -407,43 +401,6 @@ MODAL AGREGAR DIFUNTO
 
           </div>
 
-
-        <!-- ENTRADA PARA CLIENTE
-
-           <div class="col-lg-6 col-xs-12">
-
-           <div class="form-group">
-
-                  <div class="input-group">
-
-                    <span class="input-group-addon"><i class="fa fa-users"></i></span>
-
-                    <select class="form-control" name="idCliente" autocomplete="On" required>
-
-                    <option value="">Seleccionar cliente</option>
-
-                    <?php
-
-                      //$item = null;
-                      //$valor = null;
-
-                      //$cliente = ControladorClientes::ctrMostrarClientes($item, $valor);
-
-                       //foreach ($cliente as $key => $value) {
-
-                            //echo '<option value="'.$value["id"].'">'.$value["nombre"].'</option>';
-
-                       //}
-
-                    ?>
-
-                    </select>
-
-                  </div>
-
-                </div>
-
-              </div>
 
 
              -->

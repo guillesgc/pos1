@@ -30,7 +30,7 @@
 
             <div class="box-body">
 
-                <table class="table table-bordered table-striped dt-responsive tablaSepultura" width="100%">
+                <table class="table table-bordered table-striped dt-responsive tablaSepultura">
 
                     <thead>
 
@@ -69,84 +69,90 @@ MODAL MOSTRAR FALLECIDOS
 
         <div class="modal-content">
 
-            <!--=====================================
-            CABEZA DEL MODAL
-            ======================================-->
+            <form role="form" method="post">
 
-            <div class="modal-header" style="background:#3c8dbc; color:white; width:100%">
+                <!--=====================================
+                CABEZA DEL MODAL
+                ======================================-->
 
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <div class="modal-header" style="background:#3c8dbc; color:white; width:100%">
 
-                <h4 class="modal-title">Fallecidos en...</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-            </div>
-
-            <!--=====================================
-            CUERPO DEL MODAL
-            ======================================-->
-
-            <div class="modal-body">
-
-                <div class="box-body">
-
-                    <!-- ENTRADA PARA EL CÓDIGO -->
-
-                    <table class="table table-bordered table-striped table-responsive" width="100%">
-
-                        <thead>
-
-                        <tr>
-                            <th style="width:10px">#</th>
-                            <th>Nombre Fallecido</th>
-                            <th>Edad</th>
-                            <th>Fecha Sepultación</th>
-                            <th>Inscripción</th>
-                            <th>Circunscripción</th>
-                            <th>Causa Muerte</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <?php
-
-                        $item = "id_sepultura";
-                        //$valor = $_GET["id_sepultura"];
-
-
-                        $fallecido = ControladorDifuntos::ctrMostrarDifuntos($item, $valor);
-
-                        foreach ($fallecido as $key => $value) {
-
-                            echo ' <tr>
-
-                    <td>'.($key+1).'</td>
-                    <td class="text-uppercase">'.$value["nombre"].'</td>
-                    <td class="text-uppercase">'.$value["edad"].'</td>
-                    <td class="text-uppercase">'.$value["fecha_sepultacion"].'</td>
-                    <td class="text-uppercase">'.$value["inscripcion"].'</td>
-                    <td class="text-uppercase">'.$value["circunscripcion"].'</td>
-                    <td class="text-uppercase">'.$value["causa_muerte"].'</td>
-                    </tr>';
-
-                        }
-                        ?>
-
-                        </tbody>
-
-                    </table>
+                    <h4 class="modal-title">Fallecidos en...</h4>
 
                 </div>
 
-            </div>
+                <!--=====================================
+                CUERPO DEL MODAL
+                ======================================-->
 
-            <!--=====================================
-            PIE DEL MODAL
-            ======================================-->
+                <div class="modal-body">
 
-            <div class="modal-footer">
+                    <div class="box-body">
 
-                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+                        <!-- ENTRADA PARA EL CÓDIGO -->
 
-            </div>
+                        <table class="table table-bordered table-striped table-responsive" width="100%">
+
+                            <thead>
+
+                            <tr>
+                                <th style="width:10px">#</th>
+                                <th>Nombre Fallecido</th>
+                                <th>Edad</th>
+                                <th>Fecha Sepultación</th>
+                                <th>Inscripción</th>
+                                <th>Circunscripción</th>
+                                <th>Causa Muerte</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+
+                            //$item = "id_sepultura";
+                            //$valor = $_GET["id_sepultura"];
+
+
+                            //$fallecido = ControladorDifuntos::ctrMostrarDifuntos($item, $valor);
+
+                            //foreach ($fallecido as $key => $value) {
+
+                              //  echo ' <tr>
+
+                        //<td>'.($key+1).'</td>
+                        //<td class="text-uppercase">'.$value["nombre"].'</td>
+                        //<td class="text-uppercase">'.$value["edad"].'</td>
+                        //<td class="text-uppercase">'.$value["fecha_sepultacion"].'</td>
+                        //<td class="text-uppercase">'.$value["inscripcion"].'</td>
+                        //<td class="text-uppercase">'.$value["circunscripcion"].'</td>
+                        //<td class="text-uppercase">'.$value["causa_muerte"].'</td>
+                        //</tr>';
+
+                          //  }
+                            ?>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+
+                <!--=====================================
+                PIE DEL MODAL
+                ======================================-->
+
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
+
+                </div>
+
+            </form>
 
         </div>
 

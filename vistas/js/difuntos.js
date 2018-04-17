@@ -8,12 +8,12 @@ CARGAR LA TABLA DINAMICA DE DIFUNTOS
 
 if($(".perfilUsuario").val() != "Administrador"){
 
-    var botonesTabla = '<div class="btn-group"><button class="btn btn-warning btnEditarDifunto" data-toggle="modal" data-target="#modalEditarDifunto" idDifunto><i class="fa fa-pencil"></i></button><button class="btn btn-danger btnEliminarDifunto" idDifunto><i class="fa fa-times"></i></button></i></button></div>';
+    var botonesTabla = '<div class="btn-group"><button class="btn btn-warning btnEditarDifunto" data-toggle="modal" data-target="#modalEditarDifunto" idDifunto><i class="fa fa-pencil"></i></button><button class="btn btn-danger btnEliminarDifunto" idDifunto><i class="fa fa-times"></i></button></div>';
 
 
 }else{
 
-    var botonesTabla = '<div class="btn-group"><button class="btn btn-warning btnEditarDifunto" data-toggle="modal" data-target="#modalEditarDifunto" idDifunto><i class="fa fa-pencil"></i></button><button class="btn btn-danger btnEliminarDifunto" idDifunto><i class="fa fa-times"></i></button></i></button></div>';
+    var botonesTabla = '<div class="btn-group"><button class="btn btn-warning btnEditarDifunto" data-toggle="modal" data-target="#modalEditarDifunto" idDifunto><i class="fa fa-pencil"></i></button><button class="btn btn-danger btnEliminarDifunto" idDifunto><i class="fa fa-times"></i></button></div>';
 
 }
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 29-03-2018 a las 17:30:20
+-- Tiempo de generación: 17-04-2018 a las 14:30:28
 -- Versión del servidor: 5.7.19
 -- Versión de PHP: 5.6.31
 
@@ -46,8 +46,7 @@ CREATE TABLE IF NOT EXISTS `agenda` (
 
 INSERT INTO `agenda` (`id_agenda`, `glosa`, `tipo_agenda`, `boletin`, `fecha_evento`, `activo`, `hora`) VALUES
 (1, 'sepultacion de los restos de miguel de servantes en fraccion jardin AA-70', 1, 195457, '2018-03-26', 1, '14:30:00'),
-(3, 'SEPULTACION DE LOS RESTOS DE MI AMIGO T/A 35-3-3', 1, 195874, '2018-03-26', 1, '08:45:00'),
-(4, 'reduccion y traslado desde t/a 35-9-2 a fraccion jardin AA-60', 2, 196548, '2018-03-26', 2, '11:00:00'),
+(3, 'SEPULTACION DE LOS RESTOS DE MI AMIGO T/A 35-3-3', 1, 195874, '2018-03-26', 2, '08:45:00'),
 (5, 'retiro t/a 23-6-2', 2, 195887, '2018-05-26', 1, '10:30:00');
 
 -- --------------------------------------------------------
@@ -138,6 +137,34 @@ INSERT INTO `clientes` (`id`, `nombre`, `documento`, `email`, `telefono`, `direc
 (10, 'Ximena Restrepo', 436346346, 'ximena@gmail.com', '(543) 463-4634', 'calle 45 # 23 - 45', '1956-03-04', 20, '2018-02-20 16:17:59', '2018-02-20 21:17:59'),
 (11, 'David Guzman', 43634643, 'david@hotmail.com', '(354) 574-5634', 'carrera 45 # 45 ', '1967-05-04', 85, '2018-03-27 14:13:59', '2018-03-27 19:13:59'),
 (12, 'Gonzalo Pérez', 436346346, 'gonzalo@yahoo.com', '(235) 346-3464', 'Carrera 34 # 56 - 34', '1967-08-09', 26, '2018-03-27 15:12:25', '2018-03-27 20:12:25');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `creditos`
+--
+
+DROP TABLE IF EXISTS `creditos`;
+CREATE TABLE IF NOT EXISTS `creditos` (
+  `id_credito` int(11) NOT NULL AUTO_INCREMENT,
+  `id_cliente` int(11) NOT NULL,
+  `fecha_pago` date NOT NULL,
+  `detalle` text COLLATE utf8_spanish_ci NOT NULL,
+  `pie` int(11) NOT NULL,
+  `numcuotas` int(11) NOT NULL,
+  `boletin` int(11) NOT NULL,
+  `valor_credito` int(11) NOT NULL,
+  `valor_cuota` int(11) NOT NULL,
+  `estado` int(11) NOT NULL,
+  PRIMARY KEY (`id_credito`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `creditos`
+--
+
+INSERT INTO `creditos` (`id_credito`, `id_cliente`, `fecha_pago`, `detalle`, `pie`, `numcuotas`, `boletin`, `valor_credito`, `valor_cuota`, `estado`) VALUES
+(1, 11, '2019-01-01', 'tienes que pagar', 10000, 5, 1000, 100000, 1000, 1);
 
 -- --------------------------------------------------------
 
@@ -450,20 +477,18 @@ CREATE TABLE IF NOT EXISTS `difuntos` (
   `circunscripcion` text COLLATE utf8_spanish_ci NOT NULL,
   `id_sepultura` int(11) NOT NULL,
   `id_boletin` int(11) NOT NULL,
-  `id_cliente` int(11) NOT NULL,
   `rut` text COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`id_difunto`),
-  KEY `FK_id_sepultura` (`id_sepultura`),
-  KEY `FK_clientes` (`id_cliente`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+  KEY `FK_id_sepultura` (`id_sepultura`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `difuntos`
 --
 
-INSERT INTO `difuntos` (`id_difunto`, `nombre`, `apellido_paterno`, `apellido_materno`, `fecha_defuncion`, `fecha_sepultacion`, `causa_muerte`, `edad`, `sexo`, `inscripcion`, `circunscripcion`, `id_sepultura`, `id_boletin`, `id_cliente`, `rut`) VALUES
-(2, 'jose', 'carcamof', 'mandiola', '2018-03-16', '2018-03-18', 'infarto al miocardio', 85, 1, 345, 'Viña del mar', 1, 195895, 5, '13654897-8'),
-(3, 'Guerrero', 'Guerrero', 'Cabrera', '2018-01-01', '2018-01-02', 'infarto', 1, 1, 9, '500', 1, 1, 4, '179943255');
+INSERT INTO `difuntos` (`id_difunto`, `nombre`, `apellido_paterno`, `apellido_materno`, `fecha_defuncion`, `fecha_sepultacion`, `causa_muerte`, `edad`, `sexo`, `inscripcion`, `circunscripcion`, `id_sepultura`, `id_boletin`, `rut`) VALUES
+(4, 'Guillermo', 'Guerrero', 'Cabrera', '2018-01-01', '2018-01-02', 'otra cosa', 45, 1, 101, 'Viña del Mar', 1, 19213, '173537883'),
+(5, 'Eric', 'Goldberg', 'Villaroel', '2018-01-01', '2018-01-02', 'infarto', 7, 1, 5, 'Viña del Mar', 1, 6, '14627833-7');
 
 -- --------------------------------------------------------
 
@@ -661,7 +686,7 @@ CREATE TABLE IF NOT EXISTS `sepulturas` (
   `piso` int(11) NOT NULL,
   PRIMARY KEY (`id_sepultura`),
   KEY `FK_cuartel_cuerpo` (`id_cuartel_cuerpo`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `sepulturas`
@@ -669,7 +694,11 @@ CREATE TABLE IF NOT EXISTS `sepulturas` (
 
 INSERT INTO `sepulturas` (`id_sepultura`, `orden`, `numero_sepultura`, `id_cuartel_cuerpo`, `estado`, `capacidad`, `activo`, `id_cementerio`, `corrida`, `piso`) VALUES
 (1, 101, '101', 1, 3, 4, 1, 3, 1, 1),
-(2, 102, '102', 18, 2, 4, 1, 3, 1, 1);
+(2, 102, '102', 18, 2, 4, 1, 3, 1, 1),
+(3, 12, '103', 2, 1, 4, 1, 3, 10, 2),
+(4, 4, '104', 3, 1, 1, 1, 3, 2, 1),
+(5, 8, '105', 4, 1, 2, 1, 3, 1, 1),
+(6, 2, '106', 5, 1, 3, 1, 3, 5, 3);
 
 -- --------------------------------------------------------
 
@@ -726,7 +755,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `password`, `perfil`, `foto`, `estado`, `ultimo_login`, `fecha`) VALUES
-(1, 'Administrador', 'admin', '$2a$07$asxx54ahjppf45sd87a5auXBm1Vr2M1NV5t/zNQtGHGpS5fFirrbG', 'Administrador', 'vistas/img/usuarios/admin/191.jpg', 1, '2018-03-29 09:45:08', '2018-03-29 14:45:08'),
+(1, 'Administrador', 'admin', '$2a$07$asxx54ahjppf45sd87a5auXBm1Vr2M1NV5t/zNQtGHGpS5fFirrbG', 'Administrador', 'vistas/img/usuarios/admin/191.jpg', 1, '2018-04-17 07:20:43', '2018-04-17 12:20:43'),
 (60, 'Cristina Guerra', 'cguerra', '$2a$07$asxx54ahjppf45sd87a5au39vGJnQWiQys1oVPKiO3nTGpwMpyyZK', 'Especial', '', 1, '2018-02-25 20:42:33', '2018-02-26 01:42:33'),
 (61, 'Veronica Paiva', 'vpaiva', '$2a$07$asxx54ahjppf45sd87a5auOX4847hAR9mA3KoPqGWa.nKLtInOib6', 'Especial', '', 1, '2018-02-25 21:06:35', '2018-02-26 02:06:35'),
 (62, 'Carlos Pardo', 'cpardo', '$2a$07$asxx54ahjppf45sd87a5auYxkBp/9Hjq9zWF1lUYP1gd4aTASs25i', 'Vendedor', '', 1, '0000-00-00 00:00:00', '2018-02-26 01:39:40'),
@@ -819,7 +848,6 @@ ALTER TABLE `cuartel_cuerpos`
 -- Filtros para la tabla `difuntos`
 --
 ALTER TABLE `difuntos`
-  ADD CONSTRAINT `FK_clientes` FOREIGN KEY (`id_cliente`) REFERENCES `clientes` (`id`),
   ADD CONSTRAINT `FK_id_sepultura` FOREIGN KEY (`id_sepultura`) REFERENCES `sepulturas` (`id_sepultura`);
 
 --

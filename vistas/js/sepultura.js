@@ -37,12 +37,12 @@ CARGAR LA TABLA DINAMICA DE SEPULTURAS
 
 if($(".perfilUsuario").val() != "Administrador"){
 
-    var botonesTabla = '<div class="btn-group"><button class="btn btn-primary btnMostrarTarjeta" id_sepultura data-toggle="modal" data-target="#modalFallecidos"><i class="fa fa-search-plus"></i></button></div>';
+    var botonesTabla = '<div class="btn-group"><button class="btn btn-primary btnMostrarTarjeta" data-toggle="modal" data-target="#modalFallecidos" id_sepultura><i class="fa fa-search-plus"></i></button></div>';
 
 
 }else{
 
-    var botonesTabla = '<div class="btn-group"><button class="btn btn-primary btnMostrarTarjeta" id_sepultura data-toggle="modal" data-target="#modalFallecidos"><i class="fa fa-search-plus"></i></button></div>';
+    var botonesTabla = '<div class="btn-group"><button class="btn btn-primary btnMostrarTarjeta" data-toggle="modal" data-target="#modalFallecidos" id_sepultura><i class="fa fa-search-plus"></i></button></div>';
 
 }
 
@@ -158,6 +158,8 @@ $('.tablaSepultura tbody').on( 'click', 'button', function () {
 
 
 } );
+
+
 
 /*=============================================
 MOSTRAR DIFUNTOS EN SEPULTURA
