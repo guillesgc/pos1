@@ -60,7 +60,7 @@
 </div>
 
 <!--=====================================
-MODAL AGREGAR PRODUCTO
+MODAL MOSTRAR FALLECIDOS
 ======================================-->
 
 <div id="modalFallecidos" class="modal fade" role="dialog">
@@ -109,7 +109,7 @@ MODAL AGREGAR PRODUCTO
                         <?php
 
                         $item = "id_sepultura";
-                        $valor = $_GET["id_sepultura"];
+                        //$valor = $_GET["id_sepultura"];
 
 
                         $fallecido = ControladorDifuntos::ctrMostrarDifuntos($item, $valor);

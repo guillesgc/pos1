@@ -111,7 +111,6 @@ class ControladorDifuntos{
 			   preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarCircunscripcion"])){
 
 			   	$tabla = "difuntos";
-
 			   	$datos = array("iddifunto"=>$_POST["idDifunto"],
 			   				   "nombre"=>$_POST["editarDifunto"],
 					           "apaterno"=>$_POST["editarApaterno"],
@@ -121,9 +120,9 @@ class ControladorDifuntos{
 					       	   "cmuerte"=>$_POST["editarCmuerte"],
 					   		   "edad"=>$_POST["editarEdad"],
 			   				   "sexo"=>$_POST["editarSexo"],
+                               "inscripcion"=>$_POST["editarInscripcion"],
 			   				   "circunscripcion"=>$_POST["editarCircunscripcion"],
-			   				   "id_sepultura"=>$_POST["idSepultura"],
-			   				   "inscripcion"=>$_POST["editarInscripcion"]);
+			   				   "id_sepultura"=>$_POST["editarIdNumSepultura"]);
 
 			   	$respuesta = ModeloDifuntos::mdlEditarDifunto($tabla, $datos);
 

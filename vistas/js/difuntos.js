@@ -114,22 +114,23 @@ if(window.matchMedia("(max-width:767px)").matches){
 ACTIVAR LOS BOTONES CON LOS ID CORRESPONDIENTES
 =============================================*/
 
-//$('.tablaDifuntos tbody').on( 'click', 'button', function () {
-//    if(window.matchMedia("(min-width:992px)").matches){
+$('.tablaDifuntos tbody').on( 'click', 'button', function () {
+   if(window.matchMedia("(min-width:992px)").matches){
 
-//        var data = table.row( $(this).parents('tr') ).data();
+        var data = table.row( $(this).parents('tr') ).data();
 
- //   }else{
+   }else{
 
-   //     var data = table.row( $(this).parents('tbody tr ul li')).data();
+        var data = table.row( $(this).parents('tbody tr ul li')).data();
 
-    //}
-    //console.log("data",data);
-    //$(this).attr("id_difunto", data[0]);
+   }
+   console.log("data",data);
+   $(this).attr("idDifunto", data[0]);
+   //console.log("idDifunto",idDifunto);
    // console.log("data[8]",data[0]);
 
 
-//} );
+} );
 
 
 
@@ -137,13 +138,21 @@ ACTIVAR LOS BOTONES CON LOS ID CORRESPONDIENTES
 EDITAR DIFUNTOS
 =============================================*/
 $(".tablaDifuntos tbody").on("click", ".btnEditarDifunto", function(){
+
     var data = table.row( $(this).parents('tr') ).data();
-    $(this).attr("idDifunto",data[0]);
-    //console.log("data",data[0]);
-	//var idDifunto =data[0];
+    console.log("data",data);
+    var idDifunto= $(this).attr("idDifunto");
+    //var id_cc=$(this).attr("idCuartelCuerpo");
+    //var id_tsep=$(this).attr("idTipoSepultura");
+
 	var datos = new FormData();
-    datos.append("idDifunto", idDifunto);
-    console.log(datos);
+
+    datos.append('idDifunto', idDifunto);
+    //datos.append('idCuartelCuerpo', id_tsep);
+    //datos.append('idTipoSep', id_cc);
+
+    console.log("datoos",idDifunto);
+
     $.ajax({
         url:"ajax/difuntos.ajax.php",
         method: "POST",
@@ -153,7 +162,7 @@ $(".tablaDifuntos tbody").on("click", ".btnEditarDifunto", function(){
         processData: false,
         dataType:"json",
         success:function(respuesta){
-        console.log(respuesta);
+            console.log(respuesta);
             $("#idDifunto").val(respuesta["id_difunto"]);
 	        $("#editarDifunto").val(respuesta["nombre"]);
             $("#editarApaterno").val(respuesta["apellido_paterno"]);
@@ -165,9 +174,13 @@ $(".tablaDifuntos tbody").on("click", ".btnEditarDifunto", function(){
             $("#editarSexo").val(respuesta["sexo"]);
             $("#editarInscripcion").val(respuesta["inscripcion"]);
             $("#editarCircunscripcion").val(respuesta["circunscripcion"]);
-            //$("#editarIdCuartelCuerpo").val(respuesta["id_cuartel_cuerpo"]);
-            //$("#editarIdTipoSepultura").val(respuesta["tipo_sep"]);
-            //$("#editarIdNumSepultura").val(respuesta["numero_sepultura"]);
+
+            $("#editarIdTipoSepultura").empty();
+            $("#editarIdTipoSepultura").append("<option value='" + respuesta["id_tipo_sepultura"] + "'>" + respuesta[30] + "</option>");
+
+            $("#editarIdCuartelCuerpo").empty();
+            $("#editarIdCuartelCuerpo").append("<option value='" + respuesta["id_cuartel_cuerpo"] + "'>" + respuesta[26] + "</option>");
+
             $("#editarIdNumSepultura").empty();
             $("#editarIdNumSepultura").append("<option value='" + respuesta["id_sepultura"] + "'>" + respuesta["numero_sepultura"] + "</option>");
 
@@ -183,7 +196,7 @@ $(".tablaDifuntos tbody").on("click", ".btnEditarDifunto", function(){
 /*=============================================
 ELIMINAR DIFUNTOS
 =============================================*/
-$(".tablas").on("click", ".btnEliminarDifunto", function(){
+$(".tablaDifuntos").on("click", ".btnEliminarDifunto", function(){
 
    var idDifunto = $(this).attr("idDifunto");
 

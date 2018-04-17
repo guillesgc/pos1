@@ -140,7 +140,7 @@ class ModeloDifuntos{
 
 	static public function mdlEditarDifunto($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre = :nombre, apellido_paterno = :apaterno, apellido_materno = :amaterno, fecha_defuncion = :fdefuncion, fecha_sepultacion = :fsepultacion, causa_muerte = :cmuerte, edad= :edad, sexo= :sexo, inscripcion= :inscripcion, circunscripcion= :circunscripcion, id_sepultura= :idSepultura, id_cliente= :idCliente WHERE id_difunto = :iddifunto");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre = :nombre, apellido_paterno = :apaterno, apellido_materno = :amaterno, fecha_defuncion = :fdefuncion, fecha_sepultacion = :fsepultacion, causa_muerte = :cmuerte, edad= :edad, sexo= :sexo, inscripcion= :inscripcion, circunscripcion= :circunscripcion, id_sepultura= :id_sepultura WHERE id_difunto = :iddifunto");
 
 		$stmt->bindParam(":iddifunto", $datos["iddifunto"], PDO::PARAM_INT);
 		$stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
@@ -151,10 +151,9 @@ class ModeloDifuntos{
 		$stmt->bindParam(":cmuerte", $datos["cmuerte"], PDO::PARAM_STR);
 		$stmt->bindParam(":edad", $datos["edad"], PDO::PARAM_INT);
 		$stmt->bindParam(":sexo", $datos["sexo"], PDO::PARAM_INT);
+        $stmt->bindParam(":circunscripcion", $datos["circunscripcion"], PDO::PARAM_STR);
 		$stmt->bindParam(":inscripcion", $datos["inscripcion"], PDO::PARAM_INT);
-		$stmt->bindParam(":circunscripcion", $datos["circunscripcion"], PDO::PARAM_STR);
-		$stmt->bindParam(":id_sepultura", $datos["idSepultura"], PDO::PARAM_INT);
-		$stmt->bindParam(":idCliente", $datos["idCliente"], PDO::PARAM_INT);
+		$stmt->bindParam(":id_sepultura", $datos["id_sepultura"], PDO::PARAM_INT);
 
 		if($stmt->execute()){
 

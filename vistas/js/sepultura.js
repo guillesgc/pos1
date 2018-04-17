@@ -4,7 +4,8 @@
 ELIMINAR USUARIO
 =============================================*/
 $(".tablas").on("click", ".btnEliminarSepultura", function(){
-
+  var data = table.row( $(this).parents('tr') ).data();
+  console.log("data",data);
   var idSepultura = $(this).attr("id_sepultura");
 
   swal({
@@ -153,9 +154,54 @@ $('.tablaSepulturas tbody').on( 'click', 'button', function () {
         var data = table.row( $(this).parents('tbody tr ul li')).data();
 
     }
-
-    $(this).attr("id_sepultura", data[8])
-    console.log("data[8]",data[8]);
+    console.log("data",data);
+    //$(this).attr("id_sepultura", data[0]);
+    //console.log("data[8]",data);
 
 
 } );
+
+/*=============================================
+MOSTRAR DIFUNTOS EN SEPULTURA
+=============================================*/
+$(".tablaSepulturas tbody").on("click", ".btnMostrarTarjeta", function(){
+    //var data = table.row( $(this).parents('tr') ).data();
+    var id_sepultura = $(this).attr("id_sepultura");
+    //console.log("idDifunto",idDifunto);
+    var datos = new FormData();
+    datos.append('id_sepultura', id_sepultura);
+    console.log("datoos",id_sepultura);
+    $.ajax({
+        url:"ajax/sepultura.ajax.php",
+        method: "POST",
+        data: datos,
+        cache: false,
+        contentType: false,
+        processData: false,
+        dataType:"json",
+        success:function(respuesta){
+            console.log(respuesta);
+            $("#idDifunto").val(respuesta["id_difunto"]);
+            $("#editarDifunto").val(respuesta["nombre"]);
+            $("#editarApaterno").val(respuesta["apellido_paterno"]);
+            $("#editarAmaterno").val(respuesta["apellido_materno"]);
+            $("#editarCmuerte").val(respuesta["causa_muerte"]);
+            $("#editarFsepultacion").val(respuesta["fecha_sepultacion"]);
+            $("#editarFdefuncion").val(respuesta["fecha_defuncion"]);
+            $("#editarEdad").val(respuesta["edad"]);
+            $("#editarSexo").val(respuesta["sexo"]);
+            $("#editarInscripcion").val(respuesta["inscripcion"]);
+            $("#editarCircunscripcion").val(respuesta["circunscripcion"]);
+            //$("#editarIdCuartelCuerpo").val(respuesta["id_cuartel_cuerpo"]);
+            //$("#editarIdTipoSepultura").val(respuesta["tipo_sep"]);
+            //$("#editarIdNumSepultura").val(respuesta["numero_sepultura"]);
+            $("#editarIdNumSepultura").empty();
+            $("#editarIdNumSepultura").append("<option value='" + respuesta["id_sepultura"] + "'>" + respuesta["numero_sepultura"] + "</option>");
+
+
+
+        }
+
+    })
+
+})

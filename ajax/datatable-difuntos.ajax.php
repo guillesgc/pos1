@@ -45,7 +45,7 @@ class tablaDifuntos{
             $y = ControladorCcuerpo::ctrMostrarCcuerpo($item, $id_cc);
 
             echo '[
-                "'.($i + 1).'",
+                "'.$difuntos[$i]["id_difunto"].'",
                 "'.$difuntos[$i]["nombre"].'",
                 "'.$difuntos[$i]["apellido_paterno"].'",
                 "'.$difuntos[$i]["apellido_materno"].'",
@@ -70,7 +70,7 @@ class tablaDifuntos{
         $y = ControladorCcuerpo::ctrMostrarCcuerpo($item, $id_cc);
 
         echo '[
-                "'.count($difuntos).'",
+                "'.$difuntos[$i]["id_difunto"].'",
                 "'.$difuntos[count($difuntos)-1]["nombre"].'",
                 "'.$difuntos[count($difuntos)-1]["apellido_paterno"].'",
                 "'.$difuntos[count($difuntos)-1]["apellido_materno"].'",

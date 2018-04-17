@@ -871,3 +871,288 @@
 [13-Apr-2018 19:56:57 UTC] Hello, errors!
 [13-Apr-2018 19:58:22 UTC] Hello, errors!
 [13-Apr-2018 20:00:14 UTC] Hello, errors!
+[16-Apr-2018 11:58:07 UTC] Hello, errors!
+[16-Apr-2018 12:03:50 UTC] Hello, errors!
+[16-Apr-2018 12:03:51 UTC] Hello, errors!
+[16-Apr-2018 12:07:49 UTC] Hello, errors!
+[16-Apr-2018 12:27:49 UTC] Hello, errors!
+[16-Apr-2018 12:27:52 UTC] Hello, errors!
+[16-Apr-2018 12:28:00 UTC] Hello, errors!
+[16-Apr-2018 12:33:51 UTC] Hello, errors!
+[16-Apr-2018 12:34:41 UTC] Hello, errors!
+[16-Apr-2018 12:35:56 UTC] Hello, errors!
+[16-Apr-2018 12:37:46 UTC] Hello, errors!
+[16-Apr-2018 12:40:04 UTC] Hello, errors!
+[16-Apr-2018 12:40:35 UTC] Hello, errors!
+[16-Apr-2018 12:40:54 UTC] Hello, errors!
+[16-Apr-2018 12:46:01 UTC] Hello, errors!
+[16-Apr-2018 12:46:51 UTC] Hello, errors!
+[16-Apr-2018 12:51:37 UTC] Hello, errors!
+[16-Apr-2018 12:52:52 UTC] Hello, errors!
+[16-Apr-2018 12:53:22 UTC] Hello, errors!
+[16-Apr-2018 12:53:44 UTC] Hello, errors!
+[16-Apr-2018 12:55:51 UTC] Hello, errors!
+[16-Apr-2018 12:56:35 UTC] Hello, errors!
+[16-Apr-2018 12:57:04 UTC] Hello, errors!
+[16-Apr-2018 12:58:35 UTC] Hello, errors!
+[16-Apr-2018 12:58:50 UTC] Hello, errors!
+[16-Apr-2018 13:06:05 UTC] Hello, errors!
+[16-Apr-2018 13:06:52 UTC] Hello, errors!
+[16-Apr-2018 13:07:57 UTC] Hello, errors!
+[16-Apr-2018 13:08:10 UTC] Hello, errors!
+[16-Apr-2018 13:08:31 UTC] Hello, errors!
+[16-Apr-2018 13:09:21 UTC] Hello, errors!
+[16-Apr-2018 13:12:49 UTC] Hello, errors!
+[16-Apr-2018 15:01:48 UTC] Hello, errors!
+[16-Apr-2018 15:08:54 UTC] Hello, errors!
+[16-Apr-2018 15:09:22 UTC] Hello, errors!
+[16-Apr-2018 15:10:28 UTC] Hello, errors!
+[16-Apr-2018 15:17:51 UTC] Hello, errors!
+[16-Apr-2018 15:17:54 UTC] Hello, errors!
+[16-Apr-2018 15:17:55 UTC] PHP Notice:  Undefined index: id_sepultura in C:\wamp64\www\pos1\vistas\modulos\listproductos.php on line 112
+[16-Apr-2018 15:17:55 UTC] PHP Stack trace:
+[16-Apr-2018 15:17:55 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[16-Apr-2018 15:17:55 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:43
+[16-Apr-2018 15:17:55 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[16-Apr-2018 15:17:55 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:170
+[16-Apr-2018 15:17:55 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\wamp64\www\pos1\vistas\modulos\listproductos.php on line 117
+[16-Apr-2018 15:17:55 UTC] PHP Stack trace:
+[16-Apr-2018 15:17:55 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[16-Apr-2018 15:17:55 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:43
+[16-Apr-2018 15:17:55 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[16-Apr-2018 15:17:55 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:170
+[16-Apr-2018 15:18:17 UTC] Hello, errors!
+[16-Apr-2018 15:18:17 UTC] PHP Notice:  Undefined index: id_sepultura in C:\wamp64\www\pos1\vistas\modulos\listproductos.php on line 112
+[16-Apr-2018 15:18:18 UTC] PHP Stack trace:
+[16-Apr-2018 15:18:18 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[16-Apr-2018 15:18:18 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:43
+[16-Apr-2018 15:18:18 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[16-Apr-2018 15:18:18 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:170
+[16-Apr-2018 15:18:18 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\wamp64\www\pos1\vistas\modulos\listproductos.php on line 117
+[16-Apr-2018 15:18:18 UTC] PHP Stack trace:
+[16-Apr-2018 15:18:18 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[16-Apr-2018 15:18:18 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:43
+[16-Apr-2018 15:18:18 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[16-Apr-2018 15:18:18 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:170
+[16-Apr-2018 15:19:14 UTC] Hello, errors!
+[16-Apr-2018 15:19:14 UTC] PHP Notice:  Undefined index: id_sepultura in C:\wamp64\www\pos1\vistas\modulos\listproductos.php on line 112
+[16-Apr-2018 15:19:14 UTC] PHP Stack trace:
+[16-Apr-2018 15:19:14 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[16-Apr-2018 15:19:14 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:43
+[16-Apr-2018 15:19:14 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[16-Apr-2018 15:19:14 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:170
+[16-Apr-2018 15:19:14 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\wamp64\www\pos1\vistas\modulos\listproductos.php on line 117
+[16-Apr-2018 15:19:14 UTC] PHP Stack trace:
+[16-Apr-2018 15:19:14 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[16-Apr-2018 15:19:14 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:43
+[16-Apr-2018 15:19:14 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[16-Apr-2018 15:19:14 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:170
+[16-Apr-2018 15:19:52 UTC] Hello, errors!
+[16-Apr-2018 15:19:52 UTC] PHP Notice:  Undefined index: id_sepultura in C:\wamp64\www\pos1\vistas\modulos\listproductos.php on line 112
+[16-Apr-2018 15:19:52 UTC] PHP Stack trace:
+[16-Apr-2018 15:19:52 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[16-Apr-2018 15:19:52 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:43
+[16-Apr-2018 15:19:52 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[16-Apr-2018 15:19:52 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:170
+[16-Apr-2018 15:19:52 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\wamp64\www\pos1\vistas\modulos\listproductos.php on line 117
+[16-Apr-2018 15:19:52 UTC] PHP Stack trace:
+[16-Apr-2018 15:19:52 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[16-Apr-2018 15:19:53 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:43
+[16-Apr-2018 15:19:53 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[16-Apr-2018 15:19:53 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:170
+[16-Apr-2018 15:21:01 UTC] Hello, errors!
+[16-Apr-2018 15:21:01 UTC] PHP Notice:  Undefined index: id_sepultura in C:\wamp64\www\pos1\vistas\modulos\listproductos.php on line 112
+[16-Apr-2018 15:21:01 UTC] PHP Stack trace:
+[16-Apr-2018 15:21:01 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[16-Apr-2018 15:21:01 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:43
+[16-Apr-2018 15:21:01 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[16-Apr-2018 15:21:01 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:170
+[16-Apr-2018 15:21:01 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\wamp64\www\pos1\vistas\modulos\listproductos.php on line 117
+[16-Apr-2018 15:21:01 UTC] PHP Stack trace:
+[16-Apr-2018 15:21:01 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[16-Apr-2018 15:21:01 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:43
+[16-Apr-2018 15:21:01 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[16-Apr-2018 15:21:01 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:170
+[16-Apr-2018 15:29:31 UTC] Hello, errors!
+[16-Apr-2018 15:29:31 UTC] PHP Notice:  Undefined index: id_sepultura in C:\wamp64\www\pos1\vistas\modulos\listproductos.php on line 112
+[16-Apr-2018 15:29:31 UTC] PHP Stack trace:
+[16-Apr-2018 15:29:31 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[16-Apr-2018 15:29:31 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:43
+[16-Apr-2018 15:29:31 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[16-Apr-2018 15:29:31 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:170
+[16-Apr-2018 15:29:31 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\wamp64\www\pos1\vistas\modulos\listproductos.php on line 117
+[16-Apr-2018 15:29:31 UTC] PHP Stack trace:
+[16-Apr-2018 15:29:31 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[16-Apr-2018 15:29:31 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:43
+[16-Apr-2018 15:29:31 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[16-Apr-2018 15:29:31 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:170
+[16-Apr-2018 15:30:34 UTC] Hello, errors!
+[16-Apr-2018 15:30:34 UTC] PHP Notice:  Undefined index: id_sepultura in C:\wamp64\www\pos1\vistas\modulos\listproductos.php on line 112
+[16-Apr-2018 15:30:35 UTC] PHP Stack trace:
+[16-Apr-2018 15:30:35 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[16-Apr-2018 15:30:35 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:43
+[16-Apr-2018 15:30:35 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[16-Apr-2018 15:30:35 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:170
+[16-Apr-2018 15:30:35 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\wamp64\www\pos1\vistas\modulos\listproductos.php on line 117
+[16-Apr-2018 15:30:35 UTC] PHP Stack trace:
+[16-Apr-2018 15:30:35 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[16-Apr-2018 15:30:35 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:43
+[16-Apr-2018 15:30:35 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[16-Apr-2018 15:30:35 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:170
+[16-Apr-2018 15:31:19 UTC] Hello, errors!
+[16-Apr-2018 15:31:19 UTC] PHP Notice:  Undefined index: id_sepultura in C:\wamp64\www\pos1\vistas\modulos\listproductos.php on line 112
+[16-Apr-2018 15:31:19 UTC] PHP Stack trace:
+[16-Apr-2018 15:31:19 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[16-Apr-2018 15:31:19 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:43
+[16-Apr-2018 15:31:19 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[16-Apr-2018 15:31:19 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:170
+[16-Apr-2018 15:31:19 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\wamp64\www\pos1\vistas\modulos\listproductos.php on line 117
+[16-Apr-2018 15:31:19 UTC] PHP Stack trace:
+[16-Apr-2018 15:31:19 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[16-Apr-2018 15:31:19 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:43
+[16-Apr-2018 15:31:19 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[16-Apr-2018 15:31:19 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:170
+[16-Apr-2018 15:47:38 UTC] Hello, errors!
+[16-Apr-2018 15:47:38 UTC] PHP Notice:  Undefined variable: valor in C:\wamp64\www\pos1\vistas\modulos\listproductos.php on line 115
+[16-Apr-2018 15:47:38 UTC] PHP Stack trace:
+[16-Apr-2018 15:47:38 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[16-Apr-2018 15:47:38 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:43
+[16-Apr-2018 15:47:38 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[16-Apr-2018 15:47:38 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:170
+[16-Apr-2018 15:47:38 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\wamp64\www\pos1\vistas\modulos\listproductos.php on line 117
+[16-Apr-2018 15:47:38 UTC] PHP Stack trace:
+[16-Apr-2018 15:47:39 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[16-Apr-2018 15:47:39 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:43
+[16-Apr-2018 15:47:39 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[16-Apr-2018 15:47:39 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:170
+[16-Apr-2018 15:57:48 UTC] Hello, errors!
+[16-Apr-2018 15:59:52 UTC] Hello, errors!
+[16-Apr-2018 16:03:42 UTC] Hello, errors!
+[16-Apr-2018 16:04:43 UTC] Hello, errors!
+[16-Apr-2018 16:05:21 UTC] Hello, errors!
+[16-Apr-2018 16:39:27 UTC] Hello, errors!
+[16-Apr-2018 16:41:41 UTC] Hello, errors!
+[16-Apr-2018 16:44:03 UTC] Hello, errors!
+[16-Apr-2018 16:44:44 UTC] Hello, errors!
+[16-Apr-2018 16:53:09 UTC] Hello, errors!
+[16-Apr-2018 16:54:22 UTC] Hello, errors!
+[16-Apr-2018 16:54:41 UTC] Hello, errors!
+[16-Apr-2018 16:54:41 UTC] PHP Notice:  Undefined index: idSepultura in C:\wamp64\www\pos1\controladores\difuntos.controlador.php on line 125
+[16-Apr-2018 16:54:41 UTC] PHP Stack trace:
+[16-Apr-2018 16:54:41 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[16-Apr-2018 16:54:41 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:43
+[16-Apr-2018 16:54:41 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[16-Apr-2018 16:54:42 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:170
+[16-Apr-2018 16:54:42 UTC] PHP   5. ControladorDifuntos::ctrEditarDifunto() C:\wamp64\www\pos1\vistas\modulos\difuntos.php:916
+[16-Apr-2018 16:54:42 UTC] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in C:\wamp64\www\pos1\modelos\difuntos.modelo.php on line 159
+[16-Apr-2018 16:54:42 UTC] PHP Stack trace:
+[16-Apr-2018 16:54:42 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[16-Apr-2018 16:54:42 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:43
+[16-Apr-2018 16:54:42 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[16-Apr-2018 16:54:42 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:170
+[16-Apr-2018 16:54:42 UTC] PHP   5. ControladorDifuntos::ctrEditarDifunto() C:\wamp64\www\pos1\vistas\modulos\difuntos.php:916
+[16-Apr-2018 16:54:42 UTC] PHP   6. ModeloDifuntos::mdlEditarDifunto() C:\wamp64\www\pos1\controladores\difuntos.controlador.php:128
+[16-Apr-2018 16:54:42 UTC] PHP   7. PDOStatement->execute() C:\wamp64\www\pos1\modelos\difuntos.modelo.php:159
+[16-Apr-2018 18:27:18 UTC] Hello, errors!
+[16-Apr-2018 18:27:51 UTC] Hello, errors!
+[16-Apr-2018 19:00:07 UTC] Hello, errors!
+[16-Apr-2018 19:00:09 UTC] Hello, errors!
+[16-Apr-2018 19:00:15 UTC] Hello, errors!
+[16-Apr-2018 19:03:15 UTC] Hello, errors!
+[16-Apr-2018 19:03:35 UTC] Hello, errors!
+[16-Apr-2018 19:03:35 UTC] PHP Notice:  Undefined index: idSepultura in C:\wamp64\www\pos1\controladores\difuntos.controlador.php on line 126
+[16-Apr-2018 19:03:35 UTC] PHP Stack trace:
+[16-Apr-2018 19:03:35 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[16-Apr-2018 19:03:35 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:43
+[16-Apr-2018 19:03:35 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[16-Apr-2018 19:03:35 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:170
+[16-Apr-2018 19:03:35 UTC] PHP   5. ControladorDifuntos::ctrEditarDifunto() C:\wamp64\www\pos1\vistas\modulos\difuntos.php:916
+[16-Apr-2018 19:03:57 UTC] Hello, errors!
+[16-Apr-2018 19:03:57 UTC] PHP Notice:  Undefined index: idSepultura in C:\wamp64\www\pos1\controladores\difuntos.controlador.php on line 126
+[16-Apr-2018 19:03:57 UTC] PHP Stack trace:
+[16-Apr-2018 19:03:57 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[16-Apr-2018 19:03:57 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:43
+[16-Apr-2018 19:03:57 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[16-Apr-2018 19:03:58 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:170
+[16-Apr-2018 19:03:58 UTC] PHP   5. ControladorDifuntos::ctrEditarDifunto() C:\wamp64\www\pos1\vistas\modulos\difuntos.php:916
+[16-Apr-2018 19:22:14 UTC] Hello, errors!
+[16-Apr-2018 19:22:16 UTC] PHP Notice:  Undefined index: idSepultura in C:\wamp64\www\pos1\controladores\difuntos.controlador.php on line 126
+[16-Apr-2018 19:22:16 UTC] PHP Stack trace:
+[16-Apr-2018 19:22:16 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[16-Apr-2018 19:22:16 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:43
+[16-Apr-2018 19:22:16 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[16-Apr-2018 19:22:16 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:170
+[16-Apr-2018 19:22:16 UTC] PHP   5. ControladorDifuntos::ctrEditarDifunto() C:\wamp64\www\pos1\vistas\modulos\difuntos.php:916
+[16-Apr-2018 19:35:19 UTC] Hello, errors!
+[16-Apr-2018 19:35:22 UTC] PHP Notice:  Undefined index: idSepultura in C:\wamp64\www\pos1\controladores\difuntos.controlador.php on line 126
+[16-Apr-2018 19:35:22 UTC] PHP Stack trace:
+[16-Apr-2018 19:35:22 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[16-Apr-2018 19:35:22 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:43
+[16-Apr-2018 19:35:22 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[16-Apr-2018 19:35:22 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:170
+[16-Apr-2018 19:35:22 UTC] PHP   5. ControladorDifuntos::ctrEditarDifunto() C:\wamp64\www\pos1\vistas\modulos\difuntos.php:916
+[16-Apr-2018 19:37:12 UTC] Hello, errors!
+[16-Apr-2018 19:37:12 UTC] PHP Notice:  Undefined index: idNumSepultura in C:\wamp64\www\pos1\controladores\difuntos.controlador.php on line 126
+[16-Apr-2018 19:37:12 UTC] PHP Stack trace:
+[16-Apr-2018 19:37:12 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[16-Apr-2018 19:37:12 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:43
+[16-Apr-2018 19:37:12 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[16-Apr-2018 19:37:12 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:170
+[16-Apr-2018 19:37:12 UTC] PHP   5. ControladorDifuntos::ctrEditarDifunto() C:\wamp64\www\pos1\vistas\modulos\difuntos.php:916
+[16-Apr-2018 19:40:10 UTC] Hello, errors!
+[16-Apr-2018 19:40:10 UTC] PHP Notice:  Undefined index: idNumSepultura in C:\wamp64\www\pos1\controladores\difuntos.controlador.php on line 126
+[16-Apr-2018 19:40:10 UTC] PHP Stack trace:
+[16-Apr-2018 19:40:10 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[16-Apr-2018 19:40:10 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:43
+[16-Apr-2018 19:40:10 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[16-Apr-2018 19:40:10 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:170
+[16-Apr-2018 19:40:10 UTC] PHP   5. ControladorDifuntos::ctrEditarDifunto() C:\wamp64\www\pos1\vistas\modulos\difuntos.php:916
+[16-Apr-2018 19:41:26 UTC] Hello, errors!
+[16-Apr-2018 19:41:26 UTC] PHP Notice:  Undefined index: idNumSepultura in C:\wamp64\www\pos1\controladores\difuntos.controlador.php on line 126
+[16-Apr-2018 19:41:26 UTC] PHP Stack trace:
+[16-Apr-2018 19:41:26 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[16-Apr-2018 19:41:26 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:43
+[16-Apr-2018 19:41:26 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[16-Apr-2018 19:41:26 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:170
+[16-Apr-2018 19:41:26 UTC] PHP   5. ControladorDifuntos::ctrEditarDifunto() C:\wamp64\www\pos1\vistas\modulos\difuntos.php:916
+[16-Apr-2018 19:42:42 UTC] Hello, errors!
+[16-Apr-2018 19:42:42 UTC] PHP Notice:  Undefined index: id_sepultura in C:\wamp64\www\pos1\controladores\difuntos.controlador.php on line 126
+[16-Apr-2018 19:42:42 UTC] PHP Stack trace:
+[16-Apr-2018 19:42:42 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[16-Apr-2018 19:42:42 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:43
+[16-Apr-2018 19:42:42 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[16-Apr-2018 19:42:42 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:170
+[16-Apr-2018 19:42:42 UTC] PHP   5. ControladorDifuntos::ctrEditarDifunto() C:\wamp64\www\pos1\vistas\modulos\difuntos.php:916
+[16-Apr-2018 19:45:42 UTC] Hello, errors!
+[16-Apr-2018 19:45:45 UTC] Hello, errors!
+[16-Apr-2018 19:47:41 UTC] Hello, errors!
+[16-Apr-2018 19:51:07 UTC] Hello, errors!
+[16-Apr-2018 19:53:42 UTC] Hello, errors!
+[16-Apr-2018 19:54:54 UTC] Hello, errors!
+[16-Apr-2018 19:56:24 UTC] Hello, errors!
+[16-Apr-2018 19:58:45 UTC] Hello, errors!
+[16-Apr-2018 20:00:26 UTC] Hello, errors!
+[16-Apr-2018 20:02:24 UTC] Hello, errors!
+[16-Apr-2018 20:08:30 UTC] Hello, errors!
+[16-Apr-2018 20:10:13 UTC] Hello, errors!
+[16-Apr-2018 20:12:24 UTC] Hello, errors!
+[16-Apr-2018 20:13:01 UTC] Hello, errors!
+[16-Apr-2018 20:15:11 UTC] Hello, errors!
+[16-Apr-2018 20:16:00 UTC] Hello, errors!
+[16-Apr-2018 20:16:35 UTC] Hello, errors!
+[16-Apr-2018 20:18:54 UTC] Hello, errors!
+[16-Apr-2018 20:19:53 UTC] Hello, errors!
+[16-Apr-2018 20:20:29 UTC] Hello, errors!
+[16-Apr-2018 20:23:36 UTC] Hello, errors!
+[16-Apr-2018 20:24:39 UTC] Hello, errors!
+[16-Apr-2018 20:24:58 UTC] Hello, errors!
+[16-Apr-2018 20:25:18 UTC] Hello, errors!
+[16-Apr-2018 20:25:37 UTC] Hello, errors!
+[16-Apr-2018 20:28:30 UTC] Hello, errors!
+[16-Apr-2018 20:29:45 UTC] Hello, errors!
+[16-Apr-2018 20:30:02 UTC] Hello, errors!
+[16-Apr-2018 20:40:33 UTC] Hello, errors!
+[16-Apr-2018 21:00:03 UTC] Hello, errors!
+[16-Apr-2018 21:00:48 UTC] Hello, errors!
+[16-Apr-2018 21:02:41 UTC] Hello, errors!
+[16-Apr-2018 21:02:58 UTC] Hello, errors!
