@@ -1305,3 +1305,49 @@
 [17-Apr-2018 13:15:21 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:43
 [17-Apr-2018 13:15:21 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
 [17-Apr-2018 13:15:21 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:170
+[17-Apr-2018 13:55:17 UTC] Hello, errors!
+[17-Apr-2018 13:55:18 UTC] PHP Notice:  Undefined variable: valor in C:\wamp64\www\pos1\vistas\modulos\listproductos.php on line 115
+[17-Apr-2018 13:55:19 UTC] PHP Stack trace:
+[17-Apr-2018 13:55:19 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[17-Apr-2018 13:55:19 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:43
+[17-Apr-2018 13:55:19 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[17-Apr-2018 13:55:19 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:170
+[17-Apr-2018 13:55:19 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\wamp64\www\pos1\vistas\modulos\listproductos.php on line 117
+[17-Apr-2018 13:55:19 UTC] PHP Stack trace:
+[17-Apr-2018 13:55:19 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[17-Apr-2018 13:55:19 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:43
+[17-Apr-2018 13:55:19 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[17-Apr-2018 13:55:19 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:170
+[17-Apr-2018 14:01:45 UTC] Hello, errors!
+[17-Apr-2018 14:01:56 UTC] Hello, errors!
+[17-Apr-2018 14:05:08 UTC] Hello, errors!
+[17-Apr-2018 14:05:20 UTC] Hello, errors!
+[17-Apr-2018 14:05:25 UTC] Hello, errors!
+[17-Apr-2018 14:05:26 UTC] PHP Fatal error:  Class 'ControladorCreditos' not found in C:\wamp64\www\pos1\vistas\modulos\creditos.php on line 111
+[17-Apr-2018 14:05:26 UTC] PHP Stack trace:
+[17-Apr-2018 14:05:26 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[17-Apr-2018 14:05:26 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:43
+[17-Apr-2018 14:05:26 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[17-Apr-2018 14:05:26 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:170
+[17-Apr-2018 14:06:28 UTC] Hello, errors!
+[17-Apr-2018 14:06:28 UTC] PHP Warning:  require_once(controladores/credito.controlador.php): failed to open stream: No such file or directory in C:\wamp64\www\pos1\index.php on line 24
+[17-Apr-2018 14:06:28 UTC] PHP Stack trace:
+[17-Apr-2018 14:06:28 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[17-Apr-2018 14:06:29 UTC] PHP Fatal error:  require_once(): Failed opening required 'controladores/credito.controlador.php' (include_path='.;C:\php\pear') in C:\wamp64\www\pos1\index.php on line 24
+[17-Apr-2018 14:06:29 UTC] PHP Stack trace:
+[17-Apr-2018 14:06:29 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[17-Apr-2018 14:06:38 UTC] Hello, errors!
+[17-Apr-2018 14:06:38 UTC] PHP Warning:  require_once(controladores/credito.controlador.php): failed to open stream: No such file or directory in C:\wamp64\www\pos1\index.php on line 24
+[17-Apr-2018 14:06:38 UTC] PHP Stack trace:
+[17-Apr-2018 14:06:38 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[17-Apr-2018 14:06:38 UTC] PHP Fatal error:  require_once(): Failed opening required 'controladores/credito.controlador.php' (include_path='.;C:\php\pear') in C:\wamp64\www\pos1\index.php on line 24
+[17-Apr-2018 14:06:38 UTC] PHP Stack trace:
+[17-Apr-2018 14:06:38 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[17-Apr-2018 14:08:58 UTC] Hello, errors!
+[17-Apr-2018 14:09:06 UTC] Hello, errors!
+[17-Apr-2018 14:09:08 UTC] Hello, errors!
+[17-Apr-2018 14:10:22 UTC] Hello, errors!
+[17-Apr-2018 14:11:14 UTC] Hello, errors!
+[17-Apr-2018 14:11:17 UTC] Hello, errors!
+[17-Apr-2018 14:11:23 UTC] Hello, errors!
+[17-Apr-2018 14:11:25 UTC] Hello, errors!
