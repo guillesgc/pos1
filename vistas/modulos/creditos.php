@@ -79,7 +79,7 @@ ini_set('display_errors', '1');
 
                 <div class="box-body">
 
-                    <table class="table table-bordered table-striped dt-responsive tablas" width="100%">
+                    <table class="table table-bordered table-striped dt-responsive tablaCreditos" width="100%">
 
                         <thead>
 
@@ -337,10 +337,10 @@ ini_set('display_errors', '1');
     </div>
 
     <!--=====================================
-    MODAL EDITAR SEPULTURA
+    MODAL EDITAR CREDITO
     ======================================-->
 
-    <div id="modalEditarCcosto" class="modal fade" role="dialog">
+    <div id="modalEditarCredito" class="modal fade" role="dialog">
 
         <div class="modal-dialog">
 
@@ -356,7 +356,7 @@ ini_set('display_errors', '1');
 
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-                        <h4 class="modal-title">Editar Centro Costo</h4>
+                        <h4 class="modal-title">Editar Crédito</h4>
 
                     </div>
 
@@ -368,7 +368,9 @@ ini_set('display_errors', '1');
 
                         <div class="box-body">
 
-                            <!-- ENTRADA PARA EL NOMBRE -->
+
+                            <!-- ENTRADA PARA FECHA DE PAGO -->
+
 
                             <div class="form-group">
 
@@ -376,17 +378,117 @@ ini_set('display_errors', '1');
 
                                     <span class="input-group-addon"><i class="fa fa-th"></i></span>
 
-                                    <input type="text" class="form-control input-lg" name="editarCcosto" id="editarCcosto" required>
-
-                                    <input type="hidden"  name="idCcosto" id="idCcosto" required>
+                                    <input type="text" class="form-control input-lg" name="editarFechap" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask placeholder="Fecha Pago" required>
 
                                 </div>
 
                             </div>
 
+
+                            <!-- ENTRADA PARA DETALLE DE CREDITO -->
+
+
+                            <div class="form-group">
+
+                                <div class="input-group">
+
+                                    <span class="input-group-addon"><i class="fa fa-th"></i></span>
+
+                                    <input type="text" class="form-control input-lg" name="editarDetalle" placeholder="Glosa" required>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- ENTRADA PARA PIE -->
+
+
+                            <div class="form-group">
+
+                                <div class="input-group">
+
+                                    <span class="input-group-addon"><i class="fa fa-th"></i></span>
+
+                                    <input type="number" class="form-control input-lg" min="1" name="editarPie" placeholder="Pie" required>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- ENTRADA PARA NUMERO DE CUOTAS -->
+
+
+                            <div class="form-group">
+
+                                <div class="input-group">
+
+                                    <span class="input-group-addon"><i class="fa fa-th"></i></span>
+
+                                    <input type="number" class="form-control input-lg" name="editarNumcuotas" min="1" placeholder="Número de Cuotas" required>
+
+                                </div>
+
+                            </div>
+
+
+
+
+                            <!-- ENTRADA PARA BOLETIN -->
+
+
+                            <div class="form-group">
+
+                                <div class="input-group">
+
+                                    <span class="input-group-addon"><i class="fa fa-th"></i></span>
+
+                                    <input type="number" class="form-control input-lg" name="editarBoletin" min="1" placeholder="Boletin" required>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- ENTRADA PARA VALOR CREDITO -->
+
+
+                            <div class="form-group">
+
+                                <div class="input-group">
+
+                                    <span class="input-group-addon"><i class="fa fa-th"></i></span>
+
+                                    <input type="number" class="form-control input-lg" name="nuevoVcredito" min="1" placeholder="Valor Credito" required>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- ENTRADA PARA VALOR CUOTA -->
+
+
+                            <div class="form-group">
+
+                                <div class="input-group">
+
+                                    <span class="input-group-addon"><i class="fa fa-th"></i></span>
+
+                                    <input type="number" class="form-control input-lg" name="nuevaCuota" min="1" placeholder="Valor Cuota" required>
+
+                                </div>
+
+                            </div>
+
+
                         </div>
 
                     </div>
+
 
                     <!--=====================================
                     PIE DEL MODAL
@@ -402,8 +504,8 @@ ini_set('display_errors', '1');
 
                     <?php
 
-                    $editarCcosto = new ControladorCcosto();
-                    $editarCcosto -> ctrEditarCcosto();
+                    $editarCredito = new ControladorCreditos();
+                    $editarCredito   -> ctrEditarCredito();
 
                     ?>
 

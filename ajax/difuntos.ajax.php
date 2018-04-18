@@ -51,8 +51,6 @@ EDITAR DIFUNTO
 if(isset($_POST["idDifunto"])){
 	$difunto = new AjaxDifunto();
 	$difunto -> idDifunto = $_POST["idDifunto"];
-	//$difunto -> idTipoSep = $_POST["editarIdTipoSep"];
-	//$difunto -> idCuartelCuerpo = $_POST["idIdNumSepultura"];
 	$difunto -> ajaxEditarDifunto();
 
 }

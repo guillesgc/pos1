@@ -30,22 +30,22 @@
 
             <div class="box-body">
 
-                <table class="table table-bordered table-striped dt-responsive tablaSepultura">
+                <table class="table table-bordered table-striped dt-responsive tablaSepultura" width="100%">
 
                     <thead>
 
-                    <tr>
+                        <tr>
 
-                        <th style="width:10px">#</th>
-                        <th>Tipo Producto</th>
-                        <th>Cuartel-Cuerpo</th>
-                        <th># Sepultura</th>
-                        <th>Estado</th>
-                        <th>Piso</th>
-                        <th>Corrida</th>
-                        <th>Ver Fallecidos</th>
+                            <th style="width:10px">#</th>
+                            <th>Tipo Producto</th>
+                            <th>Cuartel-Cuerpo</th>
+                            <th># Sepultura</th>
+                            <th>Estado</th>
+                            <th>Piso</th>
+                            <th>Corrida</th>
+                            <th>Ver Fallecidos</th>
 
-                    </tr>
+                        </tr>
 
                     </thead>
 
@@ -97,42 +97,17 @@ MODAL MOSTRAR FALLECIDOS
 
                             <thead>
 
-                            <tr>
-                                <th style="width:10px">#</th>
-                                <th>Nombre Fallecido</th>
-                                <th>Edad</th>
-                                <th>Fecha Sepultación</th>
-                                <th>Inscripción</th>
-                                <th>Circunscripción</th>
-                                <th>Causa Muerte</th>
-                            </tr>
+                                <tr>
+                                    <th style="width:10px">#</th>
+                                    <th>Nombre Fallecido</th>
+                                    <th>Edad</th>
+                                    <th>Fecha Sepultación</th>
+                                    <th>Inscripción</th>
+                                    <th>Circunscripción</th>
+                                    <th>Causa Muerte</th>
+                                </tr>
                             </thead>
-                            <tbody>
-                            <?php
 
-                            //$item = "id_sepultura";
-                            //$valor = $_GET["id_sepultura"];
-
-
-                            //$fallecido = ControladorDifuntos::ctrMostrarDifuntos($item, $valor);
-
-                            //foreach ($fallecido as $key => $value) {
-
-                              //  echo ' <tr>
-
-                        //<td>'.($key+1).'</td>
-                        //<td class="text-uppercase">'.$value["nombre"].'</td>
-                        //<td class="text-uppercase">'.$value["edad"].'</td>
-                        //<td class="text-uppercase">'.$value["fecha_sepultacion"].'</td>
-                        //<td class="text-uppercase">'.$value["inscripcion"].'</td>
-                        //<td class="text-uppercase">'.$value["circunscripcion"].'</td>
-                        //<td class="text-uppercase">'.$value["causa_muerte"].'</td>
-                        //</tr>';
-
-                          //  }
-                            ?>
-
-                            </tbody>
 
                         </table>
 

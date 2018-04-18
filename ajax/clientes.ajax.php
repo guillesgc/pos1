@@ -11,7 +11,7 @@ class AjaxClientes{
 
 	public $idCliente;
 
-	public function ajaxEditarCliente(){
+	public function ajaxEditarClientes(){
 
 		$item = "id";
 		$valor = $this->idCliente;

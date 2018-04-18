@@ -125,7 +125,7 @@ $('.tablaDifuntos tbody').on( 'click', 'button', function () {
 
    }
    console.log("data",data);
-   $(this).attr("idDifunto", data[0]);
+   $(this).attr("idDifunto", data[12]);
    //console.log("idDifunto",idDifunto);
    // console.log("data[8]",data[0]);
 

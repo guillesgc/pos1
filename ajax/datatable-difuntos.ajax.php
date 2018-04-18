@@ -45,7 +45,7 @@ class tablaDifuntos{
             $y = ControladorCcuerpo::ctrMostrarCcuerpo($item, $id_cc);
 
             echo '[
-                "'.$difuntos[$i]["id_difunto"].'",
+                "'.($i+1).'",
                 "'.$difuntos[$i]["nombre"].'",
                 "'.$difuntos[$i]["apellido_paterno"].'",
                 "'.$difuntos[$i]["apellido_materno"].'",
@@ -56,7 +56,8 @@ class tablaDifuntos{
                 "'.$difuntos[$i]["fecha_sepultacion"].'",
                 "'.$difuntos[$i]["inscripcion"].'",
                 "'.$difuntos[$i]["circunscripcion"].'",
-                "'.$difuntos[$i]["id_boletin"].'"
+                "'.$difuntos[$i]["id_boletin"].'",
+                "'.$difuntos[$i]["id_difunto"].'"
             ],';
         }
         //AGREGAR TIPO SEPULTURA
@@ -70,7 +71,7 @@ class tablaDifuntos{
         $y = ControladorCcuerpo::ctrMostrarCcuerpo($item, $id_cc);
 
         echo '[
-                "'.$difuntos[$i]["id_difunto"].'",
+                "'.count($difuntos).'",
                 "'.$difuntos[count($difuntos)-1]["nombre"].'",
                 "'.$difuntos[count($difuntos)-1]["apellido_paterno"].'",
                 "'.$difuntos[count($difuntos)-1]["apellido_materno"].'",
@@ -81,7 +82,8 @@ class tablaDifuntos{
                 "'.$difuntos[count($difuntos)-1]["fecha_sepultacion"].'",
                 "'.$difuntos[count($difuntos)-1]["inscripcion"].'",
                 "'.$difuntos[count($difuntos)-1]["circunscripcion"].'",
-                "'.$difuntos[count($difuntos)-1]["id_boletin"].'"
+                "'.$difuntos[count($difuntos)-1]["id_boletin"].'",
+                "'.$difuntos[$i]["id_difunto"].'"
               ]
            ]
         }';
