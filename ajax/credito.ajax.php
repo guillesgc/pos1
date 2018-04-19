@@ -13,11 +13,9 @@ class AjaxCreditos{
 
     public function ajaxEditarCredito(){
 
-        $item = "id";
+        $item = "id_credito";
         $valor = $this->idCredito;
-
         $respuesta = ControladorCreditos::ctrMostrarCredito($item, $valor);
-
         echo json_encode($respuesta);
 
 
@@ -29,8 +27,7 @@ class AjaxCreditos{
 EDITAR CLIENTE
 =============================================*/
 
-if(isset($_POST["idCliente"])){
-
+if(isset($_POST["idCredito"])){
     $credito= new AjaxCreditos();
     $credito -> idCredito = $_POST["idCredito"];
     $credito -> ajaxEditarCredito();

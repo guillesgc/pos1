@@ -27,8 +27,8 @@ $(".tablaCreditos").on("click", ".btnEditarCredito", function(){
             $("#editarPie").val(respuesta["pie"]);
             $("#editarNumcuotas").val(respuesta["numcuotas"]);
             $("#editarBoletin").val(respuesta["boletin"]);
-            $("#nuevoVcredito").val(respuesta["valor_credito"]);
-            $("#nuevaCuota").val(respuesta["valor_cuota"]);
+            $("#editarVcredito").val(respuesta["valor_credito"]);
+            $("#editarCuota").val(respuesta["valor_cuota"]);
         }
 
     })

@@ -128,7 +128,7 @@ ini_set('display_errors', '1');
 
                       <div class="btn-group">
                           
-                        <button class="btn btn-warning btnEditarCredito" idCredito="'.$value["id_credito"].'" data-toggle="modal" data-target="#modalEditarCredito"><i class="fa fa-pencil"></i></button>';
+                        <button class="btn btn-warning btnEditarCredito" idCredito="'.$value["id_credito"].' data-toggle="modal" data-target="#modalEditarCredito"><i class="fa fa-pencil"></i></button>';
 
                             if($_SESSION["perfil"] == "Administrador"){
 
@@ -198,7 +198,7 @@ ini_set('display_errors', '1');
 
                                     <span class="input-group-addon"><i class="fa fa-th"></i></span>
 
-                                    <input type="text" class="form-control input-lg" name="nuevaFechap" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask placeholder="Fecha Pago" required>
+                                    <input type="text" class="form-control input-lg " name="nuevaFechap"  data-inputmask="'alias': 'yyyy/mm/dd'" data-mask placeholder="Fecha Pago" required>
 
                                 </div>
 
@@ -378,7 +378,9 @@ ini_set('display_errors', '1');
 
                                     <span class="input-group-addon"><i class="fa fa-th"></i></span>
 
-                                    <input type="text" class="form-control input-lg" name="editarFechap" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask placeholder="Fecha Pago" required>
+                                    <input type="text" class="form-control input-lg" name="editarFechap" id="editarFechap" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask placeholder="Fecha Pago" required>
+
+                                    <input type="hidden" name="idCredito" id="idCredito">
 
                                 </div>
 
@@ -394,7 +396,7 @@ ini_set('display_errors', '1');
 
                                     <span class="input-group-addon"><i class="fa fa-th"></i></span>
 
-                                    <input type="text" class="form-control input-lg" name="editarDetalle" placeholder="Glosa" required>
+                                    <input type="text" class="form-control input-lg" name="editarDetalle" id="editarDetalle" placeholder="Glosa" required>
 
                                 </div>
 
@@ -411,7 +413,7 @@ ini_set('display_errors', '1');
 
                                     <span class="input-group-addon"><i class="fa fa-th"></i></span>
 
-                                    <input type="number" class="form-control input-lg" min="1" name="editarPie" placeholder="Pie" required>
+                                    <input type="number" class="form-control input-lg" min="1" name="editarPie" id="editarPie" placeholder="Pie" required>
 
                                 </div>
 
@@ -428,7 +430,7 @@ ini_set('display_errors', '1');
 
                                     <span class="input-group-addon"><i class="fa fa-th"></i></span>
 
-                                    <input type="number" class="form-control input-lg" name="editarNumcuotas" min="1" placeholder="Número de Cuotas" required>
+                                    <input type="number" class="form-control input-lg" name="editarNumcuotas" id="editarNumcuotas" min="1" placeholder="Número de Cuotas" required>
 
                                 </div>
 
@@ -446,7 +448,7 @@ ini_set('display_errors', '1');
 
                                     <span class="input-group-addon"><i class="fa fa-th"></i></span>
 
-                                    <input type="number" class="form-control input-lg" name="editarBoletin" min="1" placeholder="Boletin" required>
+                                    <input type="number" class="form-control input-lg" name="editarBoletin" id="editarBoletin" min="1" placeholder="Boletin" required>
 
                                 </div>
 
@@ -462,7 +464,7 @@ ini_set('display_errors', '1');
 
                                     <span class="input-group-addon"><i class="fa fa-th"></i></span>
 
-                                    <input type="number" class="form-control input-lg" name="nuevoVcredito" min="1" placeholder="Valor Credito" required>
+                                    <input type="number" class="form-control input-lg" name="editarVcredito" id="editarVcredito"  min="1" placeholder="Valor Credito" required>
 
                                 </div>
 
@@ -478,7 +480,7 @@ ini_set('display_errors', '1');
 
                                     <span class="input-group-addon"><i class="fa fa-th"></i></span>
 
-                                    <input type="number" class="form-control input-lg" name="nuevaCuota" min="1" placeholder="Valor Cuota" required>
+                                    <input type="number" class="form-control input-lg" name="editarCuota" id="editarCuota" min="1" placeholder="Valor Cuota" required>
 
                                 </div>
 

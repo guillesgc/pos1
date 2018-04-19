@@ -80,12 +80,18 @@ class ModeloCredito{
 
     static public function mdlEditarCredito($tabla, $datos){
 
-        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre = :nombre, id_cementerio= :id_cementerio, tipo_sep= :tipo_sep WHERE id_cuartel_cuerpo = :id_cuartel_cuerpo");
+        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET id_credito = :id_credito, id_cliente = :id_cliente, fecha_pago = :fecha_pago, detalle = :detalle, pie= :pie, numcuotas = :numcuotas, boletin = :boletin, valor_credito = :valor_credito, valor_cuota = :valor_cuota, estado = :estado WHERE id_credito = :id_credito");
 
-        $stmt -> bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
-        $stmt -> bindParam(":id_cementerio", $datos["id_cementerio"], PDO::PARAM_INT);
-        $stmt -> bindParam(":tipo_sep", $datos["tipo_sep"], PDO::PARAM_INT);
-        $stmt -> bindParam(":id_cuartel_cuerpo", $datos["id_cuartel_cuerpo"], PDO::PARAM_INT);
+        $stmt -> bindParam(":id_credito", $datos["id_credito"], PDO::PARAM_INT);
+        $stmt -> bindParam(":id_cliente", $datos["id_cliente"], PDO::PARAM_INT);
+        $stmt -> bindParam(":fecha_pago", $datos["fecha_pago"], PDO::PARAM_STR);
+        $stmt -> bindParam(":detalle", $datos["detalle"], PDO::PARAM_STR);
+        $stmt -> bindParam(":pie", $datos["pie"], PDO::PARAM_INT);
+        $stmt -> bindParam(":numcuotas", $datos["numcuotas"], PDO::PARAM_INT);
+        $stmt -> bindParam(":boletin", $datos["boletin"], PDO::PARAM_INT);
+        $stmt -> bindParam(":valor_credito", $datos["valor_credito"], PDO::PARAM_INT);
+        $stmt -> bindParam(":valor_cuota", $datos["valor_cuota"], PDO::PARAM_INT);
+        $stmt -> bindParam(":estado", $datos["estado"], PDO::PARAM_INT);
 
         if($stmt->execute()){
 
@@ -108,9 +114,9 @@ class ModeloCredito{
 
     static public function mdlBorrarCredito($tabla, $datos){
 
-        $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id_cuartel_cuerpo = :idCcuerpo");
+        $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id_credito = :id_credito");
 
-        $stmt -> bindParam(":idCcuerpo", $datos, PDO::PARAM_INT);
+        $stmt -> bindParam(":id_credito", $datos, PDO::PARAM_INT);
 
         if($stmt -> execute()){
 

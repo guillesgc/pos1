@@ -207,6 +207,7 @@ CUERPO DOCUMENTO
 <script src="vistas/js/reportes.js"></script>
 <script src="vistas/js/ccosto.js"></script>
 <script src="vistas/js/ccuerpo.js"></script>
+<script src="vistas/js/credito.js"></script>
 <script src="vistas/js/sepultura.js"></script>
 <script src="vistas/js/tsepultura.js"></script>
 <script src="vistas/js/difuntos.js"></script>

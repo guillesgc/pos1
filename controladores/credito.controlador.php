@@ -94,23 +94,29 @@ class ControladorCreditos{
 
     static public function ctrEditarCredito(){
 
-        if(isset($_POST["editarCcuerpo"])){
+        if(isset($_POST["editarFechap"])){
 
-            if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\- ]+$/', $_POST["editarCcuerpo"])){
+            if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\- ]+$/', $_POST["editarBoletin"])){
 
-                $tabla = "cuartel_cuerpos";
+                $tabla = "creditos";
 
-                $datos = array("nombre"=>$_POST["editarCcuerpo"],
-                    "id_cementerio" =>$_POST["editarCementerio"],
-                    "tipo_sep"=>$_POST["editarTproducto"],
-                    "id_cuartel_cuerpo"=>$_POST["idCcuerpo"]);
-
+                $datos = array( "id_credito"=>$_POST["idCredito"],
+                                "id_cliente"=>$_GET["idCliente"],
+                                "fecha_pago"=>$_POST["editarFechap"],
+                                "detalle" =>$_POST["editarDetalle"],
+                                "pie"=>$_POST["editarPie"],
+                                "numcuotas"=>$_POST["editarNumcuotas"],
+                                "boletin"=>$_POST["editarBoletin"],
+                                "valor_credito"=>$_POST["editarVcredito"],
+                                "valor_cuota"=>$_POST["editarCuota"],
+                                "estado"=>1
+                              );
+                var_dump($_POST);
                 $respuesta = ModeloCredito::mdlEditarCredito($tabla, $datos);
 
                 if($respuesta == "ok"){
 
-                    echo'<script>
-
+                    echo'<script>  
 					swal({
 						  type: "success",
 						  title: "El credito ha sido cambiado correctamente",
@@ -119,11 +125,11 @@ class ControladorCreditos{
 						  }).then(function(result){
 									if (result.value) {
 
-									window.location = "credito";
+									window.location = "clientes";
 
 									}
 								})
-
+                            
 					</script>';
 
                 }
@@ -141,11 +147,10 @@ class ControladorCreditos{
 						  }).then(function(result){
 							if (result.value) {
 
-							window.location = "creditos";
+							window.location = "clientes";
 
 							}
 						})
-
 			  	</script>';
 
             }
@@ -160,10 +165,10 @@ class ControladorCreditos{
 
     static public function ctrBorrarCredito(){
 
-        if(isset($_GET["idCcuerpo"])){
-
-            $tabla ="cuartel_cuerpos";
-            $datos = $_GET["idCcuerpo"];
+        if(isset($_POST["idCredito"])){
+            var_dump($_POST);
+            $tabla ="creditos";
+            $datos = $_POST["idCredito"];
 
             $respuesta = ModeloCredito::mdlBorrarCredito($tabla, $datos);
 
@@ -179,7 +184,7 @@ class ControladorCreditos{
 						  }).then(function(result){
 									if (result.value) {
 
-									window.location = "creditos";
+									window.location = "clientes";
 
 									}
 								})

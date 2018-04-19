@@ -92,7 +92,7 @@
                           
                         <button class="btn btn-warning btnEditarCliente" data-toggle="modal" data-target="#modalEditarCliente" idCliente="'.$value["id"].'"><i class="fa fa-pencil"></i></button>
                         
-                        <button class="btn btn-success btnCreditoCliente" idCliente="'.$value["id"].'"><i class="fa fa-handshake-o"></i></button>';
+                            <button class="btn btn-success btnCreditoCliente" idCliente="'.$value["id"].'"><i class="fa fa-handshake-o"></i></button>';
 
                       if($_SESSION["perfil"] == "Administrador"){
 
@@ -190,7 +190,7 @@ MODAL AGREGAR CLIENTE
               
                 <span class="input-group-addon"><i class="fa fa-envelope"></i></span> 
 
-                <input type="email" class="form-control input-lg" name="nuevoEmail" placeholder="Ingresar email" required>
+                <input type="email" class="form-control input-lg" name="nuevoEmail" placeholder="Ingresar email" autocomplete='email' required>
 
               </div>
 
@@ -204,7 +204,7 @@ MODAL AGREGAR CLIENTE
               
                 <span class="input-group-addon"><i class="fa fa-phone"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="nuevoTelefono" placeholder="Ingresar teléfono" required>
+                <input type="text" class="form-control input-lg" name="nuevoTelefono" placeholder="Ingresar teléfono" autocomplete='tel-national' required>
 
               </div>
 
@@ -218,7 +218,7 @@ MODAL AGREGAR CLIENTE
               
                 <span class="input-group-addon"><i class="fa fa-map-marker"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="nuevaDireccion" placeholder="Ingresar dirección" required>
+                <input type="text" class="form-control input-lg" name="nuevaDireccion" placeholder="Ingresar dirección" autocomplete='adsdress-line1' required>
 
               </div>
 
