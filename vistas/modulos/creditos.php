@@ -128,11 +128,11 @@ ini_set('display_errors', '1');
 
                       <div class="btn-group">
                           
-                        <button class="btn btn-warning btnEditarCredito" idCredito="'.$value["id_credito"].' data-toggle="modal" data-target="#modalEditarCredito"><i class="fa fa-pencil"></i></button>';
+                        <button class="btn btn-warning btnEditarCredito" idCredito="'.$value["id_credito"].'" data-toggle="modal" data-target="#modalEditarCredito"><i class="fa fa-pencil"></i></button>';
 
                             if($_SESSION["perfil"] == "Administrador"){
 
-                                echo '<button class="btn btn-danger btnEliminarCredito" idCredito="'.$value["id_credito"].'"><i class="fa fa-times"></i></button>';
+                                echo '<button class="btn btn-danger btnEliminarCredito" idCredito="'.$value["id_credito"].'" idCliente="'.$value["id_cliente"].'"><i class="fa fa-times"></i></button>';
 
                             }
 
@@ -521,7 +521,7 @@ ini_set('display_errors', '1');
 
 <?php
 
-$borrarSepultura = new ControladorSepultura();
-$borrarSepultura -> ctrBorrarSepultura();
+$borrarCredito = new ControladorCreditos();
+$borrarCredito -> ctrBorrarCredito();
 
 ?>

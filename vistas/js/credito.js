@@ -29,6 +29,7 @@ $(".tablaCreditos").on("click", ".btnEditarCredito", function(){
             $("#editarBoletin").val(respuesta["boletin"]);
             $("#editarVcredito").val(respuesta["valor_credito"]);
             $("#editarCuota").val(respuesta["valor_cuota"]);
+            $("#idCredito").val(respuesta["id_credito"])
         }
 
     })
@@ -40,23 +41,23 @@ $(".tablaCreditos").on("click", ".btnEditarCredito", function(){
 ELIMINAR TIPO SEPULTURA
 =============================================*/
 $(".tablaCreditos").on("click", ".btnEliminarCredito", function(){
-
+    var idCliente = $(this).attr("idCliente");
     var idCredito = $(this).attr("idCredito");
 
     swal({
-        title: '¿Está seguro de borrar el tipo de sepultura?',
+        title: '¿Está seguro de borrar este crédito?',
         text: "¡Si no lo está puede cancelar la acción!",
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
         cancelButtonText: 'Cancelar',
-        confirmButtonText: 'Si, borrar tipo de sepultura!'
+        confirmButtonText: 'Si, borrar crédito!'
     }).then(function(result){
 
         if(result.value){
 
-            window.location = "index.php?ruta=credito&idCredito="+idCredito;
+            window.location = "index.php?ruta=creditos&idCliente="+idCliente+"&idCredito="+idCredito;
 
         }
 

@@ -165,10 +165,10 @@ class ControladorCreditos{
 
     static public function ctrBorrarCredito(){
 
-        if(isset($_POST["idCredito"])){
-            var_dump($_POST);
+        if(isset($_GET["idCredito"])){
+            print_r($_POST);
             $tabla ="creditos";
-            $datos = $_POST["idCredito"];
+            $datos = $_GET["idCredito"];
 
             $respuesta = ModeloCredito::mdlBorrarCredito($tabla, $datos);
 
