@@ -53,16 +53,16 @@ class TablaProductosS{
 
             $CCuerpo = ControladorCcuerpo::ctrMostrarCcuerpo($item, $valor);
 
-            echo '[
-			      "'.($i+1).'",
-			      "'.$nombre["nombre"].'",
-			      "'.$CCuerpo["nombre"].'", 
-			      "'.$productos[$i]["numero_sepultura"].'",
-			      "'.$estado["estado"].'",
-			      "'.$productos[$i]["corrida"].'",
-			      "'.$productos[$i]["piso"].'",
-			      "'.$productos[$i]["id_sepultura"].'"
-			],';
+        echo '[
+              "'.($i+1).'",
+              "'.$nombre["nombre"].'",
+              "'.$CCuerpo["nombre"].'", 
+              "'.$productos[$i]["numero_sepultura"].'",
+              "'.$estado["estado"].'",
+              "'.$productos[$i]["corrida"].'",
+              "'.$productos[$i]["piso"].'",
+              "'.$productos[$i]["id_sepultura"].'"
+        ],';
 
         }
 

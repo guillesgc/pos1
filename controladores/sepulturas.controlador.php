@@ -133,7 +133,7 @@ class ControladorSepultura{
 	static public function ctrEditarSepultura(){
 
 		if(isset($_POST["editarSepultura"])){
-            var_dump($_POST);
+            //var_dump($_POST);
 			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarSepultura"])){
 
 				$tabla = "sepulturas";
@@ -148,7 +148,7 @@ class ControladorSepultura{
                                "corrida"=>$_POST["editarCorrida"],
 							   "piso"=>$_POST["editarPiso"],
 							   "orden"=>$_POST["editarOrden"]);
-                var_dump($datos);
+               // var_dump($datos);
 				$respuesta = ModeloSepultura::mdlEditarSepultura($tabla, $datos);
 
 				if($respuesta == "ok"){

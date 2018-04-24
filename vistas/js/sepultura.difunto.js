@@ -120,7 +120,36 @@ $('.tablaSepultura tbody').on( 'click', '.btnMostrarDif', function () {
 
         var data = table2.row( $(this).parents('tbody tr ul li')).data();
     }
-    console.log("data",data);
-    //$(this).attr("id_sepultura",data[7]);
+    //console.log("data",data);
+    $(this).attr("id_sepultura",data[7]);
 
 } );
+
+/*=============================================
+MOSTRAR DIFUNTOS EN SEPULTURA
+=============================================*/
+$(".tablaSepultura tbody").on("click", ".btnMostrarDif", function(){
+    var idSepultura = $(this).attr("id_sepultura");
+    console.log("idDifunto",idSepultura);
+    var datos = new FormData();
+    datos.append('idSepultura', idSepultura);
+    console.log("datoos",datos);
+    $.ajax({
+        url:"ajax/sepultura.difuntos.ajax.php",
+        method: "POST",
+        data: datos,
+        cache: false,
+        contentType: false,
+        processData: false,
+        dataType:"json",
+        success:function(respuesta){
+            console.log(respuesta);
+            // $("#editarIdNumSepultura").append("<option value='" + respuesta["id_sepultura"] + "'>" + respuesta["numero_sepultura"] + "</option>");
+
+
+
+        }
+
+    })
+
+});

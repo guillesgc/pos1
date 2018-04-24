@@ -1,30 +1,49 @@
 <?php
 
-require_once "../controladores/sepulturas.controlador.php";
-require_once "../modelos/sepulturas.modelo.php";
+require_once "../controladores/difuntos.controlador.php";
+require_once "../modelos/difuntos.modelo.php";
 
-class AjaxSepulturas{
+class AjaxSepulturasYDifuntos{
 
     /*=============================================
-    EDITAR CLIENTE
+    DATOS PARA TABLA
     =============================================*/
 
     public $idSepultura;
 
-    public function ajaxEditarSepultura(){
+    public function ajaxMostrarDifuntosSep(){
 
         $item = "id_sepultura";
         $valor = $this->idSepultura;
 
-        $respuesta = ControladorSepultura::ctrMostrarSepultura($item, $valor);
+        $difuntos = ControladorDifuntos::ctrMostrarDifuntosEnSepultura($item,$valor);
+        //var_dump($difuntos);
+        echo '{
+            "data": [';
 
-        // AGREGAR FUNCIÓN PARA OBTENER MUERTOS X SEPULTURA
+        for ($i = 0; $i < count($difuntos) - 1; $i++) {
+            echo '[
+              "' . ($i + 1) . '",
+              "' . $difuntos[$i]["nombre"] . '",
+              "' . $difuntos[$i]["edad"] . '", 
+              "' . $difuntos[$i]["fecha_sepultacion"] . '",
+              "' . $difuntos[$i]["inscripcion"] . '",
+              "' . $difuntos[$i]["circunscripcion"] . '",
+              "' . $difuntos[$i]["causa_muerte"] . '",
+            ],';
+        }
 
-        $valor = $respuesta["id_sepultura"];
-        $respuesta2 = ControladorDifuntos::ctrMostrarDifuntosEnSepultura($item,$valor);
-
-        $respuesta1= array_merge($respuesta,$respuesta2);
-        echo json_encode($respuesta);
+            echo '[
+              "' . count($difuntos) . '",
+              "' . $difuntos[count($difuntos) - 1]["nombre"] . '",
+              "' . $difuntos[count($difuntos) - 1]["edad"] . '", 
+              "' . $difuntos[count($difuntos) - 1]["fecha_sepultacion"] . '",
+              "' . $difuntos[count($difuntos) - 1]["inscripcion"] . '",
+              "' . $difuntos[count($difuntos) - 1]["circunscripcion"] . '",
+              "' . $difuntos[count($difuntos) - 1]["causa_muerte"] . '",
+              ]
+            ]
+        }';
 
 
     }
@@ -37,8 +56,8 @@ EDITAR CLIENTE
 
 if(isset($_POST["idSepultura"])){
 
-    $Sepultura = new AjaxSepulturas();
+    $Sepultura = new AjaxSepulturasYDifuntos();
     $Sepultura -> idSepultura = $_POST["idSepultura"];
-    $Sepultura -> ajaxEditarSepultura();
+    $Sepultura -> ajaxMostrarDifuntosSep();
 
 }

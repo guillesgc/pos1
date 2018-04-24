@@ -97,6 +97,16 @@ class ControladorDifuntos{
 
     }
 
+    static public function ctrMostrarDifuntosEnSepultura($item, $valor){
+
+        $tabla = "difuntos";
+
+        $respuesta = ModeloDifuntos::mdlMostrarDifuntosEnSepultura($tabla, $item, $valor);
+
+        return $respuesta;
+
+    }
+
 	/*=============================================
 	EDITAR DIFUNTOS
 	=============================================*/
