@@ -58,6 +58,9 @@ session_start();
   <!-- Morris chart -->
   <link rel="stylesheet" href="vistas/bower_components/morris.js/morris.css">
 
+  <!-- Input mask -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/css/inputmask.min.css" rel="stylesheet"/>
+
   <!--=====================================
   PLUGINS DE JAVASCRIPT
   ======================================-->
@@ -89,9 +92,13 @@ session_start();
   <script src="vistas/plugins/iCheck/icheck.min.js"></script>
 
   <!-- InputMask -->
+  <script src="vistas/plugins/rut/jquery.rut.js"></script>
+
+  <!-- InputMask -->
   <script src="vistas/plugins/input-mask/jquery.inputmask.js"></script>
   <script src="vistas/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
   <script src="vistas/plugins/input-mask/jquery.inputmask.extensions.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.js"></script>
 
   <!-- jQuery Number -->
   <script src="vistas/plugins/jqueryNumber/jquerynumber.min.js"></script>
@@ -209,6 +216,7 @@ CUERPO DOCUMENTO
 <script src="vistas/js/ccuerpo.js"></script>
 <script src="vistas/js/credito.js"></script>
 <script src="vistas/js/sepultura.js"></script>
+<script src="vistas/js/sepultura.difunto.js"></script>
 <script src="vistas/js/tsepultura.js"></script>
 <script src="vistas/js/difuntos.js"></script>
 <script src="vistas/js/agenda.js"></script>

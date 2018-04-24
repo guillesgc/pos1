@@ -280,3 +280,8 @@ $(document).ready(function(){
         }
     });
 });
+
+$(function() {
+    $("#nuevoRut").rut().on('rutValido', function(e, rut, dv) {
+    }, { minimumLength: 7} );
+})

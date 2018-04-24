@@ -49,7 +49,7 @@
 
       <div class="box-body">
         
-       <table class="table table-bordered table-striped dt-responsive tablas" width="100%">
+       <table class="table table-bordered table-striped dt-responsive tablaSep" width="100%">
          
         <thead>
          
@@ -108,6 +108,7 @@
                     <td>'.$z["cementerio"].'</td>
                     <td>'.$value["corrida"].'</td>
                     <td>'.$value["piso"].'</td>
+                    <td>'.$value["id_sepultura"].'</td>
 
                     <td>
 
@@ -382,7 +383,7 @@ MODAL AGREGAR SEPULTURA
 MODAL EDITAR SEPULTURA
 ======================================-->
 
-<div id="modalEditarCcosto" class="modal fade" role="dialog">
+<div id="modalEditarSepultura" class="modal fade" role="dialog">
   
   <div class="modal-dialog">
 
@@ -398,7 +399,7 @@ MODAL EDITAR SEPULTURA
 
           <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-          <h4 class="modal-title">Editar Centro Costo</h4>
+          <h4 class="modal-title">Editar Sepultura</h4>
 
         </div>
 
@@ -410,22 +411,178 @@ MODAL EDITAR SEPULTURA
 
           <div class="box-body">
 
-            <!-- ENTRADA PARA EL NOMBRE -->
-            
+
+            <!-- ENTRADA PARA Nº SEPULTURA -->
+
+
             <div class="form-group">
-              
-              <div class="input-group">
-              
-                <span class="input-group-addon"><i class="fa fa-th"></i></span> 
 
-                <input type="text" class="form-control input-lg" name="editarCcosto" id="editarCcosto" required>
+                <div class="input-group">
 
-                 <input type="hidden"  name="idCcosto" id="idCcosto" required>
+                    <span class="input-group-addon"><i class="fa fa-th"></i></span>
+
+                    <input type="text" class="form-control input-lg editarNumero" id="editarNumero" name="editarNumero" placeholder="Nº Sepultura" required>
+                    <input type="hidden" name="idSepultura" class="idSepultura" id="idSepultura">
+                </div>
+
+            </div>
+
+              <!-- ENTRADA PARA ID CUARTEL CUERPO -->
+
+
+              <div class="form-group">
+
+                  <div class="input-group">
+
+                      <span class="input-group-addon"><i class="fa fa-users"></i></span>
+
+                      <select class="form-control editarSepultura" id="editarSepultura" name="editarSepultura" required>
+
+                          <option value="">Seleccionar Cuartel Cuerpo</option>
+
+                          <?php
+
+                          $item = null;
+                          $valor = null;
+
+                          $productos = ControladorCcuerpo::ctrMostrarCcuerpo($item, $valor);
+
+                          foreach ($productos as $key => $value) {
+
+                              echo '<option value="'.$value["id_cuartel_cuerpo"].'">'.$value["nombre"].'</option>';
+
+                          }
+
+                          ?>
+
+                      </select>
+
+                  </div>
 
               </div>
 
-            </div>
-  
+
+              <!-- ENTRADA PARA ID ESTADO -->
+
+
+              <div class="form-group">
+
+                  <div class="input-group">
+
+                      <span class="input-group-addon"><i class="fa fa-users"></i></span>
+
+                      <select class="form-control editarEstado" id="editarEstado" name="editarEstado" required>
+
+                          <option value="">Seleccionar Estado</option>
+
+                          <?php
+
+                          $item = null;
+                          $valor = null;
+
+                          $estado = ControladorSepultura::ctrMostrarEstado($item, $valor);
+
+                          foreach ($estado as $key => $value) {
+
+                              echo '<option value="'.$value["id_estado"].'">'.$value["estado"].'</option>';
+
+                          }
+
+                          ?>
+
+                      </select>
+
+                  </div>
+
+              </div>
+
+
+              <!-- ENTRADA PARA CAPACIDAD -->
+
+
+              <div class="form-group">
+
+                  <div class="input-group">
+
+                      <span class="input-group-addon"><i class="fa fa-th"></i></span>
+
+                      <input type="number" class="form-control input-lg editarCapacidad" id="editarCapacidad" min="1" name="editarCapacidad" placeholder="Capacidad" required>
+
+                  </div>
+
+              </div>
+
+
+
+              <!-- ENTRADA PARA ID CEMENTERIO -->
+
+              <div class="form-group">
+
+                  <div class="input-group">
+
+                      <span class="input-group-addon"><i class="fa fa-users"></i></span>
+
+                      <select class="form-control input-lg editarCementerio" id="editarCementerio" name="editarCementerio">
+
+                          <option value="">Selecionar Cementerio</option>
+
+                          <option value="1">Cementerio 1</option>
+
+                          <option value="2">Cementerio 2</option>
+
+                          <option value="3">Cementerio 3</option>
+
+                      </select>
+
+                  </div>
+
+              </div>
+
+
+
+              <!-- ENTRADA PARA CORRIDA -->
+
+
+              <div class="form-group">
+
+                  <div class="input-group">
+
+                      <span class="input-group-addon"><i class="fa fa-th"></i></span>
+
+                      <input type="number" class="form-control input-lg editarCorrida" id="editarCorrida" name="editarCorrida" min="1" placeholder="Corrida" required>
+
+                  </div>
+
+              </div>
+
+
+
+
+              <div class="form-group">
+                  <div class="input-group">
+
+                      <span class="input-group-addon"><i class="fa fa-th"></i></span>
+
+                      <input type="number" class="form-control input-lg editarPiso" id="editarPiso" name="editarPiso" min="1" placeholder="Piso" required>
+
+                  </div>
+              </div>
+
+
+
+
+              <div class="form-group">
+                  <div class="input-group">
+
+                      <span class="input-group-addon"><i class="fa fa-th"></i></span>
+
+                      <input type="number" class="form-control input-lg editarOden" id="editarOrden" min="1" name="editarOrden" placeholder="Orden" required>
+
+                  </div>
+
+              </div>
+
+
           </div>
 
         </div>
@@ -444,8 +601,8 @@ MODAL EDITAR SEPULTURA
 
       <?php
 
-          $editarCcosto = new ControladorCcosto();
-          $editarCcosto -> ctrEditarCcosto();
+          $editarSepultura = new ControladorSepultura();
+          $editarSepultura -> ctrEditarSepultura();
 
         ?> 
 

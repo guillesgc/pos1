@@ -173,13 +173,18 @@ class ModeloSepultura{
 
 	static public function mdlEditarSepultura($tabla, $datos){
 
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre = :nombre, id_cementerio= :id_cementerio, tipo_sep= :tipo_sep WHERE id_cuartel_cuerpo = :id_cuartel_cuerpo");
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET id_sepultura = :id_sepultura, orden = :orden, numero_sepultura = :numero_sepultura, id_cuartel_cuerpo = :id_cuartel_cuerpo, estado = :estado, capacidad = :capacidad, activo = :activo, id_cementerio = :id_cementerio, corrida = :corrida, piso = :piso WHERE id_sepultura = :id_sepultura");
 
-		$stmt -> bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
-		$stmt -> bindParam(":id_cementerio", $datos["id_cementerio"], PDO::PARAM_INT);
-		$stmt -> bindParam(":tipo_sep", $datos["tipo_sep"], PDO::PARAM_INT);
+		$stmt -> bindParam(":id_sepultura", $datos["id_sepultura"], PDO::PARAM_INT);
+		$stmt -> bindParam(":orden", $datos["orden"], PDO::PARAM_INT);
+		$stmt -> bindParam(":numero_sepultura", $datos["numero_sepultura"], PDO::PARAM_STR);
 		$stmt -> bindParam(":id_cuartel_cuerpo", $datos["id_cuartel_cuerpo"], PDO::PARAM_INT);
-
+		$stmt -> bindParam(":estado", $datos["estado"], PDO::PARAM_INT);
+		$stmt -> bindParam(":capacidad", $datos["capacidad"], PDO::PARAM_INT);
+		$stmt -> bindParam(":activo", $datos["activo"], PDO::PARAM_INT);
+		$stmt -> bindParam(":id_cementerio", $datos["id_cementerio"], PDO::PARAM_INT);
+		$stmt -> bindParam(":corrida", $datos["corrida"], PDO::PARAM_INT);
+		$stmt -> bindParam(":piso", $datos["piso"], PDO::PARAM_INT);
 		if($stmt->execute()){
 
 			return "ok";

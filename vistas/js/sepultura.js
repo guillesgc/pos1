@@ -1,12 +1,57 @@
 
 
 /*=============================================
-ELIMINAR USUARIO
+EDITAR SEPULTURA
 =============================================*/
-$(".tablas").on("click", ".btnEliminarSepultura", function(){
-  var data = table.row( $(this).parents('tr') ).data();
-  console.log("data",data);
-  var idSepultura = $(this).attr("id_sepultura");
+
+$(".tablaSep").on("click", ".btnEditarSepultura", function(){
+
+    var idSepultura = $(this).attr("idSepultura");
+    console.log("idSepultura", idSepultura);
+    var datos = new FormData();
+    datos.append("idSepultura", idSepultura);
+
+    $.ajax({
+
+        url:"ajax/sepultura.ajax.php",
+        method: "POST",
+        data: datos,
+        cache: false,
+        contentType: false,
+        processData: false,
+        dataType:"json",
+        success:function(respuesta){
+            console.log("respuesta",respuesta);
+
+            document.getElementById("idSepultura").value = respuesta["id_sepultura"];
+
+            $("#editarNumero").val(respuesta["numero_sepultura"]);
+
+            $("#editarSepultura").val(respuesta["id_cuartel_cuerpo"]);
+
+            $("#editarEstado").val(respuesta["estado"]);
+
+            $("#editarCapacidad").val(respuesta["capacidad"]);
+
+            $("#editarCementerio").val(respuesta["id_cementerio"]);
+
+            $("#editarCorrida").val(respuesta["corrida"]);
+
+            $("#editarPiso").val(respuesta["piso"]);
+
+            $("#editarOrden").val(respuesta["orden"]);
+        }
+
+    })
+
+})
+
+/*=============================================
+ELIMINAR SEPULTURA
+=============================================*/
+$(".tablaSep").on("click", ".btnEliminarSepultura", function(){
+  var idSepultura = $(this).attr("idSepultura");
+  console.log("idSepultura",idSepultura);
 
   swal({
     title: '¿Está seguro de borrar la Sepultura?',
@@ -30,130 +75,3 @@ $(".tablas").on("click", ".btnEliminarSepultura", function(){
 });
 
 
-/*=============================================
-CARGAR LA TABLA DINAMICA DE SEPULTURAS
-=============================================*/
-
-
-if($(".perfilUsuario").val() != "Administrador"){
-
-    var botonesTabla = '<button class="btn btn-primary btnMostrarDif"  data-toggle="modal" data-target="#modalFallecidos" id_sepultura><i class="fa fa-search-plus"></i></button>';
-
-
-}else{
-
-    var botonesTabla = '<button class="btn btn-primary btnMostrarDif"  data-toggle="modal" data-target="#modalFallecidos" id_sepultura><i class="fa fa-search-plus"></i></button>';
-
-}
-
-
-if(window.matchMedia("(max-width:767px)").matches){
-
-    var table = $('.tablaSepultura').DataTable({
-
-        "ajax":"ajax/datatables-sepulturas.ajax.php",
-        "columnDefs": [
-
-            {
-                "targets": -1  ,
-                "data": null,
-                "defaultContent": botonesTabla
-
-            }
-
-        ],
-
-        "language": {
-
-            "sProcessing":     "Procesando...",
-            "sLengthMenu":     "Mostrar _MENU_ registros",
-            "sZeroRecords":    "No se encontraron resultados",
-            "sEmptyTable":     "Ningún dato disponible en esta tabla",
-            "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_",
-            "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0",
-            "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
-            "sInfoPostFix":    "",
-            "sSearch":         "Buscar:",
-            "sUrl":            "",
-            "sInfoThousands":  ",",
-            "sLoadingRecords": "Cargando...",
-            "oPaginate": {
-                "sFirst":    "Primero",
-                "sLast":     "Último",
-                "sNext":     "Siguiente",
-                "sPrevious": "Anterior"
-            },
-            "oAria": {
-                "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
-                "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-            }
-
-        }
-    })
-
-}else{
-
-    var table = $('.tablaSepultura').DataTable({
-
-        "ajax":"ajax/datatables-sepulturas.ajax.php",
-        "columnDefs": [
-
-            {
-                "targets": -1,
-                "data": null,
-                "defaultContent": botonesTabla
-
-            }
-
-        ],
-
-        "language": {
-
-            "sProcessing":     "Procesando...",
-            "sLengthMenu":     "Mostrar _MENU_ registros",
-            "sZeroRecords":    "No se encontraron resultados",
-            "sEmptyTable":     "Ningún dato disponible en esta tabla",
-            "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_",
-            "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0",
-            "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
-            "sInfoPostFix":    "",
-            "sSearch":         "Buscar:",
-            "sUrl":            "",
-            "sInfoThousands":  ",",
-            "sLoadingRecords": "Cargando...",
-            "oPaginate": {
-                "sFirst":    "Primero",
-                "sLast":     "Último",
-                "sNext":     "Siguiente",
-                "sPrevious": "Anterior"
-            },
-            "oAria": {
-                "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
-                "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-            }
-
-        }
-
-
-    })
-
-}
-
-/*=============================================
-ACTIVAR LOS BOTONES CON LOS ID CORRESPONDIENTES
-=============================================*/
-
-$('.tablaSepultura tbody').on( 'click', 'btnMostrarDif', function () {
-
-    if(window.matchMedia("(min-width:992px)").matches){
-
-        var data = table.row( $(this).parents('tr th') ).data();
-
-    }else{
-
-        var data = table.row( $(this).parents('tbody tr ul li')).data();
-    }
-    console.log("data",data);
-    //$(this).attr("id_sepultura",data[7]);
-
-} );

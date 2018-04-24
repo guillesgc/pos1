@@ -403,7 +403,7 @@ MODAL AGREGAR DIFUNTO
 
 
 
-             -->
+             
                <!-- ENTRADA PARA RUT -->
 
            <div class="col-lg-6 col-xs-12">
@@ -414,7 +414,7 @@ MODAL AGREGAR DIFUNTO
 
                   <span class="input-group-addon"><i class="fa fa-id-card-o"></i></span>
 
-                  <input type="text" class="form-control input-lg" name="nuevoRut" placeholder="Rut" autocomplete="On" required>
+                  <input type="text" class="form-control input-lg nuevoRut" id="nuevoRut" name="nuevoRut"  placeholder="Rut" autocomplete="On" required>
 
                 </div>
 
@@ -557,7 +557,7 @@ MODAL EDITAR DIFUNTO
 
                 <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 
-                <input type="text" class="form-control input-lg" name="editarFdefuncion" id="editarFdefuncion" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask placeholder="Fecha Defunción" required>
+                    <input type="text" class="form-control input-lg" name="editarFdefuncion" id="editarFdefuncion" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask placeholder="Fecha Defunción" required>
 
               </div>
 

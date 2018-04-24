@@ -14,7 +14,7 @@ class ControladorDifuntos{
 			   preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\. ]+$/', $_POST["nuevoApaterno"]) &&
 			   preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\. ]+$/', $_POST["nuevoAmaterno"]) &&
 			   preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\. ]+$/', $_POST["nuevaCmuerte"]) &&
-			   preg_match('/^[a-zA-Z0-9\- ]+$/', $_POST["nuevoRut"]) &&
+			   preg_match('/^[a-zA-Z0-9\-\. ]+$/', $_POST["nuevoRut"]) &&
 			   preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\. ]+$/', $_POST["nuevaCircunscripcion"])){
 
 			   	$tabla = "difuntos";

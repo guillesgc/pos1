@@ -132,16 +132,24 @@ class ControladorSepultura{
 
 	static public function ctrEditarSepultura(){
 
-		if(isset($_POST["editarCcosto"])){
+		if(isset($_POST["editarSepultura"])){
+            var_dump($_POST);
+			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarSepultura"])){
 
-			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editarCcosto"])){
+				$tabla = "sepulturas";
 
-				$tabla = "categorias";
-
-				$datos = array("categoria"=>$_POST["editarCcosto"],
-							   "id"=>$_POST["idCcosto"]);
-
-				$respuesta = ModeloCcosto::mdlEditarCcosto($tabla, $datos);
+				$datos = array("id_sepultura"=>$_POST["idSepultura"],
+                               "numero_sepultura"=>$_POST["editarNumero"],
+                               "id_cuartel_cuerpo"=>$_POST["editarSepultura"],
+                               "estado"=>$_POST["editarEstado"],
+                               "capacidad"=>$_POST["editarCapacidad"],
+                               "activo"=> "1",
+                               "id_cementerio"=>$_POST["editarCementerio"],
+                               "corrida"=>$_POST["editarCorrida"],
+							   "piso"=>$_POST["editarPiso"],
+							   "orden"=>$_POST["editarOrden"]);
+                var_dump($datos);
+				$respuesta = ModeloSepultura::mdlEditarSepultura($tabla, $datos);
 
 				if($respuesta == "ok"){
 
@@ -149,7 +157,7 @@ class ControladorSepultura{
 
 					swal({
 						  type: "success",
-						  title: "El Centro de costo ha sido cambiado correctamente",
+						  title: "La sepultura ha sido cambiada correctamente",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
@@ -171,7 +179,7 @@ class ControladorSepultura{
 
 					swal({
 						  type: "error",
-						  title: "¡El Centro de costo no puede ir vacío o llevar caracteres especiales!",
+						  title: "¡La sepultura no puede ir vacía o llevar caracteres especiales!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){

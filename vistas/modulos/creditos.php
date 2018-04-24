@@ -114,33 +114,35 @@ ini_set('display_errors', '1');
 
                             echo ' <tr>
 
-                    <td>'.($key+1).'</td>
-                    <td>'.$value["fecha_pago"].'</td>
-                    <td>'.$value["detalle"].'</td>
-                    <td>'.$value["valor_credito"].'</td>
-                    <td>'.$value["pie"].'</td>
-                    <td>'.$value["numcuotas"].'</td>
-                    <td>'.$value["valor_cuota"].'</td>
-                    <td></td>
-                    <td></td>
-                    <td>'.$value["boletin"].'</td>
-                    <td>
+                                    <td>'.($key+1).'</td>
+                                    <td>'.$value["fecha_pago"].'</td>
+                                    <td>'.$value["detalle"].'</td>
+                                    <td>'.$value["valor_credito"].'</td>
+                                    <td>'.$value["pie"].'</td>
+                                    <td>'.$value["numcuotas"].'</td>
+                                    <td>'.$value["valor_cuota"].'</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>'.$value["boletin"].'</td>
+                                    <td>
 
-                      <div class="btn-group">
+                                        <div class="btn-group">
                           
-                        <button class="btn btn-warning btnEditarCredito" idCredito="'.$value["id_credito"].'" data-toggle="modal" data-target="#modalEditarCredito"><i class="fa fa-pencil"></i></button>';
+                                            <button class="btn btn-warning btnEditarCredito" idCredito="'.$value["id_credito"].'" data-toggle="modal" data-target="#modalEditarCredito"><i class="fa fa-pencil"></i></button>
+                                            <button class="btn btn-success btnMostrarCuotas" idCredito="'.$value["id_credito"].'" data-toggle="modal" data-target="#modalCuotasCredito"><i class="fa fa-money"></i></button>';
 
-                            if($_SESSION["perfil"] == "Administrador"){
 
-                                echo '<button class="btn btn-danger btnEliminarCredito" idCredito="'.$value["id_credito"].'" idCliente="'.$value["id_cliente"].'"><i class="fa fa-times"></i></button>';
+                                            if($_SESSION["perfil"] == "Administrador"){
 
-                            }
+                                                echo '<button class="btn btn-danger btnEliminarCredito" idCredito="'.$value["id_credito"].'" idCliente="'.$value["id_cliente"].'"><i class="fa fa-times"></i></button>';
 
-                            echo '</div>  
+                                            }
 
-                    </td>
+                                        echo '</div>  
 
-                  </tr>';
+                                    </td>
+
+                            </tr>';
                         }
                         ?>
 
