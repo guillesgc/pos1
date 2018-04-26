@@ -33,6 +33,6 @@ if(isset($_POST["idCliente"])){
 
 	$cliente = new AjaxClientes();
 	$cliente -> idCliente = $_POST["idCliente"];
-	$cliente -> ajaxEditarCliente();
+	$cliente -> ajaxEditarClientes();
 
 }

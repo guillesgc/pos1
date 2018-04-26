@@ -37,8 +37,7 @@ class ModeloItem{
 
 	static public function mdlMostrarItem($tabla, $item, $valor){
 
-		if($item != null){
-
+		if(strcmp($item, 'null') != 0){
 			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item ORDER BY nombre");
 
 			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
@@ -49,7 +48,6 @@ class ModeloItem{
 			return $stmt -> fetch();
 
 		}else{
-
 			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla ORDER BY nombre");
 
 			$stmt -> execute();

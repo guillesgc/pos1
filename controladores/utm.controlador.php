@@ -96,6 +96,20 @@ class ControladorUtm{
 	
 	}
 
+    /*=============================================
+    MOSTRAR VALOR UTM ACTUAL
+    =============================================*/
+
+    static public function ctrMostrarUtmActual($item, $valor){
+
+        $tabla = "utm";
+
+        $respuesta = ModeloUtm::mdlMostrarUtmActual($tabla, $item, $valor);
+
+        return $respuesta;
+
+    }
+
 
 	/*=============================================
 	EDITAR UTM

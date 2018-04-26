@@ -112,9 +112,9 @@
     
                   <td>'.$value["metodo_pago"].'</td>
 
-                  <td>$ '.number_format($value["neto"],2).'</td>
+                  <td>$ '.$value["neto"].'</td>
 
-                  <td>$ '.number_format($value["total"],2).'</td>
+                  <td>$ '.$value["total"].'</td>
 
                   <td>'.$value["fecha"].'</td>
 
