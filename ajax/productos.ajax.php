@@ -41,7 +41,8 @@ class AjaxProductos{
       $valor = null;
       $orden = "id";
 
-      $respuesta = ControladorProductos::ctrMostrarProductos($item, $valor, $orden);
+      $respuesta = ControladorProductos::ctrMostrarProductos($item, $valor,
+        $orden);
 
       echo json_encode($respuesta);
 

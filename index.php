@@ -1,4 +1,5 @@
 <?php
+set_time_limit(300);
 ini_set("log_errors", 1);
 ini_set("error_log", "php-error.log");
 error_log( "Hello, errors!" );
@@ -22,6 +23,10 @@ require_once "controladores/utm.controlador.php";
 require_once "controladores/estado.controlador.php";
 require_once "controladores/cementerio.controlador.php";
 require_once "controladores/credito.controlador.php";
+require_once "controladores/cuota.controlador.php";
+require_once "controladores/dxp.controlador.php";
+require_once "controladores/traslado.controlador.php";
+
 
 require_once "modelos/usuarios.modelo.php";
 require_once "modelos/categorias.modelo.php";
@@ -40,6 +45,11 @@ require_once "modelos/utm.modelo.php";
 require_once "modelos/estado.modelo.php";
 require_once "modelos/cementerio.modelo.php";
 require_once "modelos/credito.modelo.php";
+require_once "modelos/cuota.modelo.php";
+require_once "modelos/dxp.modelo.php";
+require_once "modelos/traslado.modelo.php";
+
+
 
 $plantilla = new ControladorPlantilla();
 $plantilla -> ctrPlantilla();

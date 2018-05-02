@@ -58,6 +58,38 @@ class ModeloSepultura{
 
 		}else{
 
+			
+			$stmt= Conexion::conectar()->prepare("SELECT tipo_sepultura.nombre as nombretp, cuartel_cuerpos.nombre as nombrecc, sepulturas.numero_sepultura as numero_sepultura, sepulturas.corrida as corrida, sepulturas.piso as piso, sepulturas.capacidad as capacidad, estado.estado as estado, sepulturas.id_cementerio as cementerio, sepulturas.id_sepultura as id_sepultura FROM estado INNER JOIN sepulturas ON estado.id_estado = sepulturas.estado INNER JOIN cuartel_cuerpos ON sepulturas.id_cuartel_cuerpo = cuartel_cuerpos.id_cuartel_cuerpo INNER JOIN tipo_sepultura ON cuartel_cuerpos.tipo_sep = tipo_sepultura.id_tipo_sepultura");
+			
+			$stmt -> execute();
+			
+			return $stmt -> fetchAll();
+
+		}
+
+		$stmt -> close();
+
+		$stmt = null;
+
+	}
+
+
+
+	static public function mdlMostrarSepulturaDisponible($tabla, $item, $valor){
+
+		if($item != null){
+
+			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
+
+			$stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+
+			$stmt -> execute();
+			
+
+			return $stmt -> fetch();
+
+		}else{
+
 			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
 
 			$stmt -> execute();
@@ -71,6 +103,7 @@ class ModeloSepultura{
 		$stmt = null;
 
 	}
+
 
 	static public function mdlMostrarDifuntosEnSepultura($tabla, $item, $valor){
 
@@ -101,11 +134,15 @@ class ModeloSepultura{
 
     }
 
-    static public function mdlMostrarSepulturaDisponible($tabla, $item, $valor){
+
+/*=============================================
+	MOSTRAR SEPULTURAS DISPONIBLES
+	=============================================*/
+    static public function mdlMostrarSepulturaD($tabla, $item, $valor){
 
         if($item != null){
 
-            $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
+            $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE estado=1 AND $item = :$item");
 
             $stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
 
@@ -116,7 +153,7 @@ class ModeloSepultura{
 
         }else{
 
-            $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE estado != 2");
+            $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE estado = 1 ");
 
             $stmt -> execute();
 

@@ -87,6 +87,16 @@ class ControladorSepultura{
 	
 	}
 
+	static public function ctrMostrarSepulturaD($item, $valor){
+
+		$tabla = "sepulturas";
+
+		$respuesta = ModeloSepultura::mdlMostrarSepulturaD($tabla, $item, $valor);
+
+		return $respuesta;
+	
+	}
+
 	static public  function ctrMostrarDifuntosEnSepultura($item, $valor){
 
 	    $tabla="difuntos";

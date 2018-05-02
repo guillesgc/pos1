@@ -3,16 +3,6 @@ CARGAR LA TABLA DINAMICA DE SEPULTURAS
 =============================================*/
 
 
-if($(".perfilUsuario").val() != "Administrador"){
-
-    var botonesTabla = '<button class="btn btn-primary btnMostrarDif"  data-toggle="modal" data-target="#modalFallecidos" id_sepultura><i class="fa fa-search-plus"></i></button>';
-
-
-}else{
-
-    var botonesTabla = '<button class="btn btn-primary btnMostrarDif"  data-toggle="modal" data-target="#modalFallecidos" id_sepultura><i class="fa fa-search-plus"></i></button>';
-
-}
 
 
 if(window.matchMedia("(max-width:767px)").matches){
@@ -25,7 +15,7 @@ if(window.matchMedia("(max-width:767px)").matches){
             {
                 "targets": -1  ,
                 "data": null,
-                "defaultContent": botonesTabla
+                "defaultContent": '<button class="btn btn-primary btnMostrarDif" idSepultura><i class="fa fa-search-plus"></i></button>'
 
             }
 
@@ -69,7 +59,7 @@ if(window.matchMedia("(max-width:767px)").matches){
             {
                 "targets": -1,
                 "data": null,
-                "defaultContent": botonesTabla
+                "defaultContent": '<button class="btn btn-primary btnMostrarDif" idSepultura><i class="fa fa-search-plus"></i></button>'
 
             }
 
@@ -111,26 +101,33 @@ if(window.matchMedia("(max-width:767px)").matches){
 ACTIVAR LOS BOTONES CON LOS ID CORRESPONDIENTES
 =============================================*/
 
-$('.tablaSepultura tbody').on( 'click', '.btnMostrarDif', function () {
+$('.tablaSepultura tbody').on( 'click', 'button.btnMostrarDif', function () {
 
     if(window.matchMedia("(min-width:992px)").matches){
 
-        var data = table2.row( $(this).parents('tr ') ).data();
+        var data = table2.row( $(this).parents('tr') ).data();
     }else{
 
         var data = table2.row( $(this).parents('tbody tr ul li')).data();
     }
-    //console.log("data",data);
-    $(this).attr("id_sepultura",data[7]);
+    //console.log("data",data[6]);
+    $(this).attr("idSepultura",data[6]);
 
+    var valor=$(this).val();
+
+    var datos = new FormData();
+    datos.append("valor",valor);
+
+   window.location = "index.php?ruta=difuntosxproducto&idSepultura=1";
 } );
 
 /*=============================================
 MOSTRAR DIFUNTOS EN SEPULTURA
 =============================================*/
-$(".tablaSepultura tbody").on("click", ".btnMostrarDif", function(){
-    var idSepultura = $(this).attr("id_sepultura");
-    console.log("idDifunto",idSepultura);
+//$(".tablaSepultura tbody").on("click", ".btnMostrarDif", function(){
+   
+    //var idSepultura = $(this).attr("id_sepultura");
+   /* console.log("idDifunto",idSepultura);
     var datos = new FormData();
     datos.append('idSepultura', idSepultura);
     console.log("datoos",datos);
@@ -145,11 +142,8 @@ $(".tablaSepultura tbody").on("click", ".btnMostrarDif", function(){
         success:function(respuesta){
             console.log(respuesta);
             // $("#editarIdNumSepultura").append("<option value='" + respuesta["id_sepultura"] + "'>" + respuesta["numero_sepultura"] + "</option>");
+*/
 
+    
 
-
-        }
-
-    })
-
-});
+       // });

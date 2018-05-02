@@ -46,9 +46,9 @@ class tablaDifuntos{
 
             echo '[
                 "'.($i+1).'",
-                "'.$difuntos[$i]["nombre"].'",
-                "'.$difuntos[$i]["apellido_paterno"].'",
-                "'.$difuntos[$i]["apellido_materno"].'",
+                "'.strtoupper($difuntos[$i]["nombre"]).'",
+                "'.strtoupper($difuntos[$i]["apellido_paterno"]).'",
+                "'.strtoupper($difuntos[$i]["apellido_materno"]).'",
                 "'.$difuntos[$i]["rut"].'",
                 "'.$x["nombre"].'",
                 "'.$y["nombre"].'",
@@ -72,9 +72,9 @@ class tablaDifuntos{
 
         echo '[
                 "'.count($difuntos).'",
-                "'.$difuntos[count($difuntos)-1]["nombre"].'",
-                "'.$difuntos[count($difuntos)-1]["apellido_paterno"].'",
-                "'.$difuntos[count($difuntos)-1]["apellido_materno"].'",
+                "'.strtoupper($difuntos[count($difuntos)-1]["nombre"]).'",
+                "'.strtoupper($difuntos[count($difuntos)-1]["apellido_paterno"]).'",
+                "'.strtoupper($difuntos[count($difuntos)-1]["apellido_materno"]).'",
                 "'.$difuntos[count($difuntos)-1]["rut"].'",
                 "'.$x["nombre"].'",
                 "'.$y["nombre"].'",

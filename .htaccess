@@ -3,3 +3,5 @@ Options All -Indexes
 RewriteEngine On
 
 RewriteRule ^([-a-zA-Z0-9]+)$ index.php?ruta=$1
+
+php_value max_execution_time 300

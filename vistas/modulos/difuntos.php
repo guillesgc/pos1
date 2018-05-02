@@ -1,3 +1,7 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+?>
 <style>
     #mdialTamanio{
       width: 50% !important;
@@ -230,7 +234,7 @@ MODAL AGREGAR DIFUNTO
 
               </div>
 
-              <!-- ENTRADA PARA CAURTEL CUERPO -->
+              <!-- ENTRADA PARA CUARTEL CUERPO -->
 
               <div class="col-lg-4 col-xs-12">
 
@@ -414,17 +418,13 @@ MODAL AGREGAR DIFUNTO
 
                   <span class="input-group-addon"><i class="fa fa-id-card-o"></i></span>
 
-                  <input type="text" class="form-control input-lg nuevoRut" id="nuevoRut" name="nuevoRut"  placeholder="Rut" autocomplete="On" required>
+                  <input type="text" class="form-control input-lg nuevoRut" id="nuevoRut" name="nuevoRut"  placeholder="Rut" autocomplete="On" >
 
                 </div>
 
               </div>
 
-          </div>
-
-
-
-
+            </div>
 
           </div>
 

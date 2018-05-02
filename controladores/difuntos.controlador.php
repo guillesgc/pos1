@@ -14,7 +14,6 @@ class ControladorDifuntos{
 			   preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\. ]+$/', $_POST["nuevoApaterno"]) &&
 			   preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\. ]+$/', $_POST["nuevoAmaterno"]) &&
 			   preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\. ]+$/', $_POST["nuevaCmuerte"]) &&
-			   preg_match('/^[a-zA-Z0-9\-\. ]+$/', $_POST["nuevoRut"]) &&
 			   preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\. ]+$/', $_POST["nuevaCircunscripcion"])){
 
 			   	$tabla = "difuntos";
@@ -33,8 +32,9 @@ class ControladorDifuntos{
 					           "id_boletin"=>$_POST["nuevoBoletin"],
 					           "rut"=>$_POST["nuevoRut"]
 					       );
-                print_r($datos);
+                //var_dump($datos);
 			   	$respuesta = ModeloDifuntos::mdlIngresarDifunto($tabla, $datos);
+			   	//var_dump($respuesta);
 
 			   	if($respuesta == "ok"){
 
@@ -56,7 +56,22 @@ class ControladorDifuntos{
 					</script>';
 
 				}else{
-			   	    print_r($respuesta);
+			   	    echo'<script>
+
+					swal({
+						  type: "error",
+						  title: "¡El difunto no puede ir vacío o llevar caracteres especiales!",
+						  showConfirmButton: true,
+						  confirmButtonText: "Cerrar"
+						  }).then(function(result){
+							if (result.value) {
+
+							window.location = "difuntos";
+
+							}
+						})
+
+			  	</script>';
                 }
 
 			}

@@ -135,24 +135,6 @@
 
 		}
 
-		if($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Especial"){
-
-			echo '
-
-			<li>
-
-				<a href="productos">
-
-					<i class="fa fa-product-hunt"></i>
-					<span>Productos</span>
-
-				</a>
-
-			</li>'
-
-			;
-
-		}
 
 		if($_SESSION["perfil"] == "Administrador" || $_SESSION["perfil"] == "Vendedor"){
 

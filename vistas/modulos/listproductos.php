@@ -35,8 +35,6 @@
                     <thead>
 
                         <tr>
-
-                            <th style="width:10px">#</th>
                             <th>Tipo Producto</th>
                             <th>Cuartel-Cuerpo</th>
                             <th># Sepultura</th>

@@ -47,8 +47,8 @@
            <th>Teléfono</th>
            <th>Dirección</th>
            <!--<th>Fecha nacimiento</th> 
-           <th>Total compras</th>-->
-           <th>Fecha servicio</th>
+           <th>Total compras</th>
+           <th>Fecha servicio</th>-->
            <th>Ingreso al sistema</th>
            <th>Acciones</th>
 
@@ -72,7 +72,7 @@
 
                     <td>'.($key+1).'</td>
 
-                    <td>'.$value["nombre"].'</td>
+                    <td>'.strtoupper($value["nombre"]).'</td>
 
                     <td>'.$value["documento"].'</td>
 
@@ -81,8 +81,6 @@
                     <td>'.$value["telefono"].'</td>
 
                     <td>'.$value["direccion"].'</td>
-
-                    <td>'.$value["ultima_compra"].'</td>
 
                     <td>'.$value["fecha"].'</td>
 
@@ -190,7 +188,7 @@ MODAL AGREGAR CLIENTE
               
                 <span class="input-group-addon"><i class="fa fa-envelope"></i></span> 
 
-                <input type="email" class="form-control input-lg" name="nuevoEmail" placeholder="Ingresar email" autocomplete='email' required>
+                <input type="email" class="form-control input-lg" name="nuevoEmail" placeholder="Ingresar email" autocomplete='email'>
 
               </div>
 
@@ -323,7 +321,7 @@ MODAL EDITAR CLIENTE
               
                 <span class="input-group-addon"><i class="fa fa-envelope"></i></span> 
 
-                <input type="email" class="form-control input-lg" name="editarEmail" id="editarEmail" required>
+                <input type="email" class="form-control input-lg" name="editarEmail" id="editarEmail" >
 
               </div>
 

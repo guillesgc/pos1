@@ -11,8 +11,7 @@ class ModeloDifuntos{
 	static public function mdlIngresarDifunto($tabla, $datos){
 
 
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre, apellido_paterno, apellido_materno, fecha_defuncion, fecha_sepultacion, causa_muerte, edad, sexo, inscripcion, circunscripcion, id_sepultura, id_boletin, rut)
-                                                         VALUES (:nombre, :apellido_paterno, :apellido_materno, :fecha_defuncion, :fecha_sepultacion, :causa_muerte, :edad, :sexo, :inscripcion, :circunscripcion, :id_sepultura, :id_boletin, :rut)");
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre, apellido_paterno, apellido_materno, fecha_defuncion, fecha_sepultacion, causa_muerte, edad, sexo, inscripcion, circunscripcion, id_sepultura, id_boletin, rut) VALUES (:nombre, :apellido_paterno, :apellido_materno, :fecha_defuncion, :fecha_sepultacion, :causa_muerte, :edad, :sexo, :inscripcion, :circunscripcion, :id_sepultura, :id_boletin, :rut)");
 
 		$stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
 		$stmt->bindParam(":apellido_paterno", $datos["apellido_paterno"], PDO::PARAM_STR);
@@ -27,7 +26,7 @@ class ModeloDifuntos{
 		$stmt->bindParam(":id_sepultura", $datos["id_sepultura"], PDO::PARAM_INT);
 		$stmt->bindParam(":id_boletin", $datos["id_boletin"], PDO::PARAM_INT);
 		$stmt->bindParam(":rut", $datos["rut"], PDO::PARAM_STR);
-        print_r($stmt);
+        //print_r($stmt);
 		if($stmt->execute()){
 
 			return "ok";

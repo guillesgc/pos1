@@ -10,7 +10,7 @@ class ControladorCreditos{
 
         if(isset($_POST["nuevaFechap"])){
 
-            if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\- ]+$/', $_POST["nuevoDetalle"])){
+            if(preg_match('/^[0-9]+$/', $_POST["nuevoPie"])){
 
                 $tabla = "creditos";
 
@@ -32,13 +32,13 @@ class ControladorCreditos{
 
 					swal({
 						  type: "success",
-						  title: "El credito ha sido guardado correctamente",
+						  title: "El crédito ha sido guardado correctamente",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
 									if (result.value) {
 
-									window.location = "index.php?creditos";
+									window.location = "index.php?ruta=creditos&idCliente='.$_GET["idCliente"].'";
 
 									}
 								})
@@ -54,13 +54,13 @@ class ControladorCreditos{
 
 					swal({
 						  type: "error",
-						  title: "¡El credito no puede ir vacío o llevar caracteres especiales!",
+						  title: "¡El crédito no puede ir vacío o llevar caracteres especiales!",
 						  showConfirmButton: true,
 						  confirmButtonText: "Cerrar"
 						  }).then(function(result){
 							if (result.value) {
 
-							window.location = "creditos";
+							window.location = "index.php?ruta=creditos&idCliente='.$_GET["idCliente"].'";
 
 							}
 						})
@@ -74,7 +74,7 @@ class ControladorCreditos{
     }
 
     /*=============================================
-    MOSTRAR CUARTEL_CUERPO
+    MOSTRAR CREDITO
     =============================================*/
 
     static public function ctrMostrarCredito($item, $valor){
@@ -82,6 +82,21 @@ class ControladorCreditos{
         $tabla = "creditos";
 
         $respuesta = ModeloCredito::mdlMostrarCredito($tabla, $item, $valor);
+
+        return $respuesta;
+
+    }
+
+
+    /*=============================================
+    MOSTRAR CREDITOE
+    =============================================*/
+
+    static public function ctrMostrarCreditoE($item, $valor){
+
+        $tabla = "creditos";
+
+        $respuesta = ModeloCredito::mdlMostrarCreditoE($tabla, $item, $valor);
 
         return $respuesta;
 
@@ -109,9 +124,9 @@ class ControladorCreditos{
                                 "boletin"=>$_POST["editarBoletin"],
                                 "valor_credito"=>$_POST["editarVcredito"],
                                 "valor_cuota"=>$_POST["editarCuota"],
-                                "estado"=>1
-                              );
+                                "estado"=>1);
                 var_dump($_POST);
+               
                 $respuesta = ModeloCredito::mdlEditarCredito($tabla, $datos);
 
                 if($respuesta == "ok"){
@@ -125,7 +140,7 @@ class ControladorCreditos{
 						  }).then(function(result){
 									if (result.value) {
 
-									window.location = "clientes";
+									window.location = "index.php?ruta=creditos&idCliente='.$_GET["idCliente"].'";
 
 									}
 								})
@@ -147,7 +162,7 @@ class ControladorCreditos{
 						  }).then(function(result){
 							if (result.value) {
 
-							window.location = "clientes";
+							window.location = "index.php?ruta=creditos&idCliente='.$_GET["idCliente"].'";
 
 							}
 						})
@@ -166,7 +181,7 @@ class ControladorCreditos{
     static public function ctrBorrarCredito(){
 
         if(isset($_GET["idCredito"])){
-            print_r($_POST);
+           // print_r($_POST);
             $tabla ="creditos";
             $datos = $_GET["idCredito"];
 
@@ -178,13 +193,15 @@ class ControladorCreditos{
 
 					swal({
 						  type: "success",
-						  title: "El credito ha sido borrado correctamente",
+						  title: "El crédito ha sido borrado correctamente",
 						  showConfirmButton: true,
-						  confirmButtonText: "Cerrar"
+						  confirmButtonText: "Cerrar",
+                          allowEscapeKey: false,
+                          allowOutsideClick: false,
 						  }).then(function(result){
 									if (result.value) {
 
-									window.location = "clientes";
+									window.location = "index.php?ruta=creditos&idCliente='.$_GET["idCliente"].'";
 
 									}
 								})

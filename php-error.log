@@ -645,3 +645,63 @@
 [26-Apr-2018 18:47:28 UTC] Hello, errors!
 [26-Apr-2018 18:49:46 UTC] Hello, errors!
 [26-Apr-2018 18:50:13 UTC] Hello, errors!
+[02-May-2018 14:45:42 UTC] Hello, errors!
+[02-May-2018 14:45:47 UTC] Hello, errors!
+[02-May-2018 14:45:48 UTC] Hello, errors!
+[02-May-2018 14:45:52 UTC] Hello, errors!
+[02-May-2018 14:45:55 UTC] Hello, errors!
+[02-May-2018 14:45:56 UTC] Hello, errors!
+[02-May-2018 14:46:03 UTC] Hello, errors!
+[02-May-2018 14:46:24 UTC] Hello, errors!
+[02-May-2018 14:46:27 UTC] Hello, errors!
+[02-May-2018 14:46:41 UTC] Hello, errors!
+[02-May-2018 15:21:23 UTC] Hello, errors!
+[02-May-2018 15:21:26 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1049] Unknown database 'cementerio'' in C:\wamp64\www\pos1\modelos\conexion.php:7
+Stack trace:
+#0 C:\wamp64\www\pos1\modelos\conexion.php(7): PDO->__construct('mysql:host=loca...', 'root', '')
+#1 C:\wamp64\www\pos1\modelos\ventas.modelo.php(25): Conexion::conectar()
+#2 C:\wamp64\www\pos1\controladores\ventas.controlador.php(15): ModeloVentas::mdlMostrarVentas('ventas', NULL, NULL)
+#3 C:\wamp64\www\pos1\vistas\modulos\crear-venta.php(74): ControladorVentas::ctrMostrarVentas(NULL, NULL)
+#4 C:\wamp64\www\pos1\vistas\plantilla.php(179): include('C:\\wamp64\\www\\p...')
+#5 C:\wamp64\www\pos1\controladores\plantilla.controlador.php(7): include('C:\\wamp64\\www\\p...')
+#6 C:\wamp64\www\pos1\index.php(55): ControladorPlantilla::ctrPlantilla()
+#7 {main}
+  thrown in C:\wamp64\www\pos1\modelos\conexion.php on line 7
+[02-May-2018 18:08:22 UTC] Hello, errors!
+[02-May-2018 18:08:26 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1049] Unknown database 'cementerio'' in C:\wamp64\www\pos1\modelos\conexion.php:7
+Stack trace:
+#0 C:\wamp64\www\pos1\modelos\conexion.php(7): PDO->__construct('mysql:host=loca...', 'root', '')
+#1 C:\wamp64\www\pos1\modelos\ventas.modelo.php(173): Conexion::conectar()
+#2 C:\wamp64\www\pos1\controladores\ventas.controlador.php(548): ModeloVentas::mdlSumaTotalVentas('ventas')
+#3 C:\wamp64\www\pos1\vistas\modulos\inicio\cajas-superiores.php(7): ControladorVentas::ctrSumaTotalVentas()
+#4 C:\wamp64\www\pos1\vistas\modulos\inicio.php(31): include('C:\\wamp64\\www\\p...')
+#5 C:\wamp64\www\pos1\vistas\plantilla.php(189): include('C:\\wamp64\\www\\p...')
+#6 C:\wamp64\www\pos1\controladores\plantilla.controlador.php(7): include('C:\\wamp64\\www\\p...')
+#7 C:\wamp64\www\pos1\index.php(55): ControladorPlantilla::ctrPlantilla()
+#8 {main}
+  thrown in C:\wamp64\www\pos1\modelos\conexion.php on line 7
+[02-May-2018 18:15:29 UTC] Hello, errors!
+[02-May-2018 18:15:42 UTC] Hello, errors!
+[02-May-2018 18:17:30 UTC] Hello, errors!
+[02-May-2018 18:31:53 UTC] Hello, errors!
+[02-May-2018 18:31:58 UTC] Hello, errors!
+[02-May-2018 18:32:04 UTC] Hello, errors!
+[02-May-2018 18:32:09 UTC] Hello, errors!
+[02-May-2018 18:32:18 UTC] Hello, errors!
+[02-May-2018 18:32:36 UTC] Hello, errors!
+[02-May-2018 18:32:39 UTC] Hello, errors!
+[02-May-2018 18:32:47 UTC] Hello, errors!
+[02-May-2018 18:35:18 UTC] Hello, errors!
+[02-May-2018 18:35:27 UTC] Hello, errors!
+[02-May-2018 18:39:45 UTC] Hello, errors!
+[02-May-2018 18:42:28 UTC] Hello, errors!
+[02-May-2018 18:47:24 UTC] Hello, errors!
+[02-May-2018 18:49:21 UTC] Hello, errors!
+[02-May-2018 18:50:01 UTC] Hello, errors!
+[02-May-2018 18:51:51 UTC] Hello, errors!
+[02-May-2018 18:51:53 UTC] Hello, errors!
+[02-May-2018 18:52:46 UTC] Hello, errors!
+[02-May-2018 18:57:03 UTC] Hello, errors!
+[02-May-2018 18:58:10 UTC] Hello, errors!
+[02-May-2018 18:58:30 UTC] Hello, errors!
+[02-May-2018 18:58:55 UTC] Hello, errors!

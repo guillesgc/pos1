@@ -5,7 +5,7 @@ ini_set('display_errors', '1');
 
     <style>
         #mdialTamanio{
-            width: 50% !important;
+            width: 30% !important;
         }
     </style>
 
@@ -105,8 +105,8 @@ ini_set('display_errors', '1');
                         <tbody>
                         <?php
 
-                        $item = null;
-                        $valor = null;
+                        $item = "id_cliente";
+                        $valor = $_GET["idCliente"];
 
                         $creditos = ControladorCreditos::ctrMostrarCredito($item, $valor);
 
@@ -116,20 +116,32 @@ ini_set('display_errors', '1');
 
                                     <td>'.($key+1).'</td>
                                     <td>'.$value["fecha_pago"].'</td>
-                                    <td>'.$value["detalle"].'</td>
-                                    <td>'.$value["valor_credito"].'</td>
-                                    <td>'.$value["pie"].'</td>
+                                    <td>'.strtoupper($value["detalle"]).'</td>
+                                    <td>$'.number_format($value["valor_credito"]).'</td>
+                                    <td>$'.number_format($value["pie"]).'</td>
                                     <td>'.$value["numcuotas"].'</td>
-                                    <td>'.$value["valor_cuota"].'</td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>$'.number_format($value["valor_cuota"]).'</td>';
+
+                                    //*********DEBO TRAER LO CANCELADO DE ESE CREDITO*************
+
+                                    $item="id_credito";
+                                    $valor=$value["id_credito"];
+                                    $pagado=ControladorCuota::ctrCuotasPagadas($item, $valor);
+
+                                    $total=$pagado["total_pagado"];
+                                    $saldo=$value["valor_credito"]-($total + $value["pie"]);
+                                    
+                                    //************************************************************
+                                    echo '<td>'.number_format($total).'</td>
+                                    <td>'.number_format($saldo).'</td>
                                     <td>'.$value["boletin"].'</td>
                                     <td>
 
                                         <div class="btn-group">
                           
-                                            <button class="btn btn-warning btnEditarCredito" idCredito="'.$value["id_credito"].'" data-toggle="modal" data-target="#modalEditarCredito"><i class="fa fa-pencil"></i></button>
-                                            <button class="btn btn-success btnMostrarCuotas" idCredito="'.$value["id_credito"].'" data-toggle="modal" data-target="#modalCuotasCredito"><i class="fa fa-money"></i></button>';
+                                            <button class="btn btn-warning btnEditarCredito" idCredito="'.$value["id_credito"].'" data-toggle="modal" data-target="#modalEditarCredito" title="Editar Credito del cliente"><i class="fa fa-pencil"></i></button>
+                                            
+                                            <button class="btn btn-success btnMostrarCuotas" idCredito="'.$value["id_credito"].'" idCliente="'.$value["id_cliente"].'" data-toggle="modal" data-target="#modalCuotasCredito"><i class="fa fa-money"></i></button>';
 
 
                                             if($_SESSION["perfil"] == "Administrador"){
@@ -164,7 +176,7 @@ ini_set('display_errors', '1');
 
     <div id="modalAgregaCredito" class="modal fade" role="dialog">
 
-        <div class="modal-dialog" id="mdialTamanio">
+        <div class="modal-dialog" >
 
             <div class="modal-content">
 
@@ -178,7 +190,7 @@ ini_set('display_errors', '1');
 
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-                        <h4 class="modal-title">Agregar Sepultura</h4>
+                        <h4 class="modal-title">Agregar Crédito</h4>
 
                     </div>
 
@@ -198,7 +210,7 @@ ini_set('display_errors', '1');
 
                                 <div class="input-group">
 
-                                    <span class="input-group-addon"><i class="fa fa-th"></i></span>
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 
                                     <input type="text" class="form-control input-lg " name="nuevaFechap"  data-inputmask="'alias': 'yyyy/mm/dd'" data-mask placeholder="Fecha Pago" required>
 
@@ -214,7 +226,7 @@ ini_set('display_errors', '1');
 
                                 <div class="input-group">
 
-                                    <span class="input-group-addon"><i class="fa fa-th"></i></span>
+                                    <span class="input-group-addon"><i class="fa fa-comment"></i></span>
 
                                     <input type="text" class="form-control input-lg" name="nuevoDetalle" placeholder="Glosa" required>
 
@@ -231,9 +243,9 @@ ini_set('display_errors', '1');
 
                                 <div class="input-group">
 
-                                    <span class="input-group-addon"><i class="fa fa-th"></i></span>
+                                    <span class="input-group-addon"><i class="fa fa-money"></i></span>
 
-                                    <input type="number" class="form-control input-lg" min="1" name="nuevoPie" placeholder="Pie" required>
+                                    <input type="number" class="form-control input-lg" min="0" name="nuevoPie" placeholder="Pie" required>
 
                                 </div>
 
@@ -248,7 +260,7 @@ ini_set('display_errors', '1');
 
                                 <div class="input-group">
 
-                                    <span class="input-group-addon"><i class="fa fa-th"></i></span>
+                                    <span class="input-group-addon"><i class="fa fa-sort-numeric-asc"></i></span>
 
                                     <input type="number" class="form-control input-lg" name="nuevoNumcuotas" min="1" placeholder="Número de Cuotas" required>
 
@@ -266,7 +278,7 @@ ini_set('display_errors', '1');
 
                                 <div class="input-group">
 
-                                    <span class="input-group-addon"><i class="fa fa-th"></i></span>
+                                    <span class="input-group-addon"><i class="fa fa-file-text-o"></i></span>
 
                                     <input type="number" class="form-control input-lg" name="nuevoBoletin" min="1" placeholder="Boletin" required>
 
@@ -282,7 +294,7 @@ ini_set('display_errors', '1');
 
                                 <div class="input-group">
 
-                                    <span class="input-group-addon"><i class="fa fa-th"></i></span>
+                                    <span class="input-group-addon"><i class="fa fa-money"></i></span>
 
                                     <input type="number" class="form-control input-lg" name="nuevoVcredito" min="1" placeholder="Valor Credito" required>
 
@@ -298,7 +310,7 @@ ini_set('display_errors', '1');
 
                                 <div class="input-group">
 
-                                    <span class="input-group-addon"><i class="fa fa-th"></i></span>
+                                    <span class="input-group-addon"><i class="fa fa-money"></i></span>
 
                                     <input type="number" class="form-control input-lg" name="nuevaCuota" min="1" placeholder="Valor Cuota" required>
 
@@ -378,7 +390,7 @@ ini_set('display_errors', '1');
 
                                 <div class="input-group">
 
-                                    <span class="input-group-addon"><i class="fa fa-th"></i></span>
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 
                                     <input type="text" class="form-control input-lg" name="editarFechap" id="editarFechap" data-inputmask="'alias': 'yyyy/mm/dd'" data-mask placeholder="Fecha Pago" required>
 
@@ -396,7 +408,7 @@ ini_set('display_errors', '1');
 
                                 <div class="input-group">
 
-                                    <span class="input-group-addon"><i class="fa fa-th"></i></span>
+                                    <span class="input-group-addon"><i class="fa fa-comment"></i></span>
 
                                     <input type="text" class="form-control input-lg" name="editarDetalle" id="editarDetalle" placeholder="Glosa" required>
 
@@ -413,7 +425,7 @@ ini_set('display_errors', '1');
 
                                 <div class="input-group">
 
-                                    <span class="input-group-addon"><i class="fa fa-th"></i></span>
+                                    <span class="input-group-addon"><i class="fa fa-money"></i></span>
 
                                     <input type="number" class="form-control input-lg" min="1" name="editarPie" id="editarPie" placeholder="Pie" required>
 
@@ -430,7 +442,7 @@ ini_set('display_errors', '1');
 
                                 <div class="input-group">
 
-                                    <span class="input-group-addon"><i class="fa fa-th"></i></span>
+                                    <span class="input-group-addon"><i class="fa fa-sort-numeric-asc"></i></span>
 
                                     <input type="number" class="form-control input-lg" name="editarNumcuotas" id="editarNumcuotas" min="1" placeholder="Número de Cuotas" required>
 
@@ -448,7 +460,7 @@ ini_set('display_errors', '1');
 
                                 <div class="input-group">
 
-                                    <span class="input-group-addon"><i class="fa fa-th"></i></span>
+                                    <span class="input-group-addon"><i class="fa fa-file-text-o"></i></span>
 
                                     <input type="number" class="form-control input-lg" name="editarBoletin" id="editarBoletin" min="1" placeholder="Boletin" required>
 
@@ -464,7 +476,7 @@ ini_set('display_errors', '1');
 
                                 <div class="input-group">
 
-                                    <span class="input-group-addon"><i class="fa fa-th"></i></span>
+                                    <span class="input-group-addon"><i class="fa fa-money"></i></span>
 
                                     <input type="number" class="form-control input-lg" name="editarVcredito" id="editarVcredito"  min="1" placeholder="Valor Credito" required>
 
@@ -480,7 +492,7 @@ ini_set('display_errors', '1');
 
                                 <div class="input-group">
 
-                                    <span class="input-group-addon"><i class="fa fa-th"></i></span>
+                                    <span class="input-group-addon"><i class="fa fa-money"></i></span>
 
                                     <input type="number" class="form-control input-lg" name="editarCuota" id="editarCuota" min="1" placeholder="Valor Cuota" required>
 

@@ -222,7 +222,6 @@ $(".btnAgregarProducto").click(function(){
 
 	var datos = new FormData();
 	datos.append("traerItems", "ok");
-
 	$.ajax({
 
 		url:"ajax/item.ajax.php",
@@ -334,9 +333,9 @@ $(".formularioVenta").on("change", "select.nuevaDescripcionProducto", function()
 
 	var nuevaCantidadProducto = $(this).parent().parent().parent().children(".ingresoCantidad").children(".nuevaCantidadProducto");
 
-	var nuevoDescuentoProducto = $(this).parent().parent().parent().children(".ingresoDescuento").children(".nuevoDescuentoProducto");
+	//var nuevoDescuentoProducto = $(this).parent().parent().parent().children(".ingresoDescuento").children(".nuevoDescuentoProducto");
 
-	var nuevoDctoProducto = $(this).parent().parent().parent().children(".ingresoDescuento").children(".nuevoDescuento");
+	//var nuevoDctoProducto = $(this).parent().parent().parent().children(".ingresoDescuento").children(".nuevoDescuento");
 
 
 
@@ -356,8 +355,6 @@ $(".formularioVenta").on("change", "select.nuevaDescripcionProducto", function()
       	dataType:"json",
       	success:function(respuesta){
       	    console.log("respuestaa",respuesta);
-      	    console.log("descuento",nuevoDctoProducto);
-      	    console.log("dcto",dcto);
       	    $(nuevaDescripcionProducto).attr("idItem", respuesta["id_item"]);
       	    //$(nuevaCantidadProducto).attr("stock", respuesta["stock"]);
       	    //$(nuevaCantidadProducto).attr("nuevoStock", Number(respuesta["stock"])-1);
@@ -385,22 +382,22 @@ $(".formularioVenta").on("change", "input.nuevaCantidadProducto", function(){
 	
 	precio.val(precioFinal);
 
-	var nuevoStock = Number($(this).attr("stock")) - $(this).val();
+	//var nuevoStock = Number($(this).attr("stock")) - $(this).val();
 
-	$(this).attr("nuevoStock", nuevoStock);
+	//$(this).attr("nuevoStock", nuevoStock);
 
-	if(Number($(this).val()) > Number($(this).attr("stock"))){
+	//if(Number($(this).val()) > Number($(this).attr("stock"))){
 
-		$(this).val(1);
+	//	$(this).val(1);
 
-		swal({
-	      title: "La cantidad supera el Stock",
-	      text: "¡Sólo hay "+$(this).attr("stock")+" unidades!",
-	      type: "error",
-	      confirmButtonText: "¡Cerrar!"
-	    });
+	//	swal({
+	//      title: "La cantidad supera el Stock",
+	//      text: "¡Sólo hay "+$(this).attr("stock")+" unidades!",
+	//      type: "error",
+	//      confirmButtonText: "¡Cerrar!"
+	//    });
 
-	}
+	//}
 
 	// SUMAR TOTAL DE PRECIOS
 
@@ -414,17 +411,17 @@ $(".formularioVenta").on("change", "input.nuevaCantidadProducto", function(){
 
     listarProductos()
 
-})
+});
 
 /*=============================================
-MODIFICAR LA DESCUENTO
+MODIFICAR EL DESCUENTO
 =============================================*/
 
 $(".formularioVenta").on("change", "select.nuevoDescuentoProducto", function(){
 
-    var dcto = $(this).parent().parent().children(".ingresoPrecio").children().children(".nuevoDescuentoProducto");
+   // var dcto = $(this).parent().parent().children(".ingresoPrecio").children().children(".nuevoDescuentoProducto");
 
-}
+});
 
 
 
@@ -621,7 +618,7 @@ function listarProductos(){
 		listaProductos.push({ "id" : $(descripcion[i]).attr("idItem"),
 							  "descripcion" : $(descripcion[i]).val(),
 							  "cantidad" : $(cantidad[i]).val(),
-							  "stock" : $(cantidad[i]).attr("nuevoStock"),
+							  //"stock" : $(cantidad[i]).attr("nuevoStock"),
 							  "precio" : $(precio[i]).attr("precioReal"),
 							  "total" : $(precio[i]).val()})
 

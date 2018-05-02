@@ -6,13 +6,13 @@ $orden = "id";
 
 $ventas = ControladorVentas::ctrSumaTotalVentas();
 
-$categorias = ControladorCategorias::ctrMostrarCategorias($item, $valor);
+$categorias = ControladorCreditos::ctrMostrarCredito($item, $valor);
 $totalCategorias = count($categorias);
 
-$clientes = ControladorClientes::ctrMostrarClientes($item, $valor);
+$clientes = ControladorDifuntos::ctrMostrarDifuntos($item, $valor);
 $totalClientes = count($clientes);
 
-$productos = ControladorProductos::ctrMostrarProductos($item, $valor, $orden);
+$productos = ControladorSepultura::ctrMostrarSepulturaD($item, $valor, $orden);
 $totalProductos = count($productos);
 
 ?>
@@ -55,7 +55,7 @@ $totalProductos = count($productos);
     
       <h3><?php echo number_format($totalCategorias); ?></h3>
 
-      <p>Centros de Costo</p>
+      <p>Clientes / Créditos</p>
     
     </div>
     
@@ -65,7 +65,7 @@ $totalProductos = count($productos);
     
     </div>
     
-    <a href="ccosto" class="small-box-footer">
+    <a href="clientes" class="small-box-footer">
       
       Más info <i class="fa fa-arrow-circle-right"></i>
     
@@ -83,7 +83,7 @@ $totalProductos = count($productos);
     
       <h3><?php echo number_format($totalClientes); ?></h3>
 
-      <p>Clientes</p>
+      <p>Fallecidos Registrados</p>
   
     </div>
     
@@ -93,7 +93,7 @@ $totalProductos = count($productos);
     
     </div>
     
-    <a href="clientes" class="small-box-footer">
+    <a href="difuntos" class="small-box-footer">
 
       Más info <i class="fa fa-arrow-circle-right"></i>
 
@@ -111,7 +111,7 @@ $totalProductos = count($productos);
     
       <h3><?php echo number_format($totalProductos); ?></h3>
 
-      <p>Productos</p>
+      <p>Disponibilidad de Productos</p>
     
     </div>
     
@@ -121,7 +121,7 @@ $totalProductos = count($productos);
     
     </div>
     
-    <a href="productos" class="small-box-footer">
+    <a href="listproductos" class="small-box-footer">
       
       Más info <i class="fa fa-arrow-circle-right"></i>
     

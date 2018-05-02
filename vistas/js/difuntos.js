@@ -163,6 +163,7 @@ $(".tablaDifuntos tbody").on("click", ".btnEditarDifunto", function(){
         dataType:"json",
         success:function(respuesta){
             console.log(respuesta);
+            
             $("#idDifunto").val(respuesta["id_difunto"]);
 	        $("#editarDifunto").val(respuesta["nombre"]);
             $("#editarApaterno").val(respuesta["apellido_paterno"]);

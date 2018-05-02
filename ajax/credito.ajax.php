@@ -15,9 +15,8 @@ class AjaxCreditos{
 
         $item = "id_credito";
         $valor = $this->idCredito;
-        $respuesta = ControladorCreditos::ctrMostrarCredito($item, $valor);
+        $respuesta = ControladorCreditos::ctrMostrarCreditoE($item, $valor);
         echo json_encode($respuesta);
-
 
     }
 

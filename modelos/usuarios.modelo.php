@@ -22,7 +22,7 @@ class ModeloUsuarios{
 
 		}else{
 
-			$stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla");
+			$stmt = Conexion::conectar()->prepare("SELECT id, nombre, usuario, password, perfil, foto, estado, ultimo_login, DATE_FORMAT(fecha, '%d/%m/%Y %i:%H') AS fecha FROM $tabla");
 
 			$stmt -> execute();
 

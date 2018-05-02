@@ -172,6 +172,8 @@ CUERPO DOCUMENTO
          $_GET["ruta"] == "creditos" ||
          $_GET["ruta"] == "estado" ||
          $_GET["ruta"] == "cementerio" ||
+         $_GET["ruta"] == "cuotas" ||
+         $_GET["ruta"] == "difuntosxproducto" ||
          $_GET["ruta"] == "salir"){
 
         include "modulos/".$_GET["ruta"].".php";
@@ -222,7 +224,9 @@ CUERPO DOCUMENTO
 <script src="vistas/js/agenda.js"></script>
 <script src="vistas/js/item.js"></script>
 <script src="vistas/js/utm.js"></script>
-
+<script src="vistas/js/cuota.js"></script>
+<script src="vistas/js/difuntosxproducto.js"></script>
+<script src="vistas/js/traslado.js"></script>
 
 </body>
 </html>

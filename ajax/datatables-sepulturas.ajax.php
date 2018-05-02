@@ -1,7 +1,3 @@
-<?php
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
-?>
 
 <?php
 
@@ -31,69 +27,28 @@ class TablaProductosS{
 			"data": [';
 
         for($i = 0; $i < count($productos)-1; $i++){
-
-            //saco el id tiposepultura dependiendo del id cuartel cuerpo
-            $item = "id_cuartel_cuerpo";
-            $valor = $productos[$i]["id_cuartel_cuerpo"];
-            $tiposepultura = ControladorCcuerpo::ctrMostrarCcuerpo($item, $valor);
-            $id=$tiposepultura["tipo_sep"];
-
-            //saco el tipo de sepultura con el $id retornado
-            $item = "id_tipo_sepultura";
-            $valor = $id;
-            $nombre = ControladorTsepultura::ctrMostrarTsepultura($item, $valor);
-
-            //saca el estado
-            $item = "id_estado";
-            $valor = $productos[$i]["estado"];
-            $estado = ControladorSepultura::ctrMostrarEstado($item, $valor);
-
-            $item = "id_cuartel_cuerpo";
-            $valor = $productos[$i]["id_cuartel_cuerpo"];
-
-            $CCuerpo = ControladorCcuerpo::ctrMostrarCcuerpo($item, $valor);
-
+            
         echo '[
-              "'.($i+1).'",
-              "'.$nombre["nombre"].'",
-              "'.$CCuerpo["nombre"].'", 
+              "'.$productos[$i]["nombretp"].'",
+              "'.$productos[$i]["nombrecc"].'", 
               "'.$productos[$i]["numero_sepultura"].'",
-              "'.$estado["estado"].'",
-              "'.$productos[$i]["corrida"].'",
+              "'.$productos[$i]["estado"].'",
               "'.$productos[$i]["piso"].'",
+              "'.$productos[$i]["corrida"].'",
               "'.$productos[$i]["id_sepultura"].'"
         ],';
 
         }
-
-        //saco el tipo de sepultura dependiento del id cuartel cuerpo
-        $item = "id_cuartel_cuerpo";
-        $valor = $productos[$i]["id_cuartel_cuerpo"];
-        $tiposepultura = ControladorCcuerpo::ctrMostrarCcuerpo($item, $valor);
-        $id=$tiposepultura["tipo_sep"];
-
-        //saco el tipo de sepultura con el $tiposepultura retornado
-        $item = "id_tipo_sepultura";
-        $valor = $id;
-        $nombre = ControladorTsepultura::ctrMostrarTsepultura($item, $valor);
-
-        //saca el estado
-        $item = "id_estado";
-        $valor = $productos[$i]["estado"];
-        $estado = ControladorSepultura::ctrMostrarEstado($item, $valor);
-
-        $item = "id_cuartel_cuerpo";
-        $valor = $productos[$i]["id_cuartel_cuerpo"];
-        $CCuerpo = ControladorCcuerpo::ctrMostrarCcuerpo($item, $valor);
+    
 
         echo'[
-			      "'.count($productos).'",
-			      "'.$nombre["nombre"].'",
-			      "'.$CCuerpo["nombre"].'",
+			      
+			      "'.$productos[count($productos)-1]["nombretp"].'",
+			      "'.$productos[count($productos)-1]["nombrecc"].'",
 			      "'.$productos[count($productos)-1]["numero_sepultura"].'",
-			      "'.$estado["estado"].'",
-			      "'.$productos[count($productos)-1]["corrida"].'",
+			      "'.$productos[count($productos)-1]["estado"].'",
 			      "'.$productos[count($productos)-1]["piso"].'",
+            "'.$productos[count($productos)-1]["corrida"].'",
 			      "'.$productos[count($productos)-1]["id_sepultura"].'"
 			    ]
 			]

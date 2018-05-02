@@ -52,7 +52,7 @@ class ModeloCredito{
             $stmt -> execute();
 
 
-            return $stmt -> fetch();
+            return $stmt -> fetchAll();
 
         }else{
 
@@ -71,7 +71,30 @@ class ModeloCredito{
     }
 
 
+ /*=============================================
+    MOSTRAR CREDITO PARA EDITAR
+    =============================================*/
 
+    static public function mdlMostrarCreditoE($tabla, $item, $valor){
+
+        if($item != null){
+
+            $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
+
+            $stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
+
+            $stmt -> execute();
+
+
+            return $stmt -> fetch();
+
+        }
+
+        $stmt -> close();
+
+        $stmt = null;
+
+    }
 
 
     /*=============================================
@@ -80,7 +103,7 @@ class ModeloCredito{
 
     static public function mdlEditarCredito($tabla, $datos){
 
-        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET id_credito = :id_credito, id_cliente = :id_cliente, fecha_pago = :fecha_pago, detalle = :detalle, pie= :pie, numcuotas = :numcuotas, boletin = :boletin, valor_credito = :valor_credito, valor_cuota = :valor_cuota, estado = :estado WHERE id_credito = :id_credito");
+        $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET id_cliente = :id_cliente, fecha_pago = :fecha_pago, detalle = :detalle, pie= :pie, numcuotas = :numcuotas, boletin = :boletin, valor_credito = :valor_credito, valor_cuota = :valor_cuota, estado = :estado WHERE id_credito = :id_credito");
 
         $stmt -> bindParam(":id_credito", $datos["id_credito"], PDO::PARAM_INT);
         $stmt -> bindParam(":id_cliente", $datos["id_cliente"], PDO::PARAM_INT);

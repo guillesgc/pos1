@@ -16,7 +16,8 @@
 
 		<span class="logo-lg">
 			
-			<img src="vistas/img/plantilla/logo-blanco-lineal.png" class="img-responsive" style="padding:10px 0px">
+			<!--<img src="vistas/img/plantilla/logo-blanco-lineal.svg" class="img-responsive" style="padding:10px 0px">-->
+			<b>Gestión</b> Cementerios 
 
 		</span>
 
