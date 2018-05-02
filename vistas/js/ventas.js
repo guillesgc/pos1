@@ -417,9 +417,19 @@ $(".formularioVenta").on("change", "input.nuevaCantidadProducto", function(){
 MODIFICAR EL DESCUENTO
 =============================================*/
 
-$(".formularioVenta").on("change", "select.nuevoDescuentoProducto", function(){
+$(".formularioVenta").on("change", "input.nuevoDescuentoProducto", function(){
 
-   // var dcto = $(this).parent().parent().children(".ingresoPrecio").children().children(".nuevoDescuentoProducto");
+   var precio = $(this).parent().parent().children(".ingresoPrecio").children().children(".nuevoPrecioProducto");
+  //console.log("precio",precio);
+   var preciof = (1-($(this).val()/100)) * precio.attr("precioReal");
+   //console.log("val",$(this).val());
+   console.log("porcentaje dcto",($(this).val()/100));
+   console.log("preciof",preciof);
+   precio.val(preciof);
+
+   sumarTotalPrecios();
+
+   listarProductos();
 
 });
 
