@@ -259,14 +259,14 @@ $(".btnAgregarProducto").click(function(){
 
 	          '<div class="col-xs-2 ingresoCantidad">'+
 
-	             '<input type="number" class="form-control nuevaCantidadProducto" name="nuevaCantidadProducto" min="1" value="1" stock nuevoStock required>'+
+	             '<input type="number" class="form-control nuevaCantidadProducto" name="nuevaCantidadProducto" min="1" value="1" cantidadProducto required>'+
 
 	          '</div>' +
 			  '<!-- Descuento del producto -->'+
 
 			  '<div class="col-xs-2 ingresoDescuento" style="padding-right:10px ">'+
 
-				'<input type="number" min="0" class="form-control nuevoDescuentoProducto" name="nuevoDescuentoProducto" placeholder="Dcto" autocomplete="On" required>'+
+				'<input type="number" min="0" class="form-control nuevoDescuentoProducto" name="nuevoDescuentoProducto" min= "0" max="100" placeholder="Dcto" autocomplete="On" dctoProducto required>'+
 
 			  '</div>'+
 
@@ -333,7 +333,7 @@ $(".formularioVenta").on("change", "select.nuevaDescripcionProducto", function()
 
 	var nuevaCantidadProducto = $(this).parent().parent().parent().children(".ingresoCantidad").children(".nuevaCantidadProducto");
 
-	//var nuevoDescuentoProducto = $(this).parent().parent().parent().children(".ingresoDescuento").children(".nuevoDescuentoProducto");
+	var nuevoDescuentoProducto = $(this).parent().parent().parent().children(".ingresoDescuento").children(".nuevoDescuentoProducto");
 
 	//var nuevoDctoProducto = $(this).parent().parent().parent().children(".ingresoDescuento").children(".nuevoDescuento");
 
@@ -356,6 +356,8 @@ $(".formularioVenta").on("change", "select.nuevaDescripcionProducto", function()
       	success:function(respuesta){
       	    console.log("respuestaa",respuesta);
       	    $(nuevaDescripcionProducto).attr("idItem", respuesta["id_item"]);
+      	    $(nuevaCantidadProducto).attr("cantidadProducto",1);
+      	    $(nuevoDescuentoProducto).attr("dctoProducto",0);
       	    //$(nuevaCantidadProducto).attr("stock", respuesta["stock"]);
       	    //$(nuevaCantidadProducto).attr("nuevoStock", Number(respuesta["stock"])-1);
       	    $(nuevoPrecioProducto).val(Math.round(respuesta["precio"]*respuesta["valor"]));
@@ -377,9 +379,18 @@ MODIFICAR LA CANTIDAD
 $(".formularioVenta").on("change", "input.nuevaCantidadProducto", function(){
 
 	var precio = $(this).parent().parent().children(".ingresoPrecio").children().children(".nuevoPrecioProducto");
+	var dcto = $("nuevoDescuentoProducto").attr("dctoProducto");
+	dcto = (1-(dcto/100));
+	$(this).attr("cantidadProducto",$(this).val());
 
-	var precioFinal = $(this).val() * precio.attr("precioReal");
-	
+	if(dcto){
+        var precioFinal = $(this).val() * precio.attr("precioReal") * dcto ;
+	}else {
+        var precioFinal = $(this).val() * precio.attr("precioReal");
+    }
+
+
+
 	precio.val(precioFinal);
 
 	//var nuevoStock = Number($(this).attr("stock")) - $(this).val();
@@ -419,17 +430,24 @@ MODIFICAR EL DESCUENTO
 
 $(".formularioVenta").on("change", "input.nuevoDescuentoProducto", function(){
 
-   var precio = $(this).parent().parent().children(".ingresoPrecio").children().children(".nuevoPrecioProducto");
-  //console.log("precio",precio);
-   var preciof = (1-($(this).val()/100)) * precio.attr("precioReal");
-   //console.log("val",$(this).val());
-   console.log("porcentaje dcto",($(this).val()/100));
-   console.log("preciof",preciof);
-   precio.val(preciof);
+   	var precio = $(this).parent().parent().children(".ingresoPrecio").children().children(".nuevoPrecioProducto ");
+	var cantidad =  $(".nuevaCantidadProducto").attr("cantidadProducto");
+    $(this).attr("dctoProducto",$(this).val());
 
-   sumarTotalPrecios();
+	var preciof;
+	if(cantidad){
+		preciof = (1 - ($(this).val() / 100)) * precio.attr("precioReal") * cantidad ;
+	}else {
+        preciof = (1 - ($(this).val() / 100)) * precio.attr("precioReal");
+    }
+   	//console.log("val",$(this).val());
+   	//console.log("porcentaje dcto",($(this).val()/100));
+   	//console.log("preciof",preciof);
+   	precio.val(preciof);
 
-   listarProductos();
+   	sumarTotalPrecios();
+
+   	listarProductos();
 
 });
 
@@ -488,6 +506,27 @@ function agregarImpuesto(){
 
 }
 
+/*=============================================
+AUTOCOMPLETAR CLIENTES
+=============================================*/
+$(document).ready(function () {
+	$(".seleccionarCliente").typeahead({
+		source: function (query,result) {
+			$.ajax({
+				url: 'ajax/clientes.ajax.php',
+				method: "POST",
+				data:{query:query},
+				dataType:"json",
+				success: function(data){
+					result($.map(data,function(item){
+
+					}));
+				}
+
+			});
+        }
+	});
+});
 
 /*=============================================
 CUANDO CAMBIA EL IMPUESTO
@@ -613,30 +652,38 @@ $(".formularioVenta").on("change", "input#nuevoCodigoTransaccion", function(){
 LISTAR TODOS LOS PRODUCTOS
 =============================================*/
 
-function listarProductos(){
+function listarProductos() {
 
-	var listaProductos = [];
+    var listaProductos = [];
 
-	var descripcion = $(".nuevaDescripcionProducto");
+    var descripcion = $(".nuevaDescripcionProducto");
 
-	var cantidad = $(".nuevaCantidadProducto");
+    var cantidad = $(".nuevaCantidadProducto");
 
-	var precio = $(".nuevoPrecioProducto");
+    var precio = $(".nuevoPrecioProducto");
 
-	for(var i = 0; i < descripcion.length; i++){
+    var descuento = $(".nuevoDescuentoProducto");
 
-		listaProductos.push({ "id" : $(descripcion[i]).attr("idItem"),
-							  "descripcion" : $(descripcion[i]).val(),
-							  "cantidad" : $(cantidad[i]).val(),
-							  //"stock" : $(cantidad[i]).attr("nuevoStock"),
-							  "precio" : $(precio[i]).attr("precioReal"),
-							  "total" : $(precio[i]).val()})
+    for (var i = 0; i < descripcion.length; i++) {
 
-	}
-    console.log("lista productos",listaProductos);
-	$("#listaProductos").val(JSON.stringify(listaProductos)); 
+        listaProductos.push({
+            "id": $(descripcion[i]).attr("idItem"),
+            "descripcion": $(descripcion[i]).val(),
+            "cantidad": $(cantidad[i]).val(),
+            "descuento": $(descuento[i]).val() + " %",
+            //"stock" : $(cantidad[i]).attr("nuevoStock"),
+            "precio": $(precio[i]).attr("precioReal"),
+            "total": $(precio[i]).val()
+        })
+
+    }
+    console.log("lista productos", listaProductos);
+    $("#listaProductos").val(JSON.stringify(listaProductos));
 
 }
+
+
+
 
 /*=============================================
 LISTAR MÉTODO DE PAGO

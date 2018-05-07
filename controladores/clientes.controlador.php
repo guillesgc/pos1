@@ -85,6 +85,20 @@ class ControladorClientes{
 
 	}
 
+    /*=============================================
+    MOSTRAR NOMBRE CLIENTES
+    =============================================*/
+
+    static public function ctrMostrarNombreClientes($item, $valor){
+
+        $tabla = "clientes";
+
+        $respuesta = ModeloClientes::mdlMostrarNombreClientes($tabla, $item, $valor);
+
+        return $respuesta;
+
+    }
+
 	/*=============================================
 	EDITAR CLIENTE
 	=============================================*/

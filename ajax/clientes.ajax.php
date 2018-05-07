@@ -9,7 +9,7 @@ class AjaxClientes{
 	EDITAR CLIENTE
 	=============================================*/	
 
-	public $idCliente;
+	public $idCliente, $query;
 
 	public function ajaxEditarClientes(){
 
@@ -23,6 +23,17 @@ class AjaxClientes{
 
 	}
 
+    public function ajaxMostrarNombreClientes(){
+
+        $item = "null";
+        $valor = $this->query;
+        $respuesta = ControladorClientes::ctrMostrarNombreClientes($item, $valor);
+
+        echo json_encode($respuesta);
+
+
+    }
+
 }
 
 /*=============================================
@@ -34,5 +45,12 @@ if(isset($_POST["idCliente"])){
 	$cliente = new AjaxClientes();
 	$cliente -> idCliente = $_POST["idCliente"];
 	$cliente -> ajaxEditarClientes();
+
+}else if(isset($_POST["query"])){
+    //var_dump($_POST);
+    $clientes = new AjaxClientes();
+    $clientes -> query = $_POST["query"];
+    $clientes -> ajaxMostrarNombreClientes();
+
 
 }

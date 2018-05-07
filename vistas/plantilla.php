@@ -71,6 +71,10 @@ session_start();
   <!-- Bootstrap 3.3.7 -->
   <script src="vistas/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
+  <!-- Bootstrap typeahead -->
+  <script src="vistas/bower_components/bootstrap-3-typeahead/bootstrap3-typeahead.min.js"></script>
+  <script src="vistas/bower_components/bootstrap-3-typeahead/bootstrap3-typeahead.js"></script>
+
   <!-- FastClick -->
   <script src="vistas/bower_components/fastclick/lib/fastclick.js"></script>
   

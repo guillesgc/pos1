@@ -111,27 +111,27 @@
                   <div class="input-group">
                     
                     <span class="input-group-addon"><i class="fa fa-users"></i></span>
-                    
-                    <select class="form-control" id="seleccionarCliente" name="seleccionarCliente" required>
+                        <input type="text" class="form-control seleccionarCliente" id="seleccionarCliente" name="seleccionarCliente" autocomplete="off" required>
+                    <!--
+                      <select class="form-control" id="seleccionarCliente" name="seleccionarCliente" required>
 
                     <option value="">Seleccionar cliente</option>
-
+                    -->
                     <?php
 
-                      $item = null;
-                      $valor = null;
+                    //  $item = null;
+                    //  $valor = null;
 
-                      $categorias = ControladorClientes::ctrMostrarClientes($item, $valor);
+                    //  $categorias = ControladorClientes::ctrMostrarClientes($item, $valor);
 
-                       foreach ($categorias as $key => $value) {
+                    //   foreach ($categorias as $key => $value) {
 
-                         echo '<option value="'.$value["id"].'">'.$value["nombre"].'</option>';
+                    //     echo '<option value="'.$value["id"].'">'.$value["nombre"].'</option>';
 
-                       }
+                    //   }
 
                     ?>
-
-                    </select>
+                    </input>
                     
                     <span class="input-group-addon"><button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalAgregarCliente" data-dismiss="modal">Agregar cliente</button></span>
                   

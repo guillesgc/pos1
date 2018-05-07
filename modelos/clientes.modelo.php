@@ -66,6 +66,27 @@ class ModeloClientes{
 
 	}
 
+
+    /*=============================================
+    MOSTRAR NOMBRE CLIENTES
+    =============================================*/
+
+    static public function mdlMostrarNombreClientes($tabla, $item, $valor){
+
+        $stmt = Conexion::conectar()->prepare("SELECT id, nombre FROM $tabla WHERE nombre LIKE '%:item%' ");
+
+        $stmt -> bindParam(":item", $valor, PDO::PARAM_STR);
+
+        $stmt -> execute();
+
+        return $stmt -> fetchAll();
+
+        $stmt -> close();
+
+        $stmt = null;
+
+    }
+
 	/*=============================================
 	EDITAR CLIENTE
 	=============================================*/
