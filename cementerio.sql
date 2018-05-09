@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 29-04-2018 a las 21:39:41
--- Versión del servidor: 10.1.30-MariaDB
--- Versión de PHP: 7.2.2
+-- Servidor: 127.0.0.1:3306
+-- Tiempo de generación: 09-05-2018 a las 19:38:59
+-- Versión del servidor: 5.7.19
+-- Versión de PHP: 5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -28,15 +28,17 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `agenda`
 --
 
-CREATE TABLE `agenda` (
-  `id_agenda` int(11) NOT NULL,
+DROP TABLE IF EXISTS `agenda`;
+CREATE TABLE IF NOT EXISTS `agenda` (
+  `id_agenda` int(11) NOT NULL AUTO_INCREMENT,
   `glosa` text COLLATE utf8_spanish_ci NOT NULL,
   `tipo_agenda` int(11) NOT NULL,
   `boletin` int(11) NOT NULL,
   `fecha_evento` date NOT NULL,
   `activo` int(11) NOT NULL,
-  `hora` time NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+  `hora` time NOT NULL,
+  PRIMARY KEY (`id_agenda`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `agenda`
@@ -54,11 +56,13 @@ INSERT INTO `agenda` (`id_agenda`, `glosa`, `tipo_agenda`, `boletin`, `fecha_eve
 -- Estructura de tabla para la tabla `categorias`
 --
 
-CREATE TABLE `categorias` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `categorias`;
+CREATE TABLE IF NOT EXISTS `categorias` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `categoria` text COLLATE utf8_spanish_ci NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `categorias`
@@ -82,9 +86,11 @@ INSERT INTO `categorias` (`id`, `categoria`, `fecha`) VALUES
 -- Estructura de tabla para la tabla `cementerios`
 --
 
-CREATE TABLE `cementerios` (
+DROP TABLE IF EXISTS `cementerios`;
+CREATE TABLE IF NOT EXISTS `cementerios` (
   `id_cementerio` int(11) NOT NULL,
-  `cementerio` text COLLATE utf8_spanish_ci NOT NULL
+  `cementerio` text COLLATE utf8_spanish_ci NOT NULL,
+  PRIMARY KEY (`id_cementerio`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
@@ -102,8 +108,9 @@ INSERT INTO `cementerios` (`id_cementerio`, `cementerio`) VALUES
 -- Estructura de tabla para la tabla `clientes`
 --
 
-CREATE TABLE `clientes` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `clientes`;
+CREATE TABLE IF NOT EXISTS `clientes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` text COLLATE utf8_spanish_ci NOT NULL,
   `documento` int(11) NOT NULL,
   `email` text COLLATE utf8_spanish_ci NOT NULL,
@@ -112,8 +119,9 @@ CREATE TABLE `clientes` (
   `fecha_nacimiento` date NOT NULL,
   `compras` int(11) NOT NULL,
   `ultima_compra` datetime NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `clientes`
@@ -123,13 +131,13 @@ INSERT INTO `clientes` (`id`, `nombre`, `documento`, `email`, `telefono`, `direc
 (3, 'Juan Villegas', 2147483647, 'juan@hotmail.com', '(300) 341-2345', 'Calle 23 # 45 - 56', '1980-11-02', 9, '2018-02-20 16:16:43', '2018-02-20 21:16:43'),
 (4, 'Pedro Pérez', 2147483647, 'pedro@gmail.com', '(399) 876-5432', 'Calle 34 N33 -56', '1970-08-07', 2, '2017-12-26 19:27:42', '2018-02-26 01:53:41'),
 (5, 'Miguel Murillo', 325235235, 'miguel@hotmail.com', '(254) 545-3446', 'calle 34 # 34 - 23', '1976-03-04', 22, '2017-12-26 19:27:13', '2018-02-26 01:53:44'),
-(6, 'Margarita Londoño', 34565432, 'margarita@hotmail.com', '(344) 345-6678', 'Calle 45 # 34 - 56', '1976-11-30', 7, '2017-12-26 19:26:51', '2018-02-26 01:53:48'),
+(6, 'Margarita Londoño', 34565432, 'margarita@hotmail.com', '(344) 345-6678', 'Calle 45 # 34 - 56', '1976-11-30', 8, '2018-05-09 14:07:07', '2018-05-09 19:07:07'),
 (7, 'Julian Ramirez', 786786545, 'julian@hotmail.com', '(675) 674-5453', 'Carrera 45 # 54 - 56', '1980-04-05', 14, '2017-12-26 17:26:28', '2017-12-26 22:26:28'),
-(8, 'Stella Jaramillo', 65756735, 'stella@gmail.com', '(435) 346-3463', 'Carrera 34 # 45- 56', '1956-06-05', 9, '2017-12-26 17:25:55', '2017-12-26 22:25:55'),
-(9, 'Eduardo López', 2147483647, 'eduardo@gmail.com', '(534) 634-6565', 'Carrera 67 # 45sur', '1978-03-04', 27, '2018-03-27 15:10:25', '2018-03-27 20:10:25'),
+(8, 'Stella Jaramillo', 65756735, 'stella@gmail.com', '(435) 346-3463', 'Carrera 34 # 45- 56', '1956-06-05', 11, '2018-05-09 14:06:26', '2018-05-09 19:06:26'),
+(9, 'Eduardo López', 2147483647, 'eduardo@gmail.com', '(534) 634-6565', 'Carrera 67 # 45sur', '1978-03-04', 34, '2018-05-09 14:10:14', '2018-05-09 19:10:14'),
 (10, 'Ximena Restrepo', 436346346, 'ximena@gmail.com', '(543) 463-4634', 'calle 45 # 23 - 45', '1956-03-04', 20, '2018-02-20 16:17:59', '2018-02-20 21:17:59'),
 (11, 'David Guzman', 43634643, 'david@hotmail.com', '(354) 574-5634', 'carrera 45 # 45 ', '1967-05-04', 85, '2018-03-27 14:13:59', '2018-03-27 19:13:59'),
-(12, 'Gonzalo Pérez', 436346346, 'gonzalo@yahoo.com', '(235) 346-3464', 'Carrera 34 # 56 - 34', '1967-08-09', 26, '2018-03-27 15:12:25', '2018-03-27 20:12:25');
+(12, 'Gonzalo Pérez', 436346346, 'gonzalo@yahoo.com', '(235) 346-3464', 'Carrera 34 # 56 - 34', '1967-08-09', 28, '2018-05-09 13:35:43', '2018-05-09 18:35:43');
 
 -- --------------------------------------------------------
 
@@ -137,8 +145,9 @@ INSERT INTO `clientes` (`id`, `nombre`, `documento`, `email`, `telefono`, `direc
 -- Estructura de tabla para la tabla `creditos`
 --
 
-CREATE TABLE `creditos` (
-  `id_credito` int(11) NOT NULL,
+DROP TABLE IF EXISTS `creditos`;
+CREATE TABLE IF NOT EXISTS `creditos` (
+  `id_credito` int(11) NOT NULL AUTO_INCREMENT,
   `id_cliente` int(11) NOT NULL,
   `fecha_pago` date NOT NULL,
   `detalle` text COLLATE utf8_spanish_ci NOT NULL,
@@ -147,8 +156,9 @@ CREATE TABLE `creditos` (
   `boletin` int(11) NOT NULL,
   `valor_credito` int(11) NOT NULL,
   `valor_cuota` int(11) NOT NULL,
-  `estado` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+  `estado` int(11) NOT NULL,
+  PRIMARY KEY (`id_credito`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `creditos`
@@ -165,12 +175,15 @@ INSERT INTO `creditos` (`id_credito`, `id_cliente`, `fecha_pago`, `detalle`, `pi
 -- Estructura de tabla para la tabla `cuartel_cuerpos`
 --
 
-CREATE TABLE `cuartel_cuerpos` (
+DROP TABLE IF EXISTS `cuartel_cuerpos`;
+CREATE TABLE IF NOT EXISTS `cuartel_cuerpos` (
   `id_cuartel_cuerpo` int(11) NOT NULL,
   `tipo_sep` int(11) NOT NULL,
   `nombre` text COLLATE utf8_spanish_ci NOT NULL,
   `id_sociedad` int(11) NOT NULL,
-  `id_cementerio` int(11) NOT NULL
+  `id_cementerio` int(11) NOT NULL,
+  PRIMARY KEY (`id_cuartel_cuerpo`),
+  KEY `FK_tipo_sepultura` (`tipo_sep`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
@@ -452,14 +465,16 @@ INSERT INTO `cuartel_cuerpos` (`id_cuartel_cuerpo`, `tipo_sep`, `nombre`, `id_so
 -- Estructura de tabla para la tabla `cuotas`
 --
 
-CREATE TABLE `cuotas` (
-  `id_cuota` int(11) NOT NULL,
+DROP TABLE IF EXISTS `cuotas`;
+CREATE TABLE IF NOT EXISTS `cuotas` (
+  `id_cuota` int(11) NOT NULL AUTO_INCREMENT,
   `id_credito` int(11) NOT NULL,
   `boletin` int(11) NOT NULL,
   `fecha_pago` date NOT NULL,
   `monto_cancelado` int(11) NOT NULL,
-  `glosa` text COLLATE utf8_spanish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+  `glosa` text COLLATE utf8_spanish_ci NOT NULL,
+  PRIMARY KEY (`id_cuota`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `cuotas`
@@ -475,8 +490,9 @@ INSERT INTO `cuotas` (`id_cuota`, `id_credito`, `boletin`, `fecha_pago`, `monto_
 -- Estructura de tabla para la tabla `difuntos`
 --
 
-CREATE TABLE `difuntos` (
-  `id_difunto` int(11) NOT NULL,
+DROP TABLE IF EXISTS `difuntos`;
+CREATE TABLE IF NOT EXISTS `difuntos` (
+  `id_difunto` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` text COLLATE utf8_spanish_ci NOT NULL,
   `apellido_paterno` text COLLATE utf8_spanish_ci NOT NULL,
   `apellido_materno` text COLLATE utf8_spanish_ci NOT NULL,
@@ -489,8 +505,10 @@ CREATE TABLE `difuntos` (
   `circunscripcion` text COLLATE utf8_spanish_ci NOT NULL,
   `id_sepultura` int(11) NOT NULL,
   `id_boletin` int(11) NOT NULL,
-  `rut` text COLLATE utf8_spanish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+  `rut` text COLLATE utf8_spanish_ci NOT NULL,
+  PRIMARY KEY (`id_difunto`),
+  KEY `FK_id_sepultura` (`id_sepultura`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `difuntos`
@@ -506,9 +524,11 @@ INSERT INTO `difuntos` (`id_difunto`, `nombre`, `apellido_paterno`, `apellido_ma
 -- Estructura de tabla para la tabla `estado`
 --
 
-CREATE TABLE `estado` (
+DROP TABLE IF EXISTS `estado`;
+CREATE TABLE IF NOT EXISTS `estado` (
   `id_estado` int(11) NOT NULL,
-  `estado` text COLLATE utf8_spanish_ci NOT NULL
+  `estado` text COLLATE utf8_spanish_ci NOT NULL,
+  PRIMARY KEY (`id_estado`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
@@ -527,15 +547,18 @@ INSERT INTO `estado` (`id_estado`, `estado`) VALUES
 -- Estructura de tabla para la tabla `items`
 --
 
-CREATE TABLE `items` (
-  `id_item` int(11) NOT NULL,
+DROP TABLE IF EXISTS `items`;
+CREATE TABLE IF NOT EXISTS `items` (
+  `id_item` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` text COLLATE utf8_spanish_ci NOT NULL,
   `stock` int(11) NOT NULL,
   `precio` float NOT NULL,
   `descripcion` int(11) NOT NULL,
   `servicio` int(11) NOT NULL,
-  `id_centro_costo` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+  `id_centro_costo` int(11) NOT NULL,
+  PRIMARY KEY (`id_item`),
+  KEY `FK_centro_costo` (`id_centro_costo`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `items`
@@ -559,10 +582,12 @@ INSERT INTO `items` (`id_item`, `nombre`, `stock`, `precio`, `descripcion`, `ser
 -- Estructura de tabla para la tabla `meses`
 --
 
-CREATE TABLE `meses` (
-  `id_mes` int(11) NOT NULL,
-  `mes` text COLLATE utf8_spanish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+DROP TABLE IF EXISTS `meses`;
+CREATE TABLE IF NOT EXISTS `meses` (
+  `id_mes` int(11) NOT NULL AUTO_INCREMENT,
+  `mes` text COLLATE utf8_spanish_ci NOT NULL,
+  PRIMARY KEY (`id_mes`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `meses`
@@ -588,8 +613,9 @@ INSERT INTO `meses` (`id_mes`, `mes`) VALUES
 -- Estructura de tabla para la tabla `productos`
 --
 
-CREATE TABLE `productos` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `productos`;
+CREATE TABLE IF NOT EXISTS `productos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_categoria` int(11) NOT NULL,
   `codigo` text COLLATE utf8_spanish_ci NOT NULL,
   `descripcion` text COLLATE utf8_spanish_ci NOT NULL,
@@ -598,18 +624,19 @@ CREATE TABLE `productos` (
   `precio_compra` float NOT NULL,
   `precio_venta` float NOT NULL,
   `ventas` int(11) NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `productos`
 --
 
 INSERT INTO `productos` (`id`, `id_categoria`, `codigo`, `descripcion`, `imagen`, `stock`, `precio_compra`, `precio_venta`, `ventas`, `fecha`) VALUES
-(1, 1, '101', 'Aspiradora Industrial ', 'vistas/img/productos/101/105.png', 13, 1000, 1200, 2, '2017-12-24 01:11:04'),
+(1, 1, '101', 'Aspiradora Industrial ', 'vistas/img/productos/101/105.png', 13, 1000, 1200, 25, '2018-05-09 19:10:14'),
 (2, 1, '102', 'Plato Flotante para Allanadora', 'vistas/img/productos/102/940.jpg', -1, 4500, 6300, 5, '2018-03-27 20:12:25'),
 (3, 1, '103', 'Compresor de Aire para pintura', 'vistas/img/productos/103/763.jpg', -1, 3000, 4200, 5, '2018-03-27 20:10:24'),
-(4, 1, '104', 'Cortadora de Adobe sin Disco ', 'vistas/img/productos/104/957.jpg', 19, 4000, 5600, 1, '2018-02-26 01:53:48'),
+(4, 1, '104', 'Cortadora de Adobe sin Disco ', 'vistas/img/productos/104/957.jpg', 19, 4000, 5600, 2, '2018-05-09 16:02:55'),
 (5, 1, '105', 'Cortadora de Piso sin Disco ', 'vistas/img/productos/105/630.jpg', -1, 1540, 2156, 6, '2018-03-27 20:10:24'),
 (6, 1, '106', 'Disco Punta Diamante ', 'vistas/img/productos/106/635.jpg', -1, 1100, 1540, 7, '2018-03-27 20:10:24'),
 (7, 1, '107', 'Extractor de Aire ', 'vistas/img/productos/107/848.jpg', 14, 1540, 2156, 6, '2018-02-26 01:53:41'),
@@ -673,8 +700,9 @@ INSERT INTO `productos` (`id`, `id_categoria`, `codigo`, `descripcion`, `imagen`
 -- Estructura de tabla para la tabla `sepulturas`
 --
 
-CREATE TABLE `sepulturas` (
-  `id_sepultura` int(11) NOT NULL,
+DROP TABLE IF EXISTS `sepulturas`;
+CREATE TABLE IF NOT EXISTS `sepulturas` (
+  `id_sepultura` int(11) NOT NULL AUTO_INCREMENT,
   `orden` int(11) NOT NULL,
   `numero_sepultura` text COLLATE utf8_spanish_ci NOT NULL,
   `id_cuartel_cuerpo` int(11) NOT NULL,
@@ -683,8 +711,10 @@ CREATE TABLE `sepulturas` (
   `activo` int(11) NOT NULL,
   `id_cementerio` int(11) NOT NULL,
   `corrida` int(11) NOT NULL,
-  `piso` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+  `piso` int(11) NOT NULL,
+  PRIMARY KEY (`id_sepultura`),
+  KEY `FK_cuartel_cuerpo` (`id_cuartel_cuerpo`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `sepulturas`
@@ -699,13 +729,16 @@ INSERT INTO `sepulturas` (`id_sepultura`, `orden`, `numero_sepultura`, `id_cuart
 -- Estructura de tabla para la tabla `tipo_sepultura`
 --
 
-CREATE TABLE `tipo_sepultura` (
-  `id_tipo_sepultura` int(11) NOT NULL,
+DROP TABLE IF EXISTS `tipo_sepultura`;
+CREATE TABLE IF NOT EXISTS `tipo_sepultura` (
+  `id_tipo_sepultura` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` text COLLATE utf8_spanish_ci NOT NULL,
   `familiar` int(11) NOT NULL,
   `id_centro_costo` int(11) NOT NULL,
-  `precio` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+  `precio` int(11) NOT NULL,
+  PRIMARY KEY (`id_tipo_sepultura`),
+  KEY `FK_ccosto` (`id_centro_costo`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `tipo_sepultura`
@@ -726,8 +759,9 @@ INSERT INTO `tipo_sepultura` (`id_tipo_sepultura`, `nombre`, `familiar`, `id_cen
 -- Estructura de tabla para la tabla `usuarios`
 --
 
-CREATE TABLE `usuarios` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `usuarios`;
+CREATE TABLE IF NOT EXISTS `usuarios` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` text COLLATE utf8_spanish_ci NOT NULL,
   `usuario` text COLLATE utf8_spanish_ci NOT NULL,
   `password` text COLLATE utf8_spanish_ci NOT NULL,
@@ -735,15 +769,16 @@ CREATE TABLE `usuarios` (
   `foto` text COLLATE utf8_spanish_ci NOT NULL,
   `estado` int(11) NOT NULL,
   `ultimo_login` datetime NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `password`, `perfil`, `foto`, `estado`, `ultimo_login`, `fecha`) VALUES
-(1, 'Administrador', 'admin', '$2a$07$asxx54ahjppf45sd87a5auXBm1Vr2M1NV5t/zNQtGHGpS5fFirrbG', 'Administrador', 'vistas/img/usuarios/admin/191.jpg', 1, '2018-04-29 11:32:52', '2018-04-29 16:32:52'),
+(1, 'Administrador', 'admin', '$2a$07$asxx54ahjppf45sd87a5auXBm1Vr2M1NV5t/zNQtGHGpS5fFirrbG', 'Administrador', 'vistas/img/usuarios/admin/191.jpg', 1, '2018-05-09 07:55:05', '2018-05-09 12:55:05'),
 (60, 'Cristina Guerra', 'cguerra', '$2a$07$asxx54ahjppf45sd87a5au39vGJnQWiQys1oVPKiO3nTGpwMpyyZK', 'Especial', '', 1, '2018-02-25 20:42:33', '2018-02-26 01:42:33'),
 (61, 'Veronica Paiva', 'vpaiva', '$2a$07$asxx54ahjppf45sd87a5auOX4847hAR9mA3KoPqGWa.nKLtInOib6', 'Especial', '', 1, '2018-02-25 21:06:35', '2018-02-26 02:06:35'),
 (62, 'Carlos Pardo', 'cpardo', '$2a$07$asxx54ahjppf45sd87a5auYxkBp/9Hjq9zWF1lUYP1gd4aTASs25i', 'Vendedor', '', 1, '0000-00-00 00:00:00', '2018-02-26 01:39:40'),
@@ -757,12 +792,14 @@ INSERT INTO `usuarios` (`id`, `nombre`, `usuario`, `password`, `perfil`, `foto`,
 -- Estructura de tabla para la tabla `utm`
 --
 
-CREATE TABLE `utm` (
-  `idutm` int(11) NOT NULL,
+DROP TABLE IF EXISTS `utm`;
+CREATE TABLE IF NOT EXISTS `utm` (
+  `idutm` int(11) NOT NULL AUTO_INCREMENT,
   `mes` int(11) NOT NULL,
   `valor` int(11) NOT NULL,
-  `anno` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+  `anno` int(11) NOT NULL,
+  PRIMARY KEY (`idutm`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `utm`
@@ -778,244 +815,47 @@ INSERT INTO `utm` (`idutm`, `mes`, `valor`, `anno`) VALUES
 -- Estructura de tabla para la tabla `ventas`
 --
 
-CREATE TABLE `ventas` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `ventas`;
+CREATE TABLE IF NOT EXISTS `ventas` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `codigo` int(11) NOT NULL,
   `id_cliente` int(11) NOT NULL,
   `id_vendedor` int(11) NOT NULL,
   `productos` text COLLATE utf8_spanish_ci NOT NULL,
   `glosa` text COLLATE utf8_spanish_ci NOT NULL,
-  `impuesto` float NOT NULL,
+  `info_adicional` text COLLATE utf8_spanish_ci NOT NULL,
   `neto` float NOT NULL,
   `total` float NOT NULL,
   `metodo_pago` text COLLATE utf8_spanish_ci NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `ventas`
 --
 
-INSERT INTO `ventas` (`id`, `codigo`, `id_cliente`, `id_vendedor`, `productos`, `glosa`, `impuesto`, `neto`, `total`, `metodo_pago`, `fecha`) VALUES
-(17, 10001, 3, 1, '[{\"id\":\"1\",\"descripcion\":\"Aspiradora Industrial \",\"cantidad\":\"2\",\"stock\":\"13\",\"precio\":\"1200\",\"total\":\"2400\"},{\"id\":\"2\",\"descripcion\":\"Plato Flotante para Allanadora\",\"cantidad\":\"2\",\"stock\":\"7\",\"precio\":\"6300\",\"total\":\"12600\"},{\"id\":\"3\",\"descripcion\":\"Compresor de Aire para pintura\",\"cantidad\":\"1\",\"stock\":\"19\",\"precio\":\"4200\",\"total\":\"4200\"}]', '', 3648, 19200, 22848, 'Efectivo', '2018-02-02 01:11:04'),
-(22, 10006, 10, 1, '[{\"id\":\"3\",\"descripcion\":\"Compresor de Aire para pintura\",\"cantidad\":\"1\",\"stock\":\"8\",\"precio\":\"4200\",\"total\":\"4200\"},{\"id\":\"4\",\"descripcion\":\"Cortadora de Adobe sin Disco \",\"cantidad\":\"1\",\"stock\":\"16\",\"precio\":\"5600\",\"total\":\"5600\"},{\"id\":\"5\",\"descripcion\":\"Cortadora de Piso sin Disco \",\"cantidad\":\"3\",\"stock\":\"13\",\"precio\":\"2156\",\"total\":\"6468\"},{\"id\":\"6\",\"descripcion\":\"Disco Punta Diamante \",\"cantidad\":\"1\",\"stock\":\"18\",\"precio\":\"1540\",\"total\":\"1540\"}]', '', 3383.52, 17808, 21191.5, 'Efectivo', '2018-01-26 15:03:22'),
-(23, 10007, 9, 1, '[{\"id\":\"6\",\"descripcion\":\"Disco Punta Diamante \",\"cantidad\":\"1\",\"stock\":\"17\",\"precio\":\"1540\",\"total\":\"1540\"},{\"id\":\"7\",\"descripcion\":\"Extractor de Aire \",\"cantidad\":\"1\",\"stock\":\"17\",\"precio\":\"2156\",\"total\":\"2156\"},{\"id\":\"8\",\"descripcion\":\"Guadañadora \",\"cantidad\":\"6\",\"stock\":\"13\",\"precio\":\"2156\",\"total\":\"12936\"},{\"id\":\"9\",\"descripcion\":\"Hidrolavadora Eléctrica \",\"cantidad\":\"1\",\"stock\":\"18\",\"precio\":\"3640\",\"total\":\"3640\"}]', '', 3851.68, 20272, 24123.7, 'TC-357547467346', '2017-11-30 15:03:53'),
-(24, 10008, 12, 1, '[{\"id\":\"2\",\"descripcion\":\"Plato Flotante para Allanadora\",\"cantidad\":\"1\",\"stock\":\"6\",\"precio\":\"6300\",\"total\":\"6300\"},{\"id\":\"7\",\"descripcion\":\"Extractor de Aire \",\"cantidad\":\"5\",\"stock\":\"12\",\"precio\":\"2156\",\"total\":\"10780\"},{\"id\":\"6\",\"descripcion\":\"Disco Punta Diamante \",\"cantidad\":\"1\",\"stock\":\"16\",\"precio\":\"1540\",\"total\":\"1540\"},{\"id\":\"9\",\"descripcion\":\"Hidrolavadora Eléctrica \",\"cantidad\":\"1\",\"stock\":\"17\",\"precio\":\"3640\",\"total\":\"3640\"}]', '', 4229.4, 22260, 26489.4, 'TD-35745575', '2017-12-25 15:04:11'),
-(25, 10009, 11, 1, '[{\"id\":\"10\",\"descripcion\":\"Hidrolavadora Gasolina\",\"cantidad\":\"1\",\"stock\":\"19\",\"precio\":\"3094\",\"total\":\"3094\"},{\"id\":\"9\",\"descripcion\":\"Hidrolavadora Eléctrica \",\"cantidad\":\"1\",\"stock\":\"16\",\"precio\":\"3640\",\"total\":\"3640\"},{\"id\":\"6\",\"descripcion\":\"Disco Punta Diamante \",\"cantidad\":\"1\",\"stock\":\"15\",\"precio\":\"1540\",\"total\":\"1540\"}]', '', 1572.06, 8274, 9846.06, 'TD-5745745745', '2017-08-15 15:04:38'),
-(26, 10010, 8, 1, '[{\"id\":\"9\",\"descripcion\":\"Hidrolavadora Eléctrica \",\"cantidad\":\"1\",\"stock\":\"15\",\"precio\":\"3640\",\"total\":\"3640\"},{\"id\":\"10\",\"descripcion\":\"Hidrolavadora Gasolina\",\"cantidad\":\"1\",\"stock\":\"18\",\"precio\":\"3094\",\"total\":\"3094\"}]', '', 1279.46, 6734, 8013.46, 'Efectivo', '2017-12-07 15:05:09'),
-(27, 10011, 7, 1, '[{\"id\":\"60\",\"descripcion\":\"Cortadora de Baldosin\",\"cantidad\":\"1\",\"stock\":\"19\",\"precio\":\"1302\",\"total\":\"1302\"},{\"id\":\"59\",\"descripcion\":\"Cono slump\",\"cantidad\":\"1\",\"stock\":\"19\",\"precio\":\"196\",\"total\":\"196\"},{\"id\":\"58\",\"descripcion\":\"Coche llanta neumatica\",\"cantidad\":\"1\",\"stock\":\"19\",\"precio\":\"588\",\"total\":\"588\"},{\"id\":\"57\",\"descripcion\":\"Cizalla de Tijera\",\"cantidad\":\"1\",\"stock\":\"19\",\"precio\":\"812\",\"total\":\"812\"}]', '', 550.62, 2898, 3448.62, 'Efectivo', '2017-12-25 22:23:38'),
-(28, 10012, 12, 57, '[{\"id\":\"59\",\"descripcion\":\"Cono slump\",\"cantidad\":\"1\",\"stock\":\"18\",\"precio\":\"196\",\"total\":\"196\"},{\"id\":\"58\",\"descripcion\":\"Coche llanta neumatica\",\"cantidad\":\"1\",\"stock\":\"18\",\"precio\":\"588\",\"total\":\"588\"},{\"id\":\"54\",\"descripcion\":\"Chapeta\",\"cantidad\":\"1\",\"stock\":\"19\",\"precio\":\"924\",\"total\":\"924\"},{\"id\":\"53\",\"descripcion\":\"Bomba Hidrostatica\",\"cantidad\":\"1\",\"stock\":\"19\",\"precio\":\"1078\",\"total\":\"1078\"}]', '', 529.34, 2786, 3315.34, 'TC-3545235235', '2017-12-25 22:24:24'),
-(29, 10013, 11, 57, '[{\"id\":\"54\",\"descripcion\":\"Chapeta\",\"cantidad\":\"1\",\"stock\":\"18\",\"precio\":\"924\",\"total\":\"924\"},{\"id\":\"59\",\"descripcion\":\"Cono slump\",\"cantidad\":\"1\",\"stock\":\"17\",\"precio\":\"196\",\"total\":\"196\"},{\"id\":\"60\",\"descripcion\":\"Cortadora de Baldosin\",\"cantidad\":\"5\",\"stock\":\"14\",\"precio\":\"1302\",\"total\":\"6510\"}]', '', 1449.7, 7630, 9079.7, 'TC-425235235235', '2017-12-26 22:24:50'),
-(30, 10014, 10, 57, '[{\"id\":\"59\",\"descripcion\":\"Cono slump\",\"cantidad\":\"1\",\"stock\":\"16\",\"precio\":\"196\",\"total\":\"196\"},{\"id\":\"54\",\"descripcion\":\"Chapeta\",\"cantidad\":\"1\",\"stock\":\"17\",\"precio\":\"924\",\"total\":\"924\"},{\"id\":\"53\",\"descripcion\":\"Bomba Hidrostatica\",\"cantidad\":\"10\",\"stock\":\"9\",\"precio\":\"1078\",\"total\":\"10780\"}]', '', 2261, 11900, 14161, 'Efectivo', '2017-12-26 22:25:09'),
-(31, 10015, 9, 57, '[{\"id\":\"57\",\"descripcion\":\"Cizalla de Tijera\",\"cantidad\":\"3\",\"stock\":\"16\",\"precio\":\"812\",\"total\":\"2436\"}]', '', 462.84, 2436, 2898.84, 'Efectivo', '2017-12-26 22:25:33'),
-(32, 10016, 8, 57, '[{\"id\":\"58\",\"descripcion\":\"Coche llanta neumatica\",\"cantidad\":\"1\",\"stock\":\"17\",\"precio\":\"588\",\"total\":\"588\"},{\"id\":\"57\",\"descripcion\":\"Cizalla de Tijera\",\"cantidad\":\"5\",\"stock\":\"11\",\"precio\":\"812\",\"total\":\"4060\"},{\"id\":\"56\",\"descripcion\":\"Cizalla de Palanca\",\"cantidad\":\"1\",\"stock\":\"19\",\"precio\":\"630\",\"total\":\"630\"}]', '', 1002.82, 5278, 6280.82, 'TD-4523523523', '2017-12-26 22:25:55'),
-(33, 10017, 7, 57, '[{\"id\":\"57\",\"descripcion\":\"Cizalla de Tijera\",\"cantidad\":\"4\",\"stock\":\"7\",\"precio\":\"812\",\"total\":\"3248\"},{\"id\":\"52\",\"descripcion\":\"Bascula \",\"cantidad\":\"3\",\"stock\":\"17\",\"precio\":\"182\",\"total\":\"546\"},{\"id\":\"55\",\"descripcion\":\"Cilindro muestra de concreto\",\"cantidad\":\"2\",\"stock\":\"18\",\"precio\":\"560\",\"total\":\"1120\"},{\"id\":\"56\",\"descripcion\":\"Cizalla de Palanca\",\"cantidad\":\"1\",\"stock\":\"18\",\"precio\":\"630\",\"total\":\"630\"}]', '', 1053.36, 5544, 6597.36, 'Efectivo', '2017-12-26 22:26:28'),
-(34, 10018, 6, 57, '[{\"id\":\"51\",\"descripcion\":\"Tensor\",\"cantidad\":\"1\",\"stock\":\"19\",\"precio\":\"140\",\"total\":\"140\"},{\"id\":\"52\",\"descripcion\":\"Bascula \",\"cantidad\":\"5\",\"stock\":\"12\",\"precio\":\"182\",\"total\":\"910\"},{\"id\":\"53\",\"descripcion\":\"Bomba Hidrostatica\",\"cantidad\":\"1\",\"stock\":\"8\",\"precio\":\"1078\",\"total\":\"1078\"}]', '', 404.32, 2128, 2532.32, 'Efectivo', '2017-12-26 22:26:51'),
-(35, 10019, 5, 57, '[{\"id\":\"56\",\"descripcion\":\"Cizalla de Palanca\",\"cantidad\":\"15\",\"stock\":\"3\",\"precio\":\"630\",\"total\":\"9450\"},{\"id\":\"55\",\"descripcion\":\"Cilindro muestra de concreto\",\"cantidad\":\"1\",\"stock\":\"17\",\"precio\":\"560\",\"total\":\"560\"}]', '', 1901.9, 10010, 11911.9, 'Efectivo', '2017-12-26 22:27:13'),
-(36, 10020, 4, 57, '[{\"id\":\"55\",\"descripcion\":\"Cilindro muestra de concreto\",\"cantidad\":\"1\",\"stock\":\"16\",\"precio\":\"560\",\"total\":\"560\"},{\"id\":\"54\",\"descripcion\":\"Chapeta\",\"cantidad\":\"1\",\"stock\":\"16\",\"precio\":\"924\",\"total\":\"924\"}]', '', 281.96, 1484, 1765.96, 'TC-46346346346', '2017-12-26 22:27:42'),
-(37, 10021, 3, 1, '[{\"id\":\"60\",\"descripcion\":\"Cortadora de Baldosin\",\"cantidad\":\"1\",\"stock\":\"13\",\"precio\":\"1302\",\"total\":\"1302\"},{\"id\":\"59\",\"descripcion\":\"Cono slump\",\"cantidad\":\"1\",\"stock\":\"15\",\"precio\":\"196\",\"total\":\"196\"}]', '', 149.8, 1498, 1647.8, 'Efectivo', '2018-02-06 22:47:02'),
-(38, 10022, 3, 1, '[{\"id\":\"60\",\"descripcion\":\"Cortadora de Baldosin\",\"cantidad\":\"1\",\"stock\":\"12\",\"precio\":\"1302\",\"total\":\"1302\"},{\"id\":\"59\",\"descripcion\":\"Cono slump\",\"cantidad\":\"1\",\"stock\":\"14\",\"precio\":\"196\",\"total\":\"196\"}]', '', 0, 1498, 1498, 'TC-12344444', '2018-02-20 21:16:43'),
-(39, 10023, 10, 1, '[{\"id\":\"56\",\"descripcion\":\"Cizalla de Palanca\",\"cantidad\":\"1\",\"stock\":\"2\",\"precio\":\"630\",\"total\":\"630\"},{\"id\":\"55\",\"descripcion\":\"Cilindro muestra de concreto\",\"cantidad\":\"1\",\"stock\":\"15\",\"precio\":\"560\",\"total\":\"560\"}]', '', 0, 1190, 1190, 'TD-12121', '2018-02-20 21:17:59'),
-(40, 10024, 12, 1, '[{\"id\":\"2\",\"descripcion\":\"boveda nicho familiar (4 personas)\",\"cantidad\":\"1\",\"stock\":\"-1\",\"precio\":\"87.73\",\"total\":\"87.73\"}]', '1', 0.8773, 87.73, 88.6073, 'Efectivo', '2018-03-27 20:12:25');
-
---
--- Índices para tablas volcadas
---
-
---
--- Indices de la tabla `agenda`
---
-ALTER TABLE `agenda`
-  ADD PRIMARY KEY (`id_agenda`);
-
---
--- Indices de la tabla `categorias`
---
-ALTER TABLE `categorias`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `cementerios`
---
-ALTER TABLE `cementerios`
-  ADD PRIMARY KEY (`id_cementerio`);
-
---
--- Indices de la tabla `clientes`
---
-ALTER TABLE `clientes`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `creditos`
---
-ALTER TABLE `creditos`
-  ADD PRIMARY KEY (`id_credito`);
-
---
--- Indices de la tabla `cuartel_cuerpos`
---
-ALTER TABLE `cuartel_cuerpos`
-  ADD PRIMARY KEY (`id_cuartel_cuerpo`),
-  ADD KEY `FK_tipo_sepultura` (`tipo_sep`);
-
---
--- Indices de la tabla `cuotas`
---
-ALTER TABLE `cuotas`
-  ADD PRIMARY KEY (`id_cuota`);
-
---
--- Indices de la tabla `difuntos`
---
-ALTER TABLE `difuntos`
-  ADD PRIMARY KEY (`id_difunto`),
-  ADD KEY `FK_id_sepultura` (`id_sepultura`);
-
---
--- Indices de la tabla `estado`
---
-ALTER TABLE `estado`
-  ADD PRIMARY KEY (`id_estado`);
-
---
--- Indices de la tabla `items`
---
-ALTER TABLE `items`
-  ADD PRIMARY KEY (`id_item`),
-  ADD KEY `FK_centro_costo` (`id_centro_costo`);
-
---
--- Indices de la tabla `meses`
---
-ALTER TABLE `meses`
-  ADD PRIMARY KEY (`id_mes`);
-
---
--- Indices de la tabla `productos`
---
-ALTER TABLE `productos`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `sepulturas`
---
-ALTER TABLE `sepulturas`
-  ADD PRIMARY KEY (`id_sepultura`),
-  ADD KEY `FK_cuartel_cuerpo` (`id_cuartel_cuerpo`);
-
---
--- Indices de la tabla `tipo_sepultura`
---
-ALTER TABLE `tipo_sepultura`
-  ADD PRIMARY KEY (`id_tipo_sepultura`),
-  ADD KEY `FK_ccosto` (`id_centro_costo`);
-
---
--- Indices de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `utm`
---
-ALTER TABLE `utm`
-  ADD PRIMARY KEY (`idutm`);
-
---
--- Indices de la tabla `ventas`
---
-ALTER TABLE `ventas`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `agenda`
---
-ALTER TABLE `agenda`
-  MODIFY `id_agenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT de la tabla `categorias`
---
-ALTER TABLE `categorias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT de la tabla `clientes`
---
-ALTER TABLE `clientes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
--- AUTO_INCREMENT de la tabla `creditos`
---
-ALTER TABLE `creditos`
-  MODIFY `id_credito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT de la tabla `cuotas`
---
-ALTER TABLE `cuotas`
-  MODIFY `id_cuota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT de la tabla `difuntos`
---
-ALTER TABLE `difuntos`
-  MODIFY `id_difunto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT de la tabla `items`
---
-ALTER TABLE `items`
-  MODIFY `id_item` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT de la tabla `meses`
---
-ALTER TABLE `meses`
-  MODIFY `id_mes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
--- AUTO_INCREMENT de la tabla `productos`
---
-ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
-
---
--- AUTO_INCREMENT de la tabla `sepulturas`
---
-ALTER TABLE `sepulturas`
-  MODIFY `id_sepultura` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT de la tabla `tipo_sepultura`
---
-ALTER TABLE `tipo_sepultura`
-  MODIFY `id_tipo_sepultura` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
-
---
--- AUTO_INCREMENT de la tabla `utm`
---
-ALTER TABLE `utm`
-  MODIFY `idutm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT de la tabla `ventas`
---
-ALTER TABLE `ventas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+INSERT INTO `ventas` (`id`, `codigo`, `id_cliente`, `id_vendedor`, `productos`, `glosa`, `info_adicional`, `neto`, `total`, `metodo_pago`, `fecha`) VALUES
+(17, 10001, 3, 1, '[{\"id\":\"1\",\"descripcion\":\"Aspiradora Industrial \",\"cantidad\":\"2\",\"stock\":\"13\",\"precio\":\"1200\",\"total\":\"2400\"},{\"id\":\"2\",\"descripcion\":\"Plato Flotante para Allanadora\",\"cantidad\":\"2\",\"stock\":\"7\",\"precio\":\"6300\",\"total\":\"12600\"},{\"id\":\"3\",\"descripcion\":\"Compresor de Aire para pintura\",\"cantidad\":\"1\",\"stock\":\"19\",\"precio\":\"4200\",\"total\":\"4200\"}]', '', '', 19200, 22848, 'Efectivo', '2018-02-02 01:11:04'),
+(22, 10006, 10, 1, '[{\"id\":\"3\",\"descripcion\":\"Compresor de Aire para pintura\",\"cantidad\":\"1\",\"stock\":\"8\",\"precio\":\"4200\",\"total\":\"4200\"},{\"id\":\"4\",\"descripcion\":\"Cortadora de Adobe sin Disco \",\"cantidad\":\"1\",\"stock\":\"16\",\"precio\":\"5600\",\"total\":\"5600\"},{\"id\":\"5\",\"descripcion\":\"Cortadora de Piso sin Disco \",\"cantidad\":\"3\",\"stock\":\"13\",\"precio\":\"2156\",\"total\":\"6468\"},{\"id\":\"6\",\"descripcion\":\"Disco Punta Diamante \",\"cantidad\":\"1\",\"stock\":\"18\",\"precio\":\"1540\",\"total\":\"1540\"}]', '', '', 17808, 21191.5, 'Efectivo', '2018-01-26 15:03:22'),
+(23, 10007, 9, 1, '[{\"id\":\"6\",\"descripcion\":\"Disco Punta Diamante \",\"cantidad\":\"1\",\"stock\":\"17\",\"precio\":\"1540\",\"total\":\"1540\"},{\"id\":\"7\",\"descripcion\":\"Extractor de Aire \",\"cantidad\":\"1\",\"stock\":\"17\",\"precio\":\"2156\",\"total\":\"2156\"},{\"id\":\"8\",\"descripcion\":\"Guadañadora \",\"cantidad\":\"6\",\"stock\":\"13\",\"precio\":\"2156\",\"total\":\"12936\"},{\"id\":\"9\",\"descripcion\":\"Hidrolavadora Eléctrica \",\"cantidad\":\"1\",\"stock\":\"18\",\"precio\":\"3640\",\"total\":\"3640\"}]', '', '', 20272, 24123.7, 'TC-357547467346', '2017-11-30 15:03:53'),
+(24, 10008, 12, 1, '[{\"id\":\"2\",\"descripcion\":\"Plato Flotante para Allanadora\",\"cantidad\":\"1\",\"stock\":\"6\",\"precio\":\"6300\",\"total\":\"6300\"},{\"id\":\"7\",\"descripcion\":\"Extractor de Aire \",\"cantidad\":\"5\",\"stock\":\"12\",\"precio\":\"2156\",\"total\":\"10780\"},{\"id\":\"6\",\"descripcion\":\"Disco Punta Diamante \",\"cantidad\":\"1\",\"stock\":\"16\",\"precio\":\"1540\",\"total\":\"1540\"},{\"id\":\"9\",\"descripcion\":\"Hidrolavadora Eléctrica \",\"cantidad\":\"1\",\"stock\":\"17\",\"precio\":\"3640\",\"total\":\"3640\"}]', '', '', 22260, 26489.4, 'TD-35745575', '2017-12-25 15:04:11'),
+(25, 10009, 11, 1, '[{\"id\":\"10\",\"descripcion\":\"Hidrolavadora Gasolina\",\"cantidad\":\"1\",\"stock\":\"19\",\"precio\":\"3094\",\"total\":\"3094\"},{\"id\":\"9\",\"descripcion\":\"Hidrolavadora Eléctrica \",\"cantidad\":\"1\",\"stock\":\"16\",\"precio\":\"3640\",\"total\":\"3640\"},{\"id\":\"6\",\"descripcion\":\"Disco Punta Diamante \",\"cantidad\":\"1\",\"stock\":\"15\",\"precio\":\"1540\",\"total\":\"1540\"}]', '', '', 8274, 9846.06, 'TD-5745745745', '2017-08-15 15:04:38'),
+(26, 10010, 8, 1, '[{\"id\":\"9\",\"descripcion\":\"Hidrolavadora Eléctrica \",\"cantidad\":\"1\",\"stock\":\"15\",\"precio\":\"3640\",\"total\":\"3640\"},{\"id\":\"10\",\"descripcion\":\"Hidrolavadora Gasolina\",\"cantidad\":\"1\",\"stock\":\"18\",\"precio\":\"3094\",\"total\":\"3094\"}]', '', '', 6734, 8013.46, 'Efectivo', '2017-12-07 15:05:09'),
+(27, 10011, 7, 1, '[{\"id\":\"60\",\"descripcion\":\"Cortadora de Baldosin\",\"cantidad\":\"1\",\"stock\":\"19\",\"precio\":\"1302\",\"total\":\"1302\"},{\"id\":\"59\",\"descripcion\":\"Cono slump\",\"cantidad\":\"1\",\"stock\":\"19\",\"precio\":\"196\",\"total\":\"196\"},{\"id\":\"58\",\"descripcion\":\"Coche llanta neumatica\",\"cantidad\":\"1\",\"stock\":\"19\",\"precio\":\"588\",\"total\":\"588\"},{\"id\":\"57\",\"descripcion\":\"Cizalla de Tijera\",\"cantidad\":\"1\",\"stock\":\"19\",\"precio\":\"812\",\"total\":\"812\"}]', '', '', 2898, 3448.62, 'Efectivo', '2017-12-25 22:23:38'),
+(28, 10012, 12, 57, '[{\"id\":\"59\",\"descripcion\":\"Cono slump\",\"cantidad\":\"1\",\"stock\":\"18\",\"precio\":\"196\",\"total\":\"196\"},{\"id\":\"58\",\"descripcion\":\"Coche llanta neumatica\",\"cantidad\":\"1\",\"stock\":\"18\",\"precio\":\"588\",\"total\":\"588\"},{\"id\":\"54\",\"descripcion\":\"Chapeta\",\"cantidad\":\"1\",\"stock\":\"19\",\"precio\":\"924\",\"total\":\"924\"},{\"id\":\"53\",\"descripcion\":\"Bomba Hidrostatica\",\"cantidad\":\"1\",\"stock\":\"19\",\"precio\":\"1078\",\"total\":\"1078\"}]', '', '', 2786, 3315.34, 'TC-3545235235', '2017-12-25 22:24:24'),
+(29, 10013, 11, 57, '[{\"id\":\"54\",\"descripcion\":\"Chapeta\",\"cantidad\":\"1\",\"stock\":\"18\",\"precio\":\"924\",\"total\":\"924\"},{\"id\":\"59\",\"descripcion\":\"Cono slump\",\"cantidad\":\"1\",\"stock\":\"17\",\"precio\":\"196\",\"total\":\"196\"},{\"id\":\"60\",\"descripcion\":\"Cortadora de Baldosin\",\"cantidad\":\"5\",\"stock\":\"14\",\"precio\":\"1302\",\"total\":\"6510\"}]', '', '', 7630, 9079.7, 'TC-425235235235', '2017-12-26 22:24:50'),
+(30, 10014, 10, 57, '[{\"id\":\"59\",\"descripcion\":\"Cono slump\",\"cantidad\":\"1\",\"stock\":\"16\",\"precio\":\"196\",\"total\":\"196\"},{\"id\":\"54\",\"descripcion\":\"Chapeta\",\"cantidad\":\"1\",\"stock\":\"17\",\"precio\":\"924\",\"total\":\"924\"},{\"id\":\"53\",\"descripcion\":\"Bomba Hidrostatica\",\"cantidad\":\"10\",\"stock\":\"9\",\"precio\":\"1078\",\"total\":\"10780\"}]', '', '', 11900, 14161, 'Efectivo', '2017-12-26 22:25:09'),
+(31, 10015, 9, 57, '[{\"id\":\"57\",\"descripcion\":\"Cizalla de Tijera\",\"cantidad\":\"3\",\"stock\":\"16\",\"precio\":\"812\",\"total\":\"2436\"}]', '', '', 2436, 2898.84, 'Efectivo', '2017-12-26 22:25:33'),
+(32, 10016, 8, 57, '[{\"id\":\"58\",\"descripcion\":\"Coche llanta neumatica\",\"cantidad\":\"1\",\"stock\":\"17\",\"precio\":\"588\",\"total\":\"588\"},{\"id\":\"57\",\"descripcion\":\"Cizalla de Tijera\",\"cantidad\":\"5\",\"stock\":\"11\",\"precio\":\"812\",\"total\":\"4060\"},{\"id\":\"56\",\"descripcion\":\"Cizalla de Palanca\",\"cantidad\":\"1\",\"stock\":\"19\",\"precio\":\"630\",\"total\":\"630\"}]', '', '', 5278, 6280.82, 'TD-4523523523', '2017-12-26 22:25:55'),
+(33, 10017, 7, 57, '[{\"id\":\"57\",\"descripcion\":\"Cizalla de Tijera\",\"cantidad\":\"4\",\"stock\":\"7\",\"precio\":\"812\",\"total\":\"3248\"},{\"id\":\"52\",\"descripcion\":\"Bascula \",\"cantidad\":\"3\",\"stock\":\"17\",\"precio\":\"182\",\"total\":\"546\"},{\"id\":\"55\",\"descripcion\":\"Cilindro muestra de concreto\",\"cantidad\":\"2\",\"stock\":\"18\",\"precio\":\"560\",\"total\":\"1120\"},{\"id\":\"56\",\"descripcion\":\"Cizalla de Palanca\",\"cantidad\":\"1\",\"stock\":\"18\",\"precio\":\"630\",\"total\":\"630\"}]', '', '', 5544, 6597.36, 'Efectivo', '2017-12-26 22:26:28'),
+(34, 10018, 6, 57, '[{\"id\":\"51\",\"descripcion\":\"Tensor\",\"cantidad\":\"1\",\"stock\":\"19\",\"precio\":\"140\",\"total\":\"140\"},{\"id\":\"52\",\"descripcion\":\"Bascula \",\"cantidad\":\"5\",\"stock\":\"12\",\"precio\":\"182\",\"total\":\"910\"},{\"id\":\"53\",\"descripcion\":\"Bomba Hidrostatica\",\"cantidad\":\"1\",\"stock\":\"8\",\"precio\":\"1078\",\"total\":\"1078\"}]', '', '', 2128, 2532.32, 'Efectivo', '2017-12-26 22:26:51'),
+(35, 10019, 5, 57, '[{\"id\":\"56\",\"descripcion\":\"Cizalla de Palanca\",\"cantidad\":\"15\",\"stock\":\"3\",\"precio\":\"630\",\"total\":\"9450\"},{\"id\":\"55\",\"descripcion\":\"Cilindro muestra de concreto\",\"cantidad\":\"1\",\"stock\":\"17\",\"precio\":\"560\",\"total\":\"560\"}]', '', '', 10010, 11911.9, 'Efectivo', '2017-12-26 22:27:13'),
+(36, 10020, 4, 57, '[{\"id\":\"55\",\"descripcion\":\"Cilindro muestra de concreto\",\"cantidad\":\"1\",\"stock\":\"16\",\"precio\":\"560\",\"total\":\"560\"},{\"id\":\"54\",\"descripcion\":\"Chapeta\",\"cantidad\":\"1\",\"stock\":\"16\",\"precio\":\"924\",\"total\":\"924\"}]', '', '', 1484, 1765.96, 'TC-46346346346', '2017-12-26 22:27:42'),
+(37, 10021, 3, 1, '[{\"id\":\"60\",\"descripcion\":\"Cortadora de Baldosin\",\"cantidad\":\"1\",\"stock\":\"13\",\"precio\":\"1302\",\"total\":\"1302\"},{\"id\":\"59\",\"descripcion\":\"Cono slump\",\"cantidad\":\"1\",\"stock\":\"15\",\"precio\":\"196\",\"total\":\"196\"}]', '', '', 1498, 1647.8, 'Efectivo', '2018-02-06 22:47:02'),
+(38, 10022, 3, 1, '[{\"id\":\"60\",\"descripcion\":\"Cortadora de Baldosin\",\"cantidad\":\"1\",\"stock\":\"12\",\"precio\":\"1302\",\"total\":\"1302\"},{\"id\":\"59\",\"descripcion\":\"Cono slump\",\"cantidad\":\"1\",\"stock\":\"14\",\"precio\":\"196\",\"total\":\"196\"}]', '', '', 1498, 1498, 'TC-12344444', '2018-02-20 21:16:43'),
+(39, 10023, 10, 1, '[{\"id\":\"56\",\"descripcion\":\"Cizalla de Palanca\",\"cantidad\":\"1\",\"stock\":\"2\",\"precio\":\"630\",\"total\":\"630\"},{\"id\":\"55\",\"descripcion\":\"Cilindro muestra de concreto\",\"cantidad\":\"1\",\"stock\":\"15\",\"precio\":\"560\",\"total\":\"560\"}]', '', '', 1190, 1190, 'TD-12121', '2018-02-20 21:17:59'),
+(40, 10024, 12, 1, '[{\"id\":\"2\",\"descripcion\":\"boveda nicho familiar (4 personas)\",\"cantidad\":\"1\",\"stock\":\"-1\",\"precio\":\"87.73\",\"total\":\"87.73\"}]', '1', '', 87.73, 88.6073, 'Efectivo', '2018-03-27 20:12:25');
 
 --
 -- Restricciones para tablas volcadas
