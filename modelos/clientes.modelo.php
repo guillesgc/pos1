@@ -73,9 +73,9 @@ class ModeloClientes{
 
     static public function mdlMostrarNombreClientes($tabla, $item, $valor){
 
-        $stmt = Conexion::conectar()->prepare("SELECT id, nombre FROM $tabla WHERE nombre LIKE '%:item%' ");
+        $stmt = Conexion::conectar()->prepare("SELECT id, nombre FROM $tabla WHERE nombre LIKE '%".$valor."%' ");
 
-        $stmt -> bindParam(":item", $valor, PDO::PARAM_STR);
+        //$stmt -> bindParam(":item", $valor, PDO::PARAM_STR);
 
         $stmt -> execute();
 

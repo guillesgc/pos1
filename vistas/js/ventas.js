@@ -518,9 +518,15 @@ $(document).ready(function () {
 				data:{query:query},
 				dataType:"json",
 				success: function(data){
-					result($.map(data,function(item){
-
-					}));
+					console.log("respuesta", data);
+					var len = data.length;
+					console.log("largo array",len)
+					for(var i=0;i<len;i++) {
+                        $("#seleccionarCliente").append("<option value='" + data[i]['id'] + "'>" + data[i]['nombre']+ "</option>");
+                    }
+					//result($.map(data,function(item){
+					//	return item;
+					//}));
 				}
 
 			});
@@ -588,8 +594,8 @@ $("#nuevoMetodoPago").change(function(){
 
 		// Agregar formato al precio
 
-		$('#nuevoValorEfectivo').number( true, 2);
-      	$('#nuevoCambioEfectivo').number( true, 2);
+		$('#nuevoValorEfectivo').number( true, 0);
+      	$('#nuevoCambioEfectivo').number( true, 0);
 
 
       	// Listar método en la entrada

@@ -25,13 +25,13 @@ class ControladorVentas{
 	static public function ctrCrearVenta(){
 
 		if(isset($_POST["nuevaVenta"])){
-
+            //var_dump($_POST);
 			/*=============================================
 			ACTUALIZAR LAS COMPRAS DEL CLIENTE Y REDUCIR EL STOCK Y AUMENTAR LAS VENTAS DE LOS PRODUCTOS
 			=============================================*/
 
 			$listaProductos = json_decode($_POST["listaProductos"], true);
-			print_r($listaProductos);
+			//print_r($listaProductos);
 			$totalProductosComprados = array();
 
 			foreach ($listaProductos as $key => $value) {
@@ -51,10 +51,10 @@ class ControladorVentas{
 
 			    $nuevasVentas = ModeloProductos::mdlActualizarProducto($tablaProductos, $item1a, $valor1a, $valor);
 
-				$item1b = "stock";
-				$valor1b = $value["stock"];
+				//$item1b = "stock";
+				//$valor1b = $value["stock"];
 
-				$nuevoStock = ModeloProductos::mdlActualizarProducto($tablaProductos, $item1b, $valor1b, $valor);
+				//$nuevoStock = ModeloProductos::mdlActualizarProducto($tablaProductos, $item1b, $valor1b, $valor);
 
 			}
 
@@ -86,16 +86,16 @@ class ControladorVentas{
 
 			$tabla = "ventas";
 
-			$datos = array("id_vendedor"=>$_POST["idVendedor"],
+			$datos = array("codigo"=>$_POST["nuevaVenta"],
+                           "id_vendedor"=>$_POST["idVendedor"],
 						   "id_cliente"=>$_POST["seleccionarCliente"],
-						   "codigo"=>$_POST["nuevaVenta"],
 						   "productos"=>$_POST["listaProductos"],
 						   "glosa"=>$_POST["glosaVenta"],
-						   "impuesto"=>$_POST["nuevoPrecioImpuesto"],
-						   "neto"=>$_POST["nuevoPrecioNeto"],
+						   "info_adicional"=>$_POST["infoAdicionalVenta"],
+						   "neto"=>$_POST["nuevoTotalVenta"],
 						   "total"=>$_POST["totalVenta"],
 						   "metodo_pago"=>$_POST["listaMetodoPago"]);
-
+            //var_dump($datos);
 			$respuesta = ModeloVentas::mdlIngresarVenta($tabla, $datos);
 
 			if($respuesta == "ok"){
@@ -208,10 +208,10 @@ class ControladorVentas{
 
 				$nuevasVentas_2 = ModeloProductos::mdlActualizarProducto($tablaProductos_2, $item1a_2, $valor1a_2, $valor_2);
 
-				$item1b_2 = "stock";
-				$valor1b_2 = $value["stock"];
+				//$item1b_2 = "stock";
+				//$valor1b_2 = $value["stock"];
 
-				$nuevoStock_2 = ModeloProductos::mdlActualizarProducto($tablaProductos_2, $item1b_2, $valor1b_2, $valor_2);
+				//$nuevoStock_2 = ModeloProductos::mdlActualizarProducto($tablaProductos_2, $item1b_2, $valor1b_2, $valor_2);
 
 			}
 
@@ -244,7 +244,9 @@ class ControladorVentas{
 			$datos = array("id_vendedor"=>$_POST["idVendedor"],
 						   "id_cliente"=>$_POST["seleccionarCliente"],
 						   "codigo"=>$_POST["editarVenta"],
-						   "productos"=>$_POST["listaProductos"],
+                           "productos"=>$_POST["listaProductos"],
+                           "glosa"=>$_POST["listaProductos"],
+                           "info_adicional"=>$_POST["infoAdicionalVenta"],
 						   "impuesto"=>$_POST["nuevoPrecioImpuesto"],
 						   "neto"=>$_POST["nuevoPrecioNeto"],
 						   "total"=>$_POST["totalVenta"],
