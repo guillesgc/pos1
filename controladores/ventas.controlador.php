@@ -92,7 +92,7 @@ class ControladorVentas{
 						   "productos"=>$_POST["listaProductos"],
 						   "glosa"=>$_POST["glosaVenta"],
 						   "info_adicional"=>$_POST["infoAdicionalVenta"],
-						   "neto"=>$_POST["nuevoTotalVenta"],
+						   "neto"=>$_POST["totalVenta"],
 						   "total"=>$_POST["totalVenta"],
 						   "metodo_pago"=>$_POST["listaMetodoPago"]);
             //var_dump($datos);

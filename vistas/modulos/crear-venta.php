@@ -112,7 +112,7 @@
                     
                     <span class="input-group-addon"><i class="fa fa-users"></i></span>
                       <!--
-                          <input type="text" class="form-control input-lg seleccionarCliente" id="seleccionarCliente" name="seleccionarCliente" autocomplete="off" required>
+                          <input type="text" class="form-control input-lg seleccionarCliente" id="seleccionarCliente" name="seleccionarCliente" autocomplete="off" required />
                       -->
 
                         <select  class="form-control" id="seleccionarCliente" name="seleccionarCliente" required>
