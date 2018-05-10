@@ -25,7 +25,7 @@ class ControladorVentas{
 	static public function ctrCrearVenta(){
 
 		if(isset($_POST["nuevaVenta"])){
-            //var_dump($_POST);
+            var_dump($_POST);
 			/*=============================================
 			ACTUALIZAR LAS COMPRAS DEL CLIENTE Y REDUCIR EL STOCK Y AUMENTAR LAS VENTAS DE LOS PRODUCTOS
 			=============================================*/
@@ -60,7 +60,7 @@ class ControladorVentas{
 
 			$tablaClientes = "clientes";
 
-			$item = "id";
+			$item = "nombre";
 			$valor = $_POST["seleccionarCliente"];
 
 			$traerCliente = ModeloClientes::mdlMostrarClientes($tablaClientes, $item, $valor);
@@ -88,7 +88,7 @@ class ControladorVentas{
 
 			$datos = array("codigo"=>$_POST["nuevaVenta"],
                            "id_vendedor"=>$_POST["idVendedor"],
-						   "id_cliente"=>$_POST["seleccionarCliente"],
+						   "id_cliente"=>$traerCliente['id'],
 						   "productos"=>$_POST["listaProductos"],
 						   "glosa"=>$_POST["glosaVenta"],
 						   "info_adicional"=>$_POST["infoAdicionalVenta"],
@@ -159,15 +159,15 @@ class ControladorVentas{
 
 				$traerProducto = ModeloProductos::mdlMostrarProductos($tablaProductos, $item, $valor, $orden);
 
-				$item1a = "ventas";
-				$valor1a = $traerProducto["ventas"] - $value["cantidad"];
+				//$item1a = "ventas";
+				//$valor1a = $traerProducto["ventas"] - $value["cantidad"];
 
-				$nuevasVentas = ModeloProductos::mdlActualizarProducto($tablaProductos, $item1a, $valor1a, $valor);
+				//$nuevasVentas = ModeloProductos::mdlActualizarProducto($tablaProductos, $item1a, $valor1a, $valor);
 
-				$item1b = "stock";
-				$valor1b = $value["cantidad"] + $traerProducto["stock"];
+				//$item1b = "stock";
+				//$valor1b = $value["cantidad"] + $traerProducto["stock"];
 
-				$nuevoStock = ModeloProductos::mdlActualizarProducto($tablaProductos, $item1b, $valor1b, $valor);
+				//$nuevoStock = ModeloProductos::mdlActualizarProducto($tablaProductos, $item1b, $valor1b, $valor);
 
 			}
 
@@ -245,10 +245,9 @@ class ControladorVentas{
 						   "id_cliente"=>$_POST["seleccionarCliente"],
 						   "codigo"=>$_POST["editarVenta"],
                            "productos"=>$_POST["listaProductos"],
-                           "glosa"=>$_POST["listaProductos"],
+                           "glosa"=>$_POST["glosaVenta"],
                            "info_adicional"=>$_POST["infoAdicionalVenta"],
-						   "impuesto"=>$_POST["nuevoPrecioImpuesto"],
-						   "neto"=>$_POST["nuevoPrecioNeto"],
+						   "neto"=>$_POST["totalVenta"],
 						   "total"=>$_POST["totalVenta"],
 						   "metodo_pago"=>$_POST["listaMetodoPago"]);
 

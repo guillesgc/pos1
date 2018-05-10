@@ -55,7 +55,7 @@
 
                     $cliente = ControladorClientes::ctrMostrarClientes($itemCliente, $valorCliente);
 
-                    $porcentajeImpuesto = $venta["impuesto"] * 100 / $venta["neto"];
+                    //$porcentajeImpuesto = $venta["impuesto"] * 100 / $venta["neto"];
 
 
                 ?>
@@ -149,41 +149,47 @@
 
                   $respuesta = ControladorProductos::ctrMostrarProductos($item, $valor, $orden);
 
-                  $stockAntiguo = $respuesta["stock"] + $value["cantidad"];
+                 // $stockAntiguo = $respuesta["stock"] + $value["cantidad"];
                   
                   echo '<div class="row" style="padding:5px 15px">
             
-                        <div class="col-xs-6" style="padding-right:0px">
-            
-                          <div class="input-group">
+                            <div class="col-xs-6" style="padding-right:0px">
                 
-                            <span class="input-group-addon"><button type="button" class="btn btn-danger btn-xs quitarProducto" idProducto="'.$value["id"].'"><i class="fa fa-times"></i></button></span>
-
-                            <input type="text" class="form-control nuevaDescripcionProducto" idProducto="'.$value["id"].'" name="agregarProducto" value="'.$value["descripcion"].'" readonly required>
-
-                          </div>
-
-                        </div>
-
-                        <div class="col-xs-3">
-              
-                          <input type="number" class="form-control nuevaCantidadProducto" name="nuevaCantidadProducto" min="1" value="'.$value["cantidad"].'" stock="'.$stockAntiguo.'" nuevoStock="'.$value["stock"].'" required>
-
-                        </div>
-
-                        <div class="col-xs-3 ingresoPrecio" style="padding-left:0px">
-
-                          <div class="input-group">
-
-                            <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+                              <div class="input-group">
+                    
+                                <span class="input-group-addon"><button type="button" class="btn btn-danger btn-xs quitarProducto" idProducto="'.$value["id"].'"><i class="fa fa-times"></i></button></span>
+    
+                                <input type="text" class="form-control nuevaDescripcionProducto" idProducto="'.$value["id"].'" name="agregarProducto" value="'.$value["descripcion"].'" readonly required>
+    
+                              </div>
+                              
+                            </div>
+                              
+                            <div class="col-xs-2" style="padding-right:0px">
+                
+                              <div class="input-group">
+                    
+                                <span class="input-group-addon"><i class="fa fa-sort"></i></span>
+    
+                                <input type="text" class="form-control nuevaDescripcionProducto"  name="nuevaCantidad" value="'.$value["cantidad"].'" readonly required>
+    
+                              </div>
+    
+                            </div>
+    
+                            <div class="col-xs-4 ingresoPrecio" style="padding-left:20px">
+    
+                              <div class="input-group">
+    
+                                <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+                       
+                                <input type="text" class="form-control nuevoPrecioProducto" precioReal="'.$respuesta["precio_venta"].'" name="nuevoPrecioProducto" value="'.$value["total"].'" readonly required>
+       
+                              </div>
                    
-                            <input type="text" class="form-control nuevoPrecioProducto" precioReal="'.$respuesta["precio_venta"].'" name="nuevoPrecioProducto" value="'.$value["total"].'" readonly required>
-   
-                          </div>
-               
-                        </div>
+                            </div>
 
-                      </div>';
+                        </div>';
                 }
 
 
@@ -207,14 +213,16 @@
                   ENTRADA IMPUESTOS Y TOTAL
                   ======================================-->
                   
-                  <div class="col-xs-8 pull-right">
+                  <div class="col-xs-7 pull-right">
                     
                     <table class="table">
 
                       <thead>
 
                         <tr>
+                            <!--
                           <th>Impuesto</th>
+                          -->
                           <th>Total</th>      
                         </tr>
 
@@ -223,24 +231,25 @@
                       <tbody>
                       
                         <tr>
-                          
-                          <td style="width: 50%">
-                            
+                            <!--
+                          <td style="width: 10%">
+
                             <div class="input-group">
-                           
-                              <input type="number" class="form-control input-lg" min="0" id="nuevoImpuestoVenta" name="nuevoImpuestoVenta" value="<?php echo $porcentajeImpuesto; ?>" required>
+
+                              <input type="number" class="form-control input-lg" min="0" id="nuevoImpuestoVenta" name="nuevoImpuestoVenta" value="<?php //echo $porcentajeImpuesto; ?>" required>
 
                                <input type="hidden" name="nuevoPrecioImpuesto" id="nuevoPrecioImpuesto" value="<?php echo $venta["impuesto"]; ?>" required>
 
                                <input type="hidden" name="nuevoPrecioNeto" id="nuevoPrecioNeto" value="<?php echo $venta["neto"]; ?>" required>
 
                               <span class="input-group-addon"><i class="fa fa-percent"></i></span>
-                        
+
                             </div>
+                            -->
 
                           </td>
 
-                           <td style="width: 50%">
+                           <td style="width: 100%">
                             
                             <div class="input-group">
                            
@@ -340,7 +349,6 @@
                   <th>Imagen</th>
                   <th>Código</th>
                   <th>Descripcion</th>
-                  <th>Stock</th>
                   <th>Acciones</th>
                 </tr>
 

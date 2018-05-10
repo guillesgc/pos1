@@ -509,31 +509,60 @@ function agregarImpuesto(){
 /*=============================================
 AUTOCOMPLETAR CLIENTES
 =============================================*/
+//$(document).ready(function () {
+//	$(".seleccionarCliente").typeahead({
+//		source: function (query,result) {
+//			$.ajax({
+//				url: 'ajax/clientes.ajax.php',
+//				method: "POST",
+//				data:{query:query},
+//				dataType:"json",
+//				success: function(data){
+//					console.log("respuesta", data);
+					//var len = data.length;
+					//console.log("largo array",len)
+					//for(var i=0;i<len;i++) {
+                    //     $("#seleccionarCliente").append("<option value='" + data[i]['id'] + "'>" + data[i]['nombre']+ "</option>");
+                    //}
+//					result($.map(data,function(item){
+//						return item;
+//					}));
+//				}
+//
+//			});
+//        }
+//	});
+//});
+
+
 $(document).ready(function () {
-	$(".seleccionarCliente").typeahead({
-		source: function (query,result) {
-			$.ajax({
-				url: 'ajax/clientes.ajax.php',
-				method: "POST",
-				data:{query:query},
-				dataType:"json",
-				success: function(data){
-					console.log("respuesta", data);
-					var len = data.length;
-					console.log("largo array",len)
-					for(var i=0;i<len;i++) {
-                        $("#seleccionarCliente").append("<option value='" + data[i]['id'] + "'>" + data[i]['nombre']+ "</option>");
+    $(".seleccionarCliente").typeahead({
+        source: function (query,result) {
+            $.ajax({
+                url: 'ajax/clientes.ajax.php',
+                method: "POST",
+                data:{query:query},
+                dataType:"json",
+                success: function(data){
+                    console.log("respuesta", data);
+                    var len = data.length;
+                    var send = [];
+                    //console.log("largo array",len)
+                    for(var i=0;i<len;i++) {
+                        send[i] = data[i]['nombre'];
+                        if((i+1) === len){//último
+                            result($.map(send,function(item){
+                                return item;
+                            }));
+                        }
                     }
-					//result($.map(data,function(item){
-					//	return item;
-					//}));
-				}
 
-			});
+                }
+
+            });
         }
-	});
+    });
 });
-
 /*=============================================
 CUANDO CAMBIA EL IMPUESTO
 =============================================*/
