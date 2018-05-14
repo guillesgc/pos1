@@ -12,6 +12,17 @@ require_once "../../../modelos/usuarios.modelo.php";
 require_once "../../../controladores/productos.controlador.php";
 require_once "../../../modelos/productos.modelo.php";
 
+require_once "../../../controladores/credito.controlador.php";
+require_once "../../../modelos/credito.modelo.php";
+
+require_once "../../../controladores/item.controlador.php";
+require_once "../../../modelos/item.modelo.php";
+
+require_once "../../../controladores/utm.controlador.php";
+require_once "../../../modelos/utm.modelo.php";
+
+
+
 class imprimirFactura{
 
 public $codigo;
@@ -30,6 +41,9 @@ $neto = number_format($respuestaVenta["neto"],2);
 //$impuesto = number_format($respuestaVenta["impuesto"],2);
 $total = number_format($respuestaVenta["total"],2);
 
+
+
+
 //TRAEMOS LA INFORMACIÓN DEL CLIENTE
 
 $itemCliente = "id";
@@ -44,6 +58,20 @@ $valorVendedor = $respuestaVenta["id_vendedor"];
 
 $respuestaVendedor = ControladorUsuarios::ctrMostrarUsuarios($itemVendedor, $valorVendedor);
 
+
+//TRAEMOS LA INFORMACIÓN DEL CRÉDITO
+
+$itemCredito = "boletin";
+$valorCredito = $respuestaVenta["codigo"];
+
+$respuestaCredito = ControladorCreditos::ctrMostrarCredito($itemCredito, $valorCredito);
+if(!$respuestaCredito){
+    $respuestaCredito["valor_credito"] = "no aplica";
+    $respuestaCredito["numcuotas"] = "no aplica";
+    $respuestaCredito["valor_cuota"] = "no aplica";
+}
+
+$totalVenta = number_format($respuestaVenta["total"],0);
 //REQUERIMOS LA CLASE TCPDF
 
 require_once('tcpdf_include.php');
@@ -69,6 +97,8 @@ $bloque1 = <<<EOF
 			        <strong><br><br>BOLETÍN DE INGRESOS CEMENTERIOS</strong>
 			    </div>
             </td>
+            <td style="font-size:10px; text-align: right; line-height:15px;">N° BOLETÍN: $respuestaVenta[codigo] 
+            </td>
 		</tr>
 
 	</table>
@@ -93,34 +123,34 @@ $bloque2 = <<<EOF
 		<tr>
 			<td style="border: 1px solid #666; background-color:white; width:90px"><strong>Cementerio</strong></td>
 			<td style="border: 1px solid #666; background-color:white; width:270px">Playa ancha</td>
-			<td style="border: 1px solid #666; background-color:white; width:70px; text-align:right"><strong>Fecha</strong></td>
-			<td style="border: 1px solid #666; background-color:white; width:110px; text-align:right">$fecha</td>
+			<td style="border: 1px solid #666; background-color:white; width:70px; text-align:center"><strong>Fecha</strong></td>
+			<td style="border: 1px solid #666; background-color:white; width:110px; text-align:center">$fecha</td>
 		</tr>
 		<tr>
 			<td style="border: 1px solid #666; background-color:white; width:90px"><strong>Recibido de</strong></td>
-			<td style="border: 1px solid #666; background-color:white; width:450px">nombreee</td>
+			<td style="border: 1px solid #666; background-color:white; width:450px">$respuestaVendedor[nombre]</td>
 		</tr>
 		<tr>
 			<td style="border: 1px solid #666; background-color:white; width:90px"><strong>Domicilio</strong></td>
-			<td style="border: 1px solid #666; background-color:white; width:450px">avenida siempre viva </td>
+			<td style="border: 1px solid #666; background-color:white; width:450px">$respuestaCliente[direccion]</td>
 		</tr>
         <tr>
 			<td style="border: 1px solid #666; background-color:white; width:90px"><strong>Rut</strong></td>
 			<td style="border: 1px solid #666; background-color:white; width:270px">12.345.678-9</td>
             <td style="border: 1px solid #666; background-color:white; width:70px; text-align:right"><strong>Teléfono</strong></td>
-            <td style="border: 1px solid #666; background-color:white; width:110px; text-align:right">+569 12345678</td>
+            <td style="border: 1px solid #666; background-color:white; width:110px; text-align:right">$respuestaCliente[telefono]</td>
 		</tr>
 		<tr>
 			<td style="border: 1px solid #666; background-color:white; width:90px"><strong>Email</strong></td>
-			<td style="border: 1px solid #666; background-color:white; width:450px">$respuestaVendedor[nombre]</td>
+			<td style="border: 1px solid #666; background-color:white; width:450px">$respuestaCliente[email]</td>
 		</tr>
 		<tr>
 			<td style="border: 1px solid #666; background-color:white; width:90px"><strong>$</strong></td>
-			<td style="border: 1px solid #666; background-color:white; width:450px">(total)</td>
+			<td style="border: 1px solid #666; background-color:white; width:450px">$ $totalVenta</td>
 		</tr>
 		<tr>
 			<td style="border: 1px solid #666; background-color:white; width:90px"><strong>Tipo de pago</strong></td>
-			<td style="border: 1px solid #666; background-color:white; width:450px">(efectivo, contado, tarjeta...)</td>
+			<td style="border: 1px solid #666; background-color:white; width:450px">$respuestaVenta[metodo_pago]</td>
 		</tr>
 		
 	</table>
@@ -129,15 +159,15 @@ $bloque2 = <<<EOF
 	<table style="font-size:10px; padding:5px 10px;">
 	    <tr>
 			<td style="border: 1px solid #666; background-color:white; width:90px"><strong>Crédito</strong> </td>
-			<td style="border: 1px solid #666; background-color:white; width:100px">(Crédito) </td>
+			<td style="border: 1px solid #666; background-color:white; width:100px">$respuestaCredito[valor_credito] </td>
 		</tr>
 		<tr>
 		    <td style="border: 1px solid #666; background-color:white; width:90px"><strong>Número de cuotas</strong> </td>
-			<td style="border: 1px solid #666; background-color:white; width:100px">(Número de cutas) </td>
+			<td style="border: 1px solid #666; background-color:white; width:100px">$respuestaCredito[numcuotas] </td>
         </tr>
         <tr>
             <td style="border: 1px solid #666; background-color:white; width:90px"><strong>Valor cuota </strong></td>
-			<td style="border: 1px solid #666; background-color:white; width:100px">(Valor cuota) </td>
+			<td style="border: 1px solid #666; background-color:white; width:100px">$respuestaCredito[valor_cuota] </td>
         </tr>
 		
 	</table>
@@ -148,11 +178,11 @@ $bloque2 = <<<EOF
 	<table style="font-size:10px; padding:5px 10px;">
         <tr>    
             <td style="border: 1px solid #666; background-color:white; width:90px"><strong>Información adicional</strong> </td>
-            <td style="border: 1px solid #666; background-color:white; width:450px">(info) </td>
+            <td style="border: 1px solid #666; background-color:white; width:450px">$respuestaVenta[info_adicional] </td>
         </tr>
         <tr>
             <td style="border: 1px solid #666; background-color:white; width:90px"><strong>Glosa</strong> </td>
-            <td style="border: 1px solid #666; background-color:white; width:450px">(GLOSAAAAA)</td>
+            <td style="border: 1px solid #666; background-color:white; width:450px">$respuestaVenta[glosa]</td>
         </tr>
         <br>
         <br>
@@ -188,7 +218,7 @@ EOF;
 $pdf->writeHTML($bloque3, false, false, false, false, '');
 
 // ---------------------------------------------------------
-
+//var_dump($productos);
 foreach ($productos as $key => $item) {
 
 $itemProducto = "descripcion";
@@ -197,8 +227,19 @@ $orden = null;
 
 $respuestaProducto = ControladorProductos::ctrMostrarProductos($itemProducto, $valorProducto, $orden);
 
-$valorUnitario = number_format($respuestaProducto["precio_venta"], 2);
+$itemItem = "id_item";
+$valorItem = $item["id"];
 
+$respuestaItem = ControladorItem::ctrMostrarItem($itemItem,$valorItem);
+
+$itemUtm = "null";
+$valorUtm = "null";
+
+$respuestaUtm = ControladorUtm::ctrMostrarUtmActual($itemUtm,$valorUtm);
+//var_dump($respuestaItem);
+//var_dump($respuestaUtm);
+
+$valorUnitario = number_format($respuestaItem["precio"]*$respuestaUtm["valor"],0);
 $precioTotal = number_format($item["total"], 2);
 
 $bloque4 = <<<EOF
@@ -211,9 +252,9 @@ $bloque4 = <<<EOF
 
 			<td style="border: 1px solid #666; color:#333; background-color:white; width:65px; text-align:center">$item[cantidad]</td>
 
-			<td style="border: 1px solid #666; color:#333; background-color:white; width:80px; text-align:center">$$valorUnitario</td>
+			<td style="border: 1px solid #666; color:#333; background-color:white; width:80px; text-align:center">$ $valorUnitario</td>
 
-			<td style="border: 1px solid #666; color:#333; background-color:white; width:50px; text-align:center">$(%)</td>
+			<td style="border: 1px solid #666; color:#333; background-color:white; width:50px; text-align:center"> $item[descuento]</td>
 			
 			<td style="border: 1px solid #666; color:#333; background-color:white; width:100px; text-align:center">$$precioTotal</td>
 
@@ -243,12 +284,12 @@ $bloque5 = <<<EOF
 		<tr>
 		
 			<td style="border-right: 1px solid #666; color:#333; background-color:white; width:340px; text-align:center"></td>
-			<td style="border: 1px solid #666;  background-color:white; width:100px; text-align:center">Neto</td>
+			<td style="border: 1px solid #666;  background-color:white; width:100px; text-align:center"><strong>Neto</strong></td>
 			<td style="border: 1px solid #666; color:#333; background-color:white; width:100px; text-align:center">$ $neto</td>
 		</tr>
 		<tr>
 			<td style="border-right: 1px solid #666; color:#333; background-color:white; width:340px; text-align:center"></td>
-			<td style="border: 1px solid #666; background-color:white; width:100px; text-align:center">Total:</td>
+			<td style="border: 1px solid #666; background-color:white; width:100px; text-align:center"><strong>Total</strong></td>
 			<td style="border: 1px solid #666; color:#333; background-color:white; width:100px; text-align:center">$ $total</td>
 		</tr>
 

@@ -153,7 +153,7 @@
                   
                   echo '<div class="row" style="padding:5px 15px">
             
-                            <div class="col-xs-6" style="padding-right:0px">
+                            <div class="col-xs-5" style="padding-right:0px">
                 
                               <div class="input-group">
                     
@@ -171,13 +171,19 @@
                     
                                 <span class="input-group-addon"><i class="fa fa-sort"></i></span>
     
-                                <input type="text" class="form-control nuevaDescripcionProducto"  name="nuevaCantidad" value="'.$value["cantidad"].'" readonly required>
+                                <input type="text" class="form-control nuevaCantidadProducto"  name="nuevaCantidad" value="'.$value["cantidad"].'" readonly required>
     
                               </div>
     
                             </div>
+                            
+                            <div class="col-xs-2" style="padding-right: 0px">
+                                <div class="input-group">
+                                    <input type="text" class="form-control nuevoDescuentoProducto" name="nuevoDescuento" value="'.$value["descuento"].'" min="0" max="100" placeholder="Dcto" required>   
+                                </div> 
+                            </div>
     
-                            <div class="col-xs-4 ingresoPrecio" style="padding-left:20px">
+                            <div class="col-xs-3 ingresoPrecio" style="padding-left:0px;">
     
                               <div class="input-group">
     

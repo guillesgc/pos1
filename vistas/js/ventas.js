@@ -265,6 +265,7 @@ $(".btnAgregarProducto").click(function(){
 			  '<!-- Descuento del producto -->'+
 
 			  '<div class="col-xs-2 ingresoDescuento" style="padding-right:10px ">'+
+                    '<span class="input-group-addon"><i class="fa fa-percent"></i></span>'+
 
 				'<input type="number" min="0" class="form-control nuevoDescuentoProducto" name="nuevoDescuentoProducto" min= "0" max="100" placeholder="Dcto" autocomplete="On" dctoProducto required>'+
 
@@ -705,7 +706,7 @@ function listarProductos() {
             "id": $(descripcion[i]).attr("idItem"),
             "descripcion": $(descripcion[i]).val(),
             "cantidad": $(cantidad[i]).val(),
-            "descuento": $(descuento[i]).val() + " %",
+            "descuento": $(descuento[i]).val(),
             //"stock" : $(cantidad[i]).attr("nuevoStock"),
             "precio": $(precio[i]).attr("precioReal"),
             "total": $(precio[i]).val()
