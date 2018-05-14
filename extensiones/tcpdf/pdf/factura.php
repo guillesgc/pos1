@@ -97,8 +97,7 @@ $bloque1 = <<<EOF
 			        <strong><br><br>BOLETÍN DE INGRESOS CEMENTERIOS</strong>
 			    </div>
             </td>
-            <td style="font-size:10px; text-align: right; line-height:15px;">N° BOLETÍN: $respuestaVenta[codigo] 
-            </td>
+            <td style="font-size:10px; text-align: right; line-height:15px;"><strong>N° BOLETÍN: $respuestaVenta[codigo]</strong></td>
 		</tr>
 
 	</table>
@@ -136,7 +135,7 @@ $bloque2 = <<<EOF
 		</tr>
         <tr>
 			<td style="border: 1px solid #666; background-color:white; width:90px"><strong>Rut</strong></td>
-			<td style="border: 1px solid #666; background-color:white; width:270px">12.345.678-9</td>
+			<td style="border: 1px solid #666; background-color:white; width:270px">$respuetaCliente[documento]</td>
             <td style="border: 1px solid #666; background-color:white; width:70px; text-align:right"><strong>Teléfono</strong></td>
             <td style="border: 1px solid #666; background-color:white; width:110px; text-align:right">$respuestaCliente[telefono]</td>
 		</tr>

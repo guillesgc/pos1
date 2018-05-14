@@ -2220,3 +2220,47 @@ Stack trace:
 [14-May-2018 16:41:25 UTC] Hello, errors!
 [14-May-2018 16:47:53 UTC] Hello, errors!
 [14-May-2018 17:04:40 UTC] Hello, errors!
+[14-May-2018 19:39:38 UTC] Hello, errors!
+[14-May-2018 19:52:22 UTC] Hello, errors!
+[14-May-2018 19:52:32 UTC] Hello, errors!
+[14-May-2018 19:52:32 UTC] PHP Notice:  Undefined index: impuesto in C:\wamp64\www\pos1\vistas\modulos\editar-venta.php on line 247
+[14-May-2018 19:52:32 UTC] PHP Stack trace:
+[14-May-2018 19:52:32 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[14-May-2018 19:52:32 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[14-May-2018 19:52:32 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[14-May-2018 19:52:32 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[14-May-2018 20:00:54 UTC] Hello, errors!
+[14-May-2018 20:00:55 UTC] PHP Notice:  Undefined index: impuesto in C:\wamp64\www\pos1\vistas\modulos\editar-venta.php on line 247
+[14-May-2018 20:00:56 UTC] PHP Stack trace:
+[14-May-2018 20:00:56 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[14-May-2018 20:00:56 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[14-May-2018 20:00:56 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[14-May-2018 20:00:56 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[14-May-2018 20:04:32 UTC] Hello, errors!
+[14-May-2018 20:04:33 UTC] PHP Notice:  Undefined index: impuesto in C:\wamp64\www\pos1\vistas\modulos\editar-venta.php on line 247
+[14-May-2018 20:04:33 UTC] PHP Stack trace:
+[14-May-2018 20:04:33 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[14-May-2018 20:04:33 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[14-May-2018 20:04:33 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[14-May-2018 20:04:33 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[14-May-2018 20:06:50 UTC] Hello, errors!
+[14-May-2018 20:06:51 UTC] PHP Notice:  Undefined index: impuesto in C:\wamp64\www\pos1\vistas\modulos\editar-venta.php on line 247
+[14-May-2018 20:06:51 UTC] PHP Stack trace:
+[14-May-2018 20:06:51 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[14-May-2018 20:06:51 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[14-May-2018 20:06:52 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[14-May-2018 20:06:52 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[14-May-2018 20:09:17 UTC] Hello, errors!
+[14-May-2018 20:09:17 UTC] PHP Notice:  Undefined index: impuesto in C:\wamp64\www\pos1\vistas\modulos\editar-venta.php on line 245
+[14-May-2018 20:09:17 UTC] PHP Stack trace:
+[14-May-2018 20:09:17 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[14-May-2018 20:09:17 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[14-May-2018 20:09:17 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[14-May-2018 20:09:17 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[14-May-2018 20:10:06 UTC] Hello, errors!
+[14-May-2018 20:10:06 UTC] PHP Notice:  Undefined index: impuesto in C:\wamp64\www\pos1\vistas\modulos\editar-venta.php on line 245
+[14-May-2018 20:10:06 UTC] PHP Stack trace:
+[14-May-2018 20:10:06 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[14-May-2018 20:10:06 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[14-May-2018 20:10:06 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[14-May-2018 20:10:06 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183

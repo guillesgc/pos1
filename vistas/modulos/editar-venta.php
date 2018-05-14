@@ -157,9 +157,9 @@
                 
                               <div class="input-group">
                     
-                                <span class="input-group-addon"><button type="button" class="btn btn-danger btn-xs quitarProducto" idProducto="'.$value["id"].'"><i class="fa fa-times"></i></button></span>
+                                <span class="input-group-addon"><button type="button" class="btn btn-danger btn-xs quitarProducto" idItem="'.$value["id"].'"><i class="fa fa-times"></i></button></span>
     
-                                <input type="text" class="form-control nuevaDescripcionProducto" idProducto="'.$value["id"].'" name="agregarProducto" value="'.$value["descripcion"].'" readonly required>
+                                <input type="text" class="form-control nuevaDescripcionProducto" idItem="'.$value["id"].'" name="agregarProducto" value="'.$value["descripcion"].'" required readonly>
     
                               </div>
                               
@@ -168,10 +168,8 @@
                             <div class="col-xs-2" style="padding-right:0px">
                 
                               <div class="input-group">
-                    
-                                <span class="input-group-addon"><i class="fa fa-sort"></i></span>
     
-                                <input type="text" class="form-control nuevaCantidadProducto"  name="nuevaCantidad" value="'.$value["cantidad"].'" readonly required>
+                                <input type="number" class="form-control nuevaCantidadProducto" name="nuevaCantidadProducto" min="1" value="1" cantidadProducto required>
     
                               </div>
     
@@ -189,7 +187,7 @@
     
                                 <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
                        
-                                <input type="text" class="form-control nuevoPrecioProducto" precioReal="'.$respuesta["precio_venta"].'" name="nuevoPrecioProducto" value="'.$value["total"].'" readonly required>
+                                <input type="text" class="form-control nuevoPrecioProducto" precioReal="'.$respuesta["precio_venta"].'" name="nuevoPrecioProducto" value="'.$value["total"].'"  required>
        
                               </div>
                    
