@@ -2264,3 +2264,573 @@ Stack trace:
 [14-May-2018 20:10:06 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
 [14-May-2018 20:10:06 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
 [14-May-2018 20:10:06 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 15:48:26 UTC] Hello, errors!
+[15-May-2018 15:48:33 UTC] Hello, errors!
+[15-May-2018 15:48:34 UTC] Hello, errors!
+[15-May-2018 15:49:09 UTC] Hello, errors!
+[15-May-2018 15:49:11 UTC] Hello, errors!
+[15-May-2018 15:49:11 UTC] PHP Notice:  Undefined index: descuento in C:\wamp64\www\pos1\vistas\modulos\editar-venta.php on line 180
+[15-May-2018 15:49:11 UTC] PHP Stack trace:
+[15-May-2018 15:49:11 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 15:49:11 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 15:49:11 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 15:49:11 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 15:49:11 UTC] PHP Notice:  Undefined index: descuento in C:\wamp64\www\pos1\vistas\modulos\editar-venta.php on line 180
+[15-May-2018 15:49:11 UTC] PHP Stack trace:
+[15-May-2018 15:49:11 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 15:49:11 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 15:49:11 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 15:49:11 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 15:49:11 UTC] PHP Notice:  Undefined index: descuento in C:\wamp64\www\pos1\vistas\modulos\editar-venta.php on line 180
+[15-May-2018 15:49:11 UTC] PHP Stack trace:
+[15-May-2018 15:49:11 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 15:49:11 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 15:49:11 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 15:49:11 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 15:49:11 UTC] PHP Notice:  Undefined index: impuesto in C:\wamp64\www\pos1\vistas\modulos\editar-venta.php on line 245
+[15-May-2018 15:49:11 UTC] PHP Stack trace:
+[15-May-2018 15:49:11 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 15:49:11 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 15:49:11 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 15:49:11 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 15:49:15 UTC] Hello, errors!
+[15-May-2018 15:49:20 UTC] Hello, errors!
+[15-May-2018 15:49:20 UTC] PHP Notice:  Undefined index: impuesto in C:\wamp64\www\pos1\vistas\modulos\editar-venta.php on line 245
+[15-May-2018 15:49:20 UTC] PHP Stack trace:
+[15-May-2018 15:49:20 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 15:49:20 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 15:49:20 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 15:49:20 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 15:49:47 UTC] Hello, errors!
+[15-May-2018 15:49:47 UTC] PHP Notice:  Undefined index: impuesto in C:\wamp64\www\pos1\vistas\modulos\editar-venta.php on line 245
+[15-May-2018 15:49:47 UTC] PHP Stack trace:
+[15-May-2018 15:49:47 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 15:49:47 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 15:49:47 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 15:49:47 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 10:49:48 America/Bogota] PHP Notice:  Undefined index: glosaVenta in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 248
+[15-May-2018 10:49:48 America/Bogota] PHP Stack trace:
+[15-May-2018 10:49:48 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 10:49:48 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 10:49:48 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 10:49:48 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 10:49:48 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:327
+[15-May-2018 10:49:48 America/Bogota] PHP Notice:  Undefined index: infoAdicionalVenta in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 249
+[15-May-2018 10:49:48 America/Bogota] PHP Stack trace:
+[15-May-2018 10:49:48 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 10:49:48 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 10:49:48 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 10:49:48 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 10:49:48 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:327
+[15-May-2018 10:49:48 America/Bogota] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\wamp64\www\pos1\modelos\ventas.modelo.php on line 91
+[15-May-2018 10:49:49 America/Bogota] PHP Stack trace:
+[15-May-2018 10:49:49 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 10:49:49 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 10:49:49 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 10:49:49 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 10:49:49 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:327
+[15-May-2018 10:49:49 America/Bogota] PHP   6. ModeloVentas::mdlEditarVenta() C:\wamp64\www\pos1\controladores\ventas.controlador.php:255
+[15-May-2018 10:49:49 America/Bogota] PHP   7. PDOStatement->execute() C:\wamp64\www\pos1\modelos\ventas.modelo.php:91
+[15-May-2018 15:51:56 UTC] Hello, errors!
+[15-May-2018 15:51:56 UTC] PHP Notice:  Undefined index: impuesto in C:\wamp64\www\pos1\vistas\modulos\editar-venta.php on line 245
+[15-May-2018 15:51:56 UTC] PHP Stack trace:
+[15-May-2018 15:51:56 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 15:51:56 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 15:51:56 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 15:51:56 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 10:51:58 America/Bogota] PHP Notice:  Undefined index: glosaVenta in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 248
+[15-May-2018 10:51:58 America/Bogota] PHP Stack trace:
+[15-May-2018 10:51:58 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 10:51:59 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 10:51:59 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 10:51:59 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 10:51:59 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:327
+[15-May-2018 10:51:59 America/Bogota] PHP Notice:  Undefined index: infoAdicionalVenta in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 249
+[15-May-2018 10:51:59 America/Bogota] PHP Stack trace:
+[15-May-2018 10:51:59 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 10:51:59 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 10:51:59 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 10:51:59 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 10:51:59 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:327
+[15-May-2018 10:52:00 America/Bogota] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\wamp64\www\pos1\modelos\ventas.modelo.php on line 91
+[15-May-2018 10:52:00 America/Bogota] PHP Stack trace:
+[15-May-2018 10:52:00 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 10:52:00 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 10:52:00 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 10:52:00 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 10:52:00 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:327
+[15-May-2018 10:52:01 America/Bogota] PHP   6. ModeloVentas::mdlEditarVenta() C:\wamp64\www\pos1\controladores\ventas.controlador.php:255
+[15-May-2018 10:52:01 America/Bogota] PHP   7. PDOStatement->execute() C:\wamp64\www\pos1\modelos\ventas.modelo.php:91
+[15-May-2018 15:52:28 UTC] Hello, errors!
+[15-May-2018 15:52:28 UTC] PHP Notice:  Undefined index: impuesto in C:\wamp64\www\pos1\vistas\modulos\editar-venta.php on line 245
+[15-May-2018 15:52:28 UTC] PHP Stack trace:
+[15-May-2018 15:52:28 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 15:52:28 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 15:52:28 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 15:52:28 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 15:52:28 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 194
+[15-May-2018 15:52:28 UTC] PHP Stack trace:
+[15-May-2018 15:52:28 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 15:52:28 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 15:52:28 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 15:52:28 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 15:52:28 UTC] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:327
+[15-May-2018 10:52:29 America/Bogota] PHP Notice:  Undefined index: glosaVenta in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 248
+[15-May-2018 10:52:29 America/Bogota] PHP Stack trace:
+[15-May-2018 10:52:29 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 10:52:29 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 10:52:29 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 10:52:29 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 10:52:29 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:327
+[15-May-2018 10:52:29 America/Bogota] PHP Notice:  Undefined index: infoAdicionalVenta in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 249
+[15-May-2018 10:52:29 America/Bogota] PHP Stack trace:
+[15-May-2018 10:52:29 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 10:52:29 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 10:52:29 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 10:52:29 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 10:52:29 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:327
+[15-May-2018 10:52:29 America/Bogota] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\wamp64\www\pos1\modelos\ventas.modelo.php on line 91
+[15-May-2018 10:52:29 America/Bogota] PHP Stack trace:
+[15-May-2018 10:52:29 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 10:52:29 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 10:52:29 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 10:52:30 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 10:52:30 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:327
+[15-May-2018 10:52:30 America/Bogota] PHP   6. ModeloVentas::mdlEditarVenta() C:\wamp64\www\pos1\controladores\ventas.controlador.php:255
+[15-May-2018 10:52:30 America/Bogota] PHP   7. PDOStatement->execute() C:\wamp64\www\pos1\modelos\ventas.modelo.php:91
+[15-May-2018 15:54:09 UTC] Hello, errors!
+[15-May-2018 15:54:12 UTC] PHP Notice:  Undefined index: impuesto in C:\wamp64\www\pos1\vistas\modulos\editar-venta.php on line 245
+[15-May-2018 15:54:13 UTC] PHP Stack trace:
+[15-May-2018 15:54:13 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 15:54:13 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 15:54:13 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 15:54:13 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 15:54:14 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 194
+[15-May-2018 15:54:14 UTC] PHP Stack trace:
+[15-May-2018 15:54:14 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 15:54:14 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 15:54:14 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 15:54:14 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 15:54:14 UTC] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 10:54:15 America/Bogota] PHP Notice:  Undefined index: glosaVenta in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 248
+[15-May-2018 10:54:15 America/Bogota] PHP Stack trace:
+[15-May-2018 10:54:15 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 10:54:15 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 10:54:15 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 10:54:15 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 10:54:15 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 10:54:15 America/Bogota] PHP Notice:  Undefined index: infoAdicionalVenta in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 249
+[15-May-2018 10:54:15 America/Bogota] PHP Stack trace:
+[15-May-2018 10:54:15 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 10:54:15 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 10:54:15 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 10:54:15 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 10:54:16 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 10:54:16 America/Bogota] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\wamp64\www\pos1\modelos\ventas.modelo.php on line 91
+[15-May-2018 10:54:16 America/Bogota] PHP Stack trace:
+[15-May-2018 10:54:16 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 10:54:16 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 10:54:16 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 10:54:16 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 10:54:16 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 10:54:16 America/Bogota] PHP   6. ModeloVentas::mdlEditarVenta() C:\wamp64\www\pos1\controladores\ventas.controlador.php:255
+[15-May-2018 10:54:16 America/Bogota] PHP   7. PDOStatement->execute() C:\wamp64\www\pos1\modelos\ventas.modelo.php:91
+[15-May-2018 15:55:19 UTC] Hello, errors!
+[15-May-2018 15:55:20 UTC] PHP Notice:  Undefined index: impuesto in C:\wamp64\www\pos1\vistas\modulos\editar-venta.php on line 245
+[15-May-2018 15:55:20 UTC] PHP Stack trace:
+[15-May-2018 15:55:20 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 15:55:20 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 15:55:20 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 15:55:21 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 15:55:21 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 194
+[15-May-2018 15:55:21 UTC] PHP Stack trace:
+[15-May-2018 15:55:21 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 15:55:21 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 15:55:21 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 15:55:21 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 15:55:21 UTC] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 10:55:21 America/Bogota] PHP Notice:  Undefined index: glosaVenta in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 248
+[15-May-2018 10:55:22 America/Bogota] PHP Stack trace:
+[15-May-2018 10:55:22 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 10:55:22 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 10:55:22 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 10:55:22 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 10:55:22 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 10:55:22 America/Bogota] PHP Notice:  Undefined index: infoAdicionalVenta in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 249
+[15-May-2018 10:55:22 America/Bogota] PHP Stack trace:
+[15-May-2018 10:55:22 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 10:55:22 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 10:55:22 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 10:55:22 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 10:55:22 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 10:55:22 America/Bogota] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\wamp64\www\pos1\modelos\ventas.modelo.php on line 91
+[15-May-2018 10:55:23 America/Bogota] PHP Stack trace:
+[15-May-2018 10:55:23 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 10:55:23 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 10:55:23 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 10:55:23 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 10:55:23 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 10:55:23 America/Bogota] PHP   6. ModeloVentas::mdlEditarVenta() C:\wamp64\www\pos1\controladores\ventas.controlador.php:255
+[15-May-2018 10:55:23 America/Bogota] PHP   7. PDOStatement->execute() C:\wamp64\www\pos1\modelos\ventas.modelo.php:91
+[15-May-2018 15:57:29 UTC] Hello, errors!
+[15-May-2018 15:57:29 UTC] PHP Notice:  Undefined index: impuesto in C:\wamp64\www\pos1\vistas\modulos\editar-venta.php on line 245
+[15-May-2018 15:57:29 UTC] PHP Stack trace:
+[15-May-2018 15:57:30 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 15:57:30 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 15:57:30 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 15:57:30 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 15:57:30 UTC] PHP Notice:  Use of undefined constant console - assumed 'console' in C:\wamp64\www\pos1\vistas\modulos\editar-venta.php on line 288
+[15-May-2018 15:57:30 UTC] PHP Stack trace:
+[15-May-2018 15:57:30 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 15:57:30 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 15:57:30 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 15:57:30 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 15:57:30 UTC] PHP Warning:  log() expects parameter 1 to be double, string given in C:\wamp64\www\pos1\vistas\modulos\editar-venta.php on line 288
+[15-May-2018 15:57:31 UTC] PHP Stack trace:
+[15-May-2018 15:57:31 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 15:57:31 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 15:57:31 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 15:57:31 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 15:57:31 UTC] PHP   5. log() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:288
+[15-May-2018 15:57:31 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 194
+[15-May-2018 15:57:31 UTC] PHP Stack trace:
+[15-May-2018 15:57:31 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 15:57:31 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 15:57:31 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 15:57:31 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 15:57:31 UTC] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 10:57:32 America/Bogota] PHP Notice:  Undefined index: glosaVenta in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 248
+[15-May-2018 10:57:32 America/Bogota] PHP Stack trace:
+[15-May-2018 10:57:32 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 10:57:32 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 10:57:32 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 10:57:32 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 10:57:32 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 10:57:32 America/Bogota] PHP Notice:  Undefined index: infoAdicionalVenta in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 249
+[15-May-2018 10:57:32 America/Bogota] PHP Stack trace:
+[15-May-2018 10:57:32 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 10:57:32 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 10:57:32 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 10:57:32 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 10:57:32 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 10:57:32 America/Bogota] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\wamp64\www\pos1\modelos\ventas.modelo.php on line 91
+[15-May-2018 10:57:32 America/Bogota] PHP Stack trace:
+[15-May-2018 10:57:32 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 10:57:32 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 10:57:33 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 10:57:33 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 10:57:33 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 10:57:33 America/Bogota] PHP   6. ModeloVentas::mdlEditarVenta() C:\wamp64\www\pos1\controladores\ventas.controlador.php:255
+[15-May-2018 10:57:33 America/Bogota] PHP   7. PDOStatement->execute() C:\wamp64\www\pos1\modelos\ventas.modelo.php:91
+[15-May-2018 15:58:26 UTC] Hello, errors!
+[15-May-2018 15:58:26 UTC] PHP Notice:  Undefined index: impuesto in C:\wamp64\www\pos1\vistas\modulos\editar-venta.php on line 245
+[15-May-2018 15:58:26 UTC] PHP Stack trace:
+[15-May-2018 15:58:26 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 15:58:26 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 15:58:26 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 15:58:26 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 15:58:27 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 194
+[15-May-2018 15:58:27 UTC] PHP Stack trace:
+[15-May-2018 15:58:27 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 15:58:27 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 15:58:27 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 15:58:27 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 15:58:27 UTC] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 10:58:27 America/Bogota] PHP Notice:  Undefined index: glosaVenta in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 248
+[15-May-2018 10:58:27 America/Bogota] PHP Stack trace:
+[15-May-2018 10:58:28 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 10:58:28 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 10:58:28 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 10:58:28 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 10:58:28 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 10:58:28 America/Bogota] PHP Notice:  Undefined index: infoAdicionalVenta in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 249
+[15-May-2018 10:58:28 America/Bogota] PHP Stack trace:
+[15-May-2018 10:58:28 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 10:58:28 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 10:58:28 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 10:58:28 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 10:58:28 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 10:58:28 America/Bogota] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\wamp64\www\pos1\modelos\ventas.modelo.php on line 91
+[15-May-2018 10:58:28 America/Bogota] PHP Stack trace:
+[15-May-2018 10:58:28 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 10:58:28 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 10:58:29 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 10:58:29 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 10:58:29 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 10:58:29 America/Bogota] PHP   6. ModeloVentas::mdlEditarVenta() C:\wamp64\www\pos1\controladores\ventas.controlador.php:255
+[15-May-2018 10:58:29 America/Bogota] PHP   7. PDOStatement->execute() C:\wamp64\www\pos1\modelos\ventas.modelo.php:91
+[15-May-2018 16:00:04 UTC] Hello, errors!
+[15-May-2018 16:00:04 UTC] PHP Notice:  Use of undefined constant console - assumed 'console' in C:\wamp64\www\pos1\vistas\modulos\editar-venta.php on line 143
+[15-May-2018 16:00:04 UTC] PHP Stack trace:
+[15-May-2018 16:00:04 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 16:00:05 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 16:00:05 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 16:00:05 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 16:00:05 UTC] PHP Warning:  log() expects parameter 1 to be double, string given in C:\wamp64\www\pos1\vistas\modulos\editar-venta.php on line 143
+[15-May-2018 16:00:05 UTC] PHP Stack trace:
+[15-May-2018 16:00:05 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 16:00:05 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 16:00:05 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 16:00:05 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 16:00:05 UTC] PHP   5. log() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:143
+[15-May-2018 16:00:05 UTC] PHP Notice:  Undefined index: impuesto in C:\wamp64\www\pos1\vistas\modulos\editar-venta.php on line 245
+[15-May-2018 16:00:06 UTC] PHP Stack trace:
+[15-May-2018 16:00:06 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 16:00:06 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 16:00:06 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 16:00:06 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 16:00:06 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 194
+[15-May-2018 16:00:06 UTC] PHP Stack trace:
+[15-May-2018 16:00:06 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 16:00:06 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 16:00:06 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 16:00:06 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 16:00:06 UTC] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 11:00:06 America/Bogota] PHP Notice:  Undefined index: glosaVenta in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 248
+[15-May-2018 11:00:06 America/Bogota] PHP Stack trace:
+[15-May-2018 11:00:07 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 11:00:07 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 11:00:07 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 11:00:07 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 11:00:07 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 11:00:07 America/Bogota] PHP Notice:  Undefined index: infoAdicionalVenta in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 249
+[15-May-2018 11:00:07 America/Bogota] PHP Stack trace:
+[15-May-2018 11:00:07 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 11:00:07 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 11:00:07 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 11:00:07 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 11:00:07 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 11:00:07 America/Bogota] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\wamp64\www\pos1\modelos\ventas.modelo.php on line 91
+[15-May-2018 11:00:07 America/Bogota] PHP Stack trace:
+[15-May-2018 11:00:07 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 11:00:07 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 11:00:07 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 11:00:07 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 11:00:07 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 11:00:07 America/Bogota] PHP   6. ModeloVentas::mdlEditarVenta() C:\wamp64\www\pos1\controladores\ventas.controlador.php:255
+[15-May-2018 11:00:07 America/Bogota] PHP   7. PDOStatement->execute() C:\wamp64\www\pos1\modelos\ventas.modelo.php:91
+[15-May-2018 16:00:32 UTC] Hello, errors!
+[15-May-2018 16:00:32 UTC] PHP Notice:  Undefined index: impuesto in C:\wamp64\www\pos1\vistas\modulos\editar-venta.php on line 245
+[15-May-2018 16:00:32 UTC] PHP Stack trace:
+[15-May-2018 16:00:32 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 16:00:32 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 16:00:32 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 16:00:32 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 16:00:32 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 194
+[15-May-2018 16:00:33 UTC] PHP Stack trace:
+[15-May-2018 16:00:33 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 16:00:33 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 16:00:33 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 16:00:33 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 16:00:33 UTC] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 11:00:34 America/Bogota] PHP Notice:  Undefined index: glosaVenta in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 248
+[15-May-2018 11:00:34 America/Bogota] PHP Stack trace:
+[15-May-2018 11:00:34 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 11:00:34 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 11:00:34 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 11:00:34 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 11:00:34 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 11:00:34 America/Bogota] PHP Notice:  Undefined index: infoAdicionalVenta in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 249
+[15-May-2018 11:00:34 America/Bogota] PHP Stack trace:
+[15-May-2018 11:00:34 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 11:00:34 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 11:00:34 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 11:00:35 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 11:00:35 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 11:00:35 America/Bogota] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\wamp64\www\pos1\modelos\ventas.modelo.php on line 91
+[15-May-2018 11:00:35 America/Bogota] PHP Stack trace:
+[15-May-2018 11:00:35 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 11:00:35 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 11:00:35 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 11:00:35 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 11:00:35 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 11:00:35 America/Bogota] PHP   6. ModeloVentas::mdlEditarVenta() C:\wamp64\www\pos1\controladores\ventas.controlador.php:255
+[15-May-2018 11:00:35 America/Bogota] PHP   7. PDOStatement->execute() C:\wamp64\www\pos1\modelos\ventas.modelo.php:91
+[15-May-2018 16:03:16 UTC] Hello, errors!
+[15-May-2018 16:03:16 UTC] PHP Notice:  Undefined index: impuesto in C:\wamp64\www\pos1\vistas\modulos\editar-venta.php on line 245
+[15-May-2018 16:03:16 UTC] PHP Stack trace:
+[15-May-2018 16:03:16 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 16:03:16 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 16:03:17 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 16:03:17 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 16:03:17 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 194
+[15-May-2018 16:03:17 UTC] PHP Stack trace:
+[15-May-2018 16:03:17 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 16:03:17 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 16:03:17 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 16:03:17 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 16:03:17 UTC] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 11:03:17 America/Bogota] PHP Notice:  Undefined index: glosaVenta in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 248
+[15-May-2018 11:03:18 America/Bogota] PHP Stack trace:
+[15-May-2018 11:03:18 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 11:03:18 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 11:03:18 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 11:03:18 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 11:03:18 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 11:03:18 America/Bogota] PHP Notice:  Undefined index: infoAdicionalVenta in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 249
+[15-May-2018 11:03:18 America/Bogota] PHP Stack trace:
+[15-May-2018 11:03:18 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 11:03:18 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 11:03:18 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 11:03:18 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 11:03:18 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 11:03:18 America/Bogota] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\wamp64\www\pos1\modelos\ventas.modelo.php on line 91
+[15-May-2018 11:03:18 America/Bogota] PHP Stack trace:
+[15-May-2018 11:03:19 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 11:03:19 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 11:03:19 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 11:03:19 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 11:03:19 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 11:03:19 America/Bogota] PHP   6. ModeloVentas::mdlEditarVenta() C:\wamp64\www\pos1\controladores\ventas.controlador.php:255
+[15-May-2018 11:03:19 America/Bogota] PHP   7. PDOStatement->execute() C:\wamp64\www\pos1\modelos\ventas.modelo.php:91
+[15-May-2018 16:07:22 UTC] Hello, errors!
+[15-May-2018 16:07:22 UTC] PHP Notice:  Undefined index: impuesto in C:\wamp64\www\pos1\vistas\modulos\editar-venta.php on line 245
+[15-May-2018 16:07:22 UTC] PHP Stack trace:
+[15-May-2018 16:07:22 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 16:07:22 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 16:07:22 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 16:07:22 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 16:07:22 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 194
+[15-May-2018 16:07:22 UTC] PHP Stack trace:
+[15-May-2018 16:07:22 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 16:07:23 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 16:07:23 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 16:07:23 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 16:07:23 UTC] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 11:07:23 America/Bogota] PHP Notice:  Undefined index: glosaVenta in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 248
+[15-May-2018 11:07:23 America/Bogota] PHP Stack trace:
+[15-May-2018 11:07:23 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 11:07:23 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 11:07:23 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 11:07:23 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 11:07:24 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 11:07:24 America/Bogota] PHP Notice:  Undefined index: infoAdicionalVenta in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 249
+[15-May-2018 11:07:24 America/Bogota] PHP Stack trace:
+[15-May-2018 11:07:24 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 11:07:24 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 11:07:24 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 11:07:24 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 11:07:24 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 11:07:24 America/Bogota] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\wamp64\www\pos1\modelos\ventas.modelo.php on line 91
+[15-May-2018 11:07:24 America/Bogota] PHP Stack trace:
+[15-May-2018 11:07:24 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 11:07:24 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 11:07:24 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 11:07:24 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 11:07:25 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 11:07:25 America/Bogota] PHP   6. ModeloVentas::mdlEditarVenta() C:\wamp64\www\pos1\controladores\ventas.controlador.php:255
+[15-May-2018 11:07:25 America/Bogota] PHP   7. PDOStatement->execute() C:\wamp64\www\pos1\modelos\ventas.modelo.php:91
+[15-May-2018 16:10:09 UTC] Hello, errors!
+[15-May-2018 16:10:09 UTC] PHP Notice:  Undefined index: impuesto in C:\wamp64\www\pos1\vistas\modulos\editar-venta.php on line 245
+[15-May-2018 16:10:09 UTC] PHP Stack trace:
+[15-May-2018 16:10:09 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 16:10:09 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 16:10:09 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 16:10:10 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 16:10:10 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 194
+[15-May-2018 16:10:10 UTC] PHP Stack trace:
+[15-May-2018 16:10:10 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 16:10:10 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 16:10:10 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 16:10:10 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 16:10:10 UTC] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 11:10:11 America/Bogota] PHP Notice:  Undefined index: glosaVenta in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 248
+[15-May-2018 11:10:11 America/Bogota] PHP Stack trace:
+[15-May-2018 11:10:11 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 11:10:11 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 11:10:11 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 11:10:11 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 11:10:11 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 11:10:11 America/Bogota] PHP Notice:  Undefined index: infoAdicionalVenta in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 249
+[15-May-2018 11:10:11 America/Bogota] PHP Stack trace:
+[15-May-2018 11:10:11 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 11:10:11 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 11:10:11 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 11:10:12 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 11:10:12 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 11:10:12 America/Bogota] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\wamp64\www\pos1\modelos\ventas.modelo.php on line 91
+[15-May-2018 11:10:12 America/Bogota] PHP Stack trace:
+[15-May-2018 11:10:12 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 11:10:12 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 11:10:12 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 11:10:12 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 11:10:12 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 11:10:12 America/Bogota] PHP   6. ModeloVentas::mdlEditarVenta() C:\wamp64\www\pos1\controladores\ventas.controlador.php:255
+[15-May-2018 11:10:12 America/Bogota] PHP   7. PDOStatement->execute() C:\wamp64\www\pos1\modelos\ventas.modelo.php:91
+[15-May-2018 16:10:40 UTC] Hello, errors!
+[15-May-2018 16:10:40 UTC] PHP Notice:  Undefined index: impuesto in C:\wamp64\www\pos1\vistas\modulos\editar-venta.php on line 245
+[15-May-2018 16:10:41 UTC] PHP Stack trace:
+[15-May-2018 16:10:41 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 16:10:41 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 16:10:41 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 16:10:41 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 16:10:41 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 194
+[15-May-2018 16:10:41 UTC] PHP Stack trace:
+[15-May-2018 16:10:41 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 16:10:41 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 16:10:42 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 16:10:42 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 16:10:42 UTC] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 11:10:42 America/Bogota] PHP Notice:  Undefined index: glosaVenta in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 248
+[15-May-2018 11:10:42 America/Bogota] PHP Stack trace:
+[15-May-2018 11:10:42 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 11:10:42 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 11:10:42 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 11:10:42 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 11:10:42 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 11:10:42 America/Bogota] PHP Notice:  Undefined index: infoAdicionalVenta in C:\wamp64\www\pos1\controladores\ventas.controlador.php on line 249
+[15-May-2018 11:10:42 America/Bogota] PHP Stack trace:
+[15-May-2018 11:10:42 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 11:10:43 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 11:10:43 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 11:10:43 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 11:10:43 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 11:10:43 America/Bogota] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\wamp64\www\pos1\modelos\ventas.modelo.php on line 91
+[15-May-2018 11:10:43 America/Bogota] PHP Stack trace:
+[15-May-2018 11:10:43 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 11:10:43 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 11:10:43 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 11:10:43 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 11:10:43 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 11:10:43 America/Bogota] PHP   6. ModeloVentas::mdlEditarVenta() C:\wamp64\www\pos1\controladores\ventas.controlador.php:255
+[15-May-2018 11:10:43 America/Bogota] PHP   7. PDOStatement->execute() C:\wamp64\www\pos1\modelos\ventas.modelo.php:91
+[15-May-2018 16:11:47 UTC] Hello, errors!
+[15-May-2018 16:11:50 UTC] PHP Notice:  Undefined index: impuesto in C:\wamp64\www\pos1\vistas\modulos\editar-venta.php on line 245
+[15-May-2018 16:11:50 UTC] PHP Stack trace:
+[15-May-2018 16:11:50 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 16:11:50 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 16:11:50 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 16:11:50 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 11:11:51 America/Bogota] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\wamp64\www\pos1\modelos\ventas.modelo.php on line 91
+[15-May-2018 11:11:51 America/Bogota] PHP Stack trace:
+[15-May-2018 11:11:51 America/Bogota] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 11:11:51 America/Bogota] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 11:11:51 America/Bogota] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 11:11:51 America/Bogota] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 11:11:51 America/Bogota] PHP   5. ControladorVentas::ctrEditarVenta() C:\wamp64\www\pos1\vistas\modulos\editar-venta.php:351
+[15-May-2018 11:11:51 America/Bogota] PHP   6. ModeloVentas::mdlEditarVenta() C:\wamp64\www\pos1\controladores\ventas.controlador.php:255
+[15-May-2018 11:11:51 America/Bogota] PHP   7. PDOStatement->execute() C:\wamp64\www\pos1\modelos\ventas.modelo.php:91
+[15-May-2018 16:25:35 UTC] Hello, errors!
+[15-May-2018 16:25:37 UTC] PHP Notice:  Undefined index: impuesto in C:\wamp64\www\pos1\vistas\modulos\editar-venta.php on line 245
+[15-May-2018 16:25:37 UTC] PHP Stack trace:
+[15-May-2018 16:25:37 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[15-May-2018 16:25:37 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[15-May-2018 16:25:37 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[15-May-2018 16:25:37 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[15-May-2018 16:25:41 UTC] Hello, errors!
+[15-May-2018 16:26:51 UTC] Hello, errors!
+[15-May-2018 16:26:54 UTC] Hello, errors!
+[15-May-2018 16:33:56 UTC] Hello, errors!
+[15-May-2018 16:37:53 UTC] Hello, errors!
+[15-May-2018 16:38:22 UTC] Hello, errors!
+[15-May-2018 16:40:17 UTC] Hello, errors!
+[15-May-2018 17:08:12 UTC] Hello, errors!
+[15-May-2018 17:08:39 UTC] Hello, errors!
+[15-May-2018 17:12:45 UTC] Hello, errors!
+[15-May-2018 17:14:39 UTC] Hello, errors!
+[15-May-2018 17:15:56 UTC] Hello, errors!
+[15-May-2018 17:16:47 UTC] Hello, errors!
+[15-May-2018 17:17:17 UTC] Hello, errors!
+[15-May-2018 17:17:29 UTC] Hello, errors!
+[15-May-2018 17:18:01 UTC] Hello, errors!
+[15-May-2018 17:18:33 UTC] Hello, errors!

@@ -140,7 +140,7 @@
                 <?php
 
                 $listaProducto = json_decode($venta["productos"], true);
-
+                var_dump($venta);
                 foreach ($listaProducto as $key => $value) {
 
                   $item = "id";
@@ -278,6 +278,30 @@
 
                 </div>
 
+                  <!--=====================================
+                  ENTRADA GLOSA
+                  ======================================-->
+                  <hr>
+                  <div class="form-group">
+                      <div class="input-group">
+                          <span class="input-group-addon" ><i class="fa fa-commenting"></i></span>
+                          <textarea class="form-control glosaVenta" rows="3" id="glosaVenta" name="glosaVenta" placeholder="Glosa"  required><?php echo $venta["glosa"];?></textarea>
+                      </div>
+                  </div>
+
+                  <hr>
+                  <!--=====================================
+                  ENTRADA INFO ADICIONAL
+                  ======================================-->
+                  <div class="form-group">
+                      <div class="input-group">
+                          <span class="input-group-addon" ><i class="fa fa-commenting"></i></span>
+                          <textarea class="form-control infoAdicionalVenta" rows="3" id="infoAdicionalVenta" name="infoAdicionalVenta" placeholder="Información Adicional"  required><?php echo $venta["info_adicional"]; ?></textarea>
+                      </div>
+                  </div>
+
+                  <hr>
+
                 <hr>
 
                 <!--=====================================
@@ -385,7 +409,7 @@ MODAL AGREGAR CLIENTE
 
       <form role="form" method="post">
 
-        <!--=====================================
+       <!--=====================================
         CABEZA DEL MODAL
         ======================================-->
 

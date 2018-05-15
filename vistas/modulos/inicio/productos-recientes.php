@@ -1,11 +1,14 @@
 <?php
 
-$item = null;
-$valor = null;
+$item = "null";
+$valor = "null";
 $orden = "id";
 
-$productos = ControladorProductos::ctrMostrarProductos($item, $valor, $orden);
+$productos = ControladorItem::ctrMostrarItem($item, $valor);
+//var_dump($productos);
 
+$utm = ControladorUtm::ctrMostrarUtmActual($item,$valor);
+var_dump($utm);
  ?>
 
 
@@ -40,22 +43,25 @@ $productos = ControladorProductos::ctrMostrarProductos($item, $valor, $orden);
     <?php
 
     for($i = 0; $i < 10; $i++){
-
+        $precioItem = $utm["valor"] * $productos[$i]["precio"];
+        $precioItem = number_format($precioItem,0);
       echo '<li class="item">
 
+        <!--
         <div class="product-img">
 
           <img src="'.$productos[$i]["imagen"].'" alt="Product Image">
 
         </div>
+        -->
 
         <div class="product-info">
 
           <a href="" class="product-title">
 
-            '.$productos[$i]["descripcion"].'
+            '.$productos[$i]["nombre"].'
 
-            <span class="label label-warning pull-right">$'.$productos[$i]["precio_venta"].'</span>
+            <span class="label label-warning pull-right">$'.$precioItem.'</span>
 
           </a>
     

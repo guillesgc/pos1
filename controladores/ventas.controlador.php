@@ -188,7 +188,7 @@ class ControladorVentas{
 			=============================================*/
 
 			$listaProductos_2 = json_decode($_POST["listaProductos"], true);
-			var_dump($listaProductos_2);
+			//var_dump($listaProductos_2);
 			$totalProductosComprados_2 = array();
 
 			foreach ($listaProductos_2 as $key => $value) {
@@ -240,7 +240,7 @@ class ControladorVentas{
 			/*=============================================
 			GUARDAR CAMBIOS DE LA COMPRA
 			=============================================*/	
-
+            var_dump($_POST);
 			$datos = array("id_vendedor"=>$_POST["idVendedor"],
 						   "id_cliente"=>$_POST["seleccionarCliente"],
 						   "codigo"=>$_POST["editarVenta"],
