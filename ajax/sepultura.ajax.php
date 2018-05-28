@@ -30,7 +30,7 @@ EDITAR CLIENTE
 =============================================*/	
 
 if(isset($_POST["idSepultura"])){
-
+    var_dump($_POST);
 	$sepultura = new AjaxSepulturas();
 	$sepultura -> idSepultura = $_POST["idSepultura"];
 	$sepultura -> ajaxEditarSepultura();

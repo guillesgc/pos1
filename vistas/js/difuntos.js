@@ -21,7 +21,8 @@ if($(".perfilUsuario").val() != "Administrador"){
 if(window.matchMedia("(max-width:767px)").matches){
 
     var table = $('.tablaDifuntos').DataTable({
-
+        "processing":true,
+        "serverSide":true,
         "ajax":"ajax/datatable-difuntos.ajax.php",
         "columnDefs": [
 
@@ -165,7 +166,7 @@ $(".tablaDifuntos tbody").on("click", ".btnEditarDifunto", function(){
             console.log(respuesta);
             
             $("#idDifunto").val(respuesta["id_difunto"]);
-	        $("#editarDifunto").val(respuesta["nombre"]);
+	        $("#editarDifunto").val(respuesta[1]);
             $("#editarApaterno").val(respuesta["apellido_paterno"]);
 	        $("#editarAmaterno").val(respuesta["apellido_materno"]);
 	        $("#editarCmuerte").val(respuesta["causa_muerte"]);

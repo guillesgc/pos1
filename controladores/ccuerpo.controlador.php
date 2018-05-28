@@ -8,7 +8,7 @@ class ControladorCcuerpo{
 
 	static public function ctrCrearCcuerpo(){
 
-		if(isset($_POST["nuevoCcuerpo"])){
+        if(isset($_POST["nuevoCcuerpo"])){
 
 			if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\- ]+$/', $_POST["nuevoCcuerpo"])){
 
@@ -16,10 +16,10 @@ class ControladorCcuerpo{
 
 				$datos = array("nombre"=> $_POST["nuevoCcuerpo"],
 					           "id_cementerio"=> $_POST["nuevoCementerio"],
-					           "tipo_sep"=> $_POST["nuevoTproducto"]);
-
+					           "tipo_sep"=> $_POST["nuevoTproducto"],
+                               "id_sociedad" => '0');
 				$respuesta = ModeloCcuerpo::mdlIngresarCcuerpo($tabla, $datos);
-
+                print_r($respuesta);
 				if($respuesta == "ok"){
 
 					echo'<script>

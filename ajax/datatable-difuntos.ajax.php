@@ -28,11 +28,38 @@ class tablaDifuntos{
 
         $difuntos = ControladorDifuntos::ctrMostrarDifuntosYNumSepultura($item, $valor);
 
-        echo '{
+            echo '{
             "data": [';
+        if(count($difuntos) != 0) {
+            for ($i = 0; $i < count($difuntos) - 1; $i++) {
 
-        for($i = 0; $i < count($difuntos)-1; $i++){
+                //AGREGAR TIPO SEPULTURA
+                $id_sep = $difuntos[$i]["id_sepultura"];
+                $item = "id_tipo_sepultura";
+                $x = ControladorTsepultura::ctrMostrarTsepultura($item, $id_sep);
 
+                //AGREGAR CUARTEL CUERPO
+                $id_cc = $difuntos[$i]["id_cuartel_cuerpo"];
+                //print_r($id_cc);
+                $item = "id_cuartel_cuerpo";
+                $y = ControladorCcuerpo::ctrMostrarCcuerpo($item, $id_cc);
+
+                echo '[
+                "' . ($i + 1) . '",
+                "' . strtoupper($difuntos[$i]["nombre"]) . '",
+                "' . strtoupper($difuntos[$i]["apellido_paterno"]) . '",
+                "' . strtoupper($difuntos[$i]["apellido_materno"]) . '",
+                "' . $difuntos[$i]["rut"] . '",
+                "' . $x["nombre"] . '",
+                "' . $y["nombre"] . '",
+                "' . $difuntos[$i]["numero_sepultura"] . '",
+                "' . $difuntos[$i]["fecha_sepultacion"] . '",
+                "' . $difuntos[$i]["inscripcion"] . '",
+                "' . $difuntos[$i]["circunscripcion"] . '",
+                "' . $difuntos[$i]["id_boletin"] . '",
+                "' . $difuntos[$i]["id_difunto"] . '"
+            ],';
+            }
             //AGREGAR TIPO SEPULTURA
             $id_sep = $difuntos[$i]["id_sepultura"];
             $item = "id_tipo_sepultura";
@@ -40,53 +67,29 @@ class tablaDifuntos{
 
             //AGREGAR CUARTEL CUERPO
             $id_cc = $difuntos[$i]["id_cuartel_cuerpo"];
-            //print_r($id_cc);
             $item = "id_cuartel_cuerpo";
             $y = ControladorCcuerpo::ctrMostrarCcuerpo($item, $id_cc);
-
             echo '[
-                "'.($i+1).'",
-                "'.strtoupper($difuntos[$i]["nombre"]).'",
-                "'.strtoupper($difuntos[$i]["apellido_paterno"]).'",
-                "'.strtoupper($difuntos[$i]["apellido_materno"]).'",
-                "'.$difuntos[$i]["rut"].'",
-                "'.$x["nombre"].'",
-                "'.$y["nombre"].'",
-                "'.$difuntos[$i]["numero_sepultura"].'",
-                "'.$difuntos[$i]["fecha_sepultacion"].'",
-                "'.$difuntos[$i]["inscripcion"].'",
-                "'.$difuntos[$i]["circunscripcion"].'",
-                "'.$difuntos[$i]["id_boletin"].'",
-                "'.$difuntos[$i]["id_difunto"].'"
-            ],';
-        }
-        //AGREGAR TIPO SEPULTURA
-        $id_sep = $difuntos[$i]["id_sepultura"];
-        $item = "id_tipo_sepultura";
-        $x = ControladorTsepultura::ctrMostrarTsepultura($item, $id_sep);
-
-        //AGREGAR CUARTEL CUERPO
-        $id_cc = $difuntos[$i]["id_cuartel_cuerpo"];
-        $item = "id_cuartel_cuerpo";
-        $y = ControladorCcuerpo::ctrMostrarCcuerpo($item, $id_cc);
-
-        echo '[
-                "'.count($difuntos).'",
-                "'.strtoupper($difuntos[count($difuntos)-1]["nombre"]).'",
-                "'.strtoupper($difuntos[count($difuntos)-1]["apellido_paterno"]).'",
-                "'.strtoupper($difuntos[count($difuntos)-1]["apellido_materno"]).'",
-                "'.$difuntos[count($difuntos)-1]["rut"].'",
-                "'.$x["nombre"].'",
-                "'.$y["nombre"].'",
-                "'.$difuntos[count($difuntos)-1]["numero_sepultura"].'",
-                "'.$difuntos[count($difuntos)-1]["fecha_sepultacion"].'",
-                "'.$difuntos[count($difuntos)-1]["inscripcion"].'",
-                "'.$difuntos[count($difuntos)-1]["circunscripcion"].'",
-                "'.$difuntos[count($difuntos)-1]["id_boletin"].'",
-                "'.$difuntos[$i]["id_difunto"].'"
+                "' . count($difuntos) . '",
+                "' . strtoupper($difuntos[count($difuntos) - 1]["nombre"]) . '",
+                "' . strtoupper($difuntos[count($difuntos) - 1]["apellido_paterno"]) . '",
+                "' . strtoupper($difuntos[count($difuntos) - 1]["apellido_materno"]) . '",
+                "' . $difuntos[count($difuntos) - 1]["rut"] . '",
+                "' . $x["nombre"] . '",
+                "' . $y["nombre"] . '",
+                "' . $difuntos[count($difuntos) - 1]["numero_sepultura"] . '",
+                "' . $difuntos[count($difuntos) - 1]["fecha_sepultacion"] . '",
+                "' . $difuntos[count($difuntos) - 1]["inscripcion"] . '",
+                "' . $difuntos[count($difuntos) - 1]["circunscripcion"] . '",
+                "' . $difuntos[count($difuntos) - 1]["id_boletin"] . '",
+                "' . $difuntos[$i]["id_difunto"] . '"
               ]
            ]
         }';
+        }else{
+            echo ']}';
+
+        }
     }
 }
 

@@ -27,7 +27,7 @@ class AjaxCcuerpo{
 EDITAR CUARTEL CUERPO
 =============================================*/	
 if(isset($_POST["idCcuerpo"])){
-
+    var_dump($_POST);
 	$ccuerpo = new AjaxCcuerpo();
 	$ccuerpo -> idCcuerpo = $_POST["idCcuerpo"];
 	$ccuerpo -> ajaxEditarCcuerpo();

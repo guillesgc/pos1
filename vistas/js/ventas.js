@@ -631,26 +631,6 @@ $("#nuevoMetodoPago").change(function(){
       	// Listar método en la entrada
       	listarMetodos()
 
-	}else{
-
-		$(this).parent().parent().removeClass('col-xs-4');
-
-		$(this).parent().parent().addClass('col-xs-6');
-
-		 $(this).parent().parent().parent().children('.cajasMetodoPago').html(
-
-		 	'<div class="col-xs-6" style="padding-left:0px">'+
-                        
-                '<div class="input-group">'+
-                     
-                  '<input type="number" min="0" class="form-control" id="nuevoCodigoTransaccion" placeholder="Código transacción"  required>'+
-                       
-                  '<span class="input-group-addon"><i class="fa fa-lock"></i></span>'+
-                  
-                '</div>'+
-
-              '</div>')
-
 	}
 
 	
@@ -735,7 +715,8 @@ function listarMetodos(){
 
 	}else{
 
-		$("#listaMetodoPago").val($("#nuevoMetodoPago").val()+"-"+$("#nuevoCodigoTransaccion").val());
+		$("#listaMetodoPago").val($("#nuevoMetodoPago").val());
+		//$("#listaMetodoPago").val($("#nuevoMetodoPago").val()+"-"+$("#nuevoCodigoTransaccion").val());
 
 	}
 
