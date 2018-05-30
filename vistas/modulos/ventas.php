@@ -60,7 +60,6 @@
            <th>Vendedor</th>
            <th>Glosa</th>
            <th>Forma de pago</th>
-           <th>Neto</th>
            <th>Total</th> 
            <th>Fecha</th>
            <th>Acciones</th>
@@ -111,8 +110,6 @@
                   <td>'.$value["glosa"].'</td>
     
                   <td>'.$value["metodo_pago"].'</td>
-
-                  <td>$ '.$value["neto"].'</td>
 
                   <td>$ '.$value["total"].'</td>
 

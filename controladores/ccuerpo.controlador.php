@@ -14,10 +14,11 @@ class ControladorCcuerpo{
 
 				$tabla = "cuartel_cuerpos";
 
-				$datos = array("nombre"=> $_POST["nuevoCcuerpo"],
-					           "id_cementerio"=> $_POST["nuevoCementerio"],
-					           "tipo_sep"=> $_POST["nuevoTproducto"],
-                               "id_sociedad" => '0');
+				$datos = array("tipo_sep"=> $_POST["nuevoTproducto"],
+                               "nombre"=> $_POST["nuevoCcuerpo"],
+                               "id_sociedad" => '0',
+                               "id_cementerio"=> $_POST["nuevoCementerio"]);
+
 				$respuesta = ModeloCcuerpo::mdlIngresarCcuerpo($tabla, $datos);
                 print_r($respuesta);
 				if($respuesta == "ok"){

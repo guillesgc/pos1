@@ -9,14 +9,15 @@ class ModeloCcuerpo{
 	=============================================*/
 
 	static public function mdlIngresarCcuerpo($tabla, $datos){
-        var_dump($datos);
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla (tipo_sep, nombre, id_sociedad, id_cementerio) VALUES (:tipo_sep, :nombre, :id_sociedad, :id_cementerio)");
+        //var_dump($datos);
+        $stmt = Conexion::conectar()->prepare("INSERT INTO cuartel_cuerpos (tipo_sep, nombre, id_sociedad, id_cementerio) 
+                                                         VALUES (:tipo_sep, :nombre, :id_sociedad, :id_cementerio)");
 
         $stmt->bindParam(":tipo_sep", $datos["tipo_sep"], PDO::PARAM_INT);
 		$stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
         $stmt->bindParam(":id_sociedad", $datos["id_sociedad"], PDO::PARAM_INT);
 		$stmt->bindParam(":id_cementerio", $datos["id_cementerio"], PDO::PARAM_INT);
-
+        //var_dump($stmt);
 
 		if($stmt->execute()){
 

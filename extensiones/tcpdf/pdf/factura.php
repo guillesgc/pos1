@@ -135,7 +135,7 @@ $bloque2 = <<<EOF
 		</tr>
         <tr>
 			<td style="border: 1px solid #666; background-color:white; width:90px"><strong>Rut</strong></td>
-			<td style="border: 1px solid #666; background-color:white; width:270px">$respuetaCliente[documento]</td>
+			<td style="border: 1px solid #666; background-color:white; width:270px">$respuestaCliente[documentof]</td>
             <td style="border: 1px solid #666; background-color:white; width:70px; text-align:right"><strong>Teléfono</strong></td>
             <td style="border: 1px solid #666; background-color:white; width:110px; text-align:right">$respuestaCliente[telefono]</td>
 		</tr>
