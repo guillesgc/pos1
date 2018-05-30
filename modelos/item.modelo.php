@@ -9,12 +9,14 @@ class ModeloItem{
 	=============================================*/
 
 	static public function mdlIngresarItem($tabla, $datos){
-
-		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre, id_centro_costo, precio) VALUES (:nombre, :id_centro_costo, :precio)");
+        var_dump($datos);
+		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre, precio, descripcion, servicio, id_centro_costo) VALUES (:nombre, :precio, :descripcion, :servicio, :id_centro_costo)");
 
 		$stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
-			$stmt->bindParam(":id_centro_costo", $datos["id_centro_costo"], PDO::PARAM_INT);
 		$stmt->bindParam(":precio", $datos["precio"], PDO::PARAM_STR);
+		$stmt->bindParam(":descripcion", $datos["descripcion"], PDO::PARAM_INT);
+		$stmt->bindParam(":id_centro_costo", $datos["id_centro_costo"], PDO::PARAM_INT);
+		$stmt->bindParam(":servicio", $datos["servicio"], PDO::PARAM_INT);
 
 		if($stmt->execute()){
 

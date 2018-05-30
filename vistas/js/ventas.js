@@ -101,7 +101,7 @@ $(".tablaVentas tbody").on("click", "button.agregarProducto", function(){
      		console.log("respuesta",respuesta);
       	    var descripcion = respuesta["nombre"];
           	var stock = respuesta["stock"];
-          	var precio = Math.round(respuesta["precio"] * respuesta["valor"]);
+          	var precio = Math.round(respuesta["precio"]	);
 
           	$(".nuevoProducto").append(
 
@@ -361,9 +361,9 @@ $(".formularioVenta").on("change", "select.nuevaDescripcionProducto", function()
       	    $(nuevoDescuentoProducto).attr("dctoProducto",0);
       	    //$(nuevaCantidadProducto).attr("stock", respuesta["stock"]);
       	    //$(nuevaCantidadProducto).attr("nuevoStock", Number(respuesta["stock"])-1);
-      	    $(nuevoPrecioProducto).val(Math.round(respuesta["precio"]*respuesta["valor"]));
-      	    $(nuevoPrecioProducto).attr("precioReal", Math.round(respuesta["precio"]*respuesta["valor"]));
-
+      	    $(nuevoPrecioProducto).val(Math.round(respuesta["precio"]));
+      	    $(nuevoPrecioProducto).attr("precioReal", respuesta["precio"]);
+			//cambiar precio por valor si se quiere en pesos (sino en utm)
   	      // AGRUPAR PRODUCTOS EN FORMATO JSON
 
 	        listarProductos()
@@ -484,57 +484,10 @@ function sumarTotalPrecios(){
 
 }
 
-/*=============================================
-FUNCIÓN AGREGAR IMPUESTO
-=============================================*/
-
-function agregarImpuesto(){
-
-    var impuesto = $("#nuevoImpuestoVenta").val();
-    var precioTotal = $("#nuevoTotalVenta").attr("total");
-
-    var precioImpuesto = Number(precioTotal * impuesto/100);
-
-    var totalConImpuesto = Number(precioImpuesto) + Number(precioTotal);
-
-    $("#nuevoTotalVenta").val(totalConImpuesto);
-
-    $("#totalVenta").val(totalConImpuesto);
-
-    $("#nuevoPrecioImpuesto").val(precioImpuesto);
-
-    $("#nuevoPrecioNeto").val(precioTotal);
-
-}
 
 /*=============================================
 AUTOCOMPLETAR CLIENTES
 =============================================*/
-//$(document).ready(function () {
-//	$(".seleccionarCliente").typeahead({
-//		source: function (query,result) {
-//			$.ajax({
-//				url: 'ajax/clientes.ajax.php',
-//				method: "POST",
-//				data:{query:query},
-//				dataType:"json",
-//				success: function(data){
-//					console.log("respuesta", data);
-					//var len = data.length;
-					//console.log("largo array",len)
-					//for(var i=0;i<len;i++) {
-                    //     $("#seleccionarCliente").append("<option value='" + data[i]['id'] + "'>" + data[i]['nombre']+ "</option>");
-                    //}
-//					result($.map(data,function(item){
-//						return item;
-//					}));
-//				}
-//
-//			});
-//        }
-//	});
-//});
-
 
 $(document).ready(function () {
     $(".seleccionarCliente").typeahead({

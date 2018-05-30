@@ -16,6 +16,8 @@ class ControladorItem{
 
 				$datos = array("nombre"=> $_POST["nuevoItem"],
 					           "id_centro_costo"=> $_POST["nuevoCcosto"],
+					           "descripcion"=> 0,
+					           "servicio"=> 0,
 					           "precio"=> $_POST["nuevoPrecio"]);
 
 				$respuesta = ModeloItem::mdlIngresarItem($tabla, $datos);

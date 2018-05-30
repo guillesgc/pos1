@@ -76,3 +76,66 @@
 [30-May-2018 15:34:24 UTC] Hello, errors!
 [30-May-2018 15:34:26 UTC] Hello, errors!
 [30-May-2018 16:29:25 UTC] Hello, errors!
+[30-May-2018 16:48:01 UTC] Hello, errors!
+[30-May-2018 16:48:20 UTC] Hello, errors!
+[30-May-2018 16:48:42 UTC] Hello, errors!
+[30-May-2018 16:48:43 UTC] Hello, errors!
+[30-May-2018 16:48:49 UTC] Hello, errors!
+[30-May-2018 16:50:54 UTC] Hello, errors!
+[30-May-2018 16:51:37 UTC] Hello, errors!
+[30-May-2018 17:10:54 UTC] Hello, errors!
+[30-May-2018 17:11:24 UTC] Hello, errors!
+[30-May-2018 17:11:24 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\wamp64\www\pos1\vistas\modulos\item.php on line 67
+[30-May-2018 17:11:24 UTC] PHP Stack trace:
+[30-May-2018 17:11:24 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[30-May-2018 17:11:24 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[30-May-2018 17:11:24 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[30-May-2018 17:11:24 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[30-May-2018 17:13:37 UTC] Hello, errors!
+[30-May-2018 17:13:37 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\wamp64\www\pos1\vistas\modulos\item.php on line 67
+[30-May-2018 17:13:37 UTC] PHP Stack trace:
+[30-May-2018 17:13:37 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[30-May-2018 17:13:37 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[30-May-2018 17:13:37 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[30-May-2018 17:13:37 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[30-May-2018 17:14:04 UTC] Hello, errors!
+[30-May-2018 17:14:04 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\wamp64\www\pos1\vistas\modulos\item.php on line 67
+[30-May-2018 17:14:04 UTC] PHP Stack trace:
+[30-May-2018 17:14:04 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[30-May-2018 17:14:04 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[30-May-2018 17:14:04 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[30-May-2018 17:14:04 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[30-May-2018 17:15:31 UTC] Hello, errors!
+[30-May-2018 17:15:43 UTC] Hello, errors!
+[30-May-2018 17:16:06 UTC] Hello, errors!
+[30-May-2018 17:32:45 UTC] Hello, errors!
+[30-May-2018 17:32:52 UTC] Hello, errors!
+[30-May-2018 17:33:15 UTC] Hello, errors!
+[30-May-2018 17:35:01 UTC] Hello, errors!
+[30-May-2018 17:40:27 UTC] Hello, errors!
+[30-May-2018 17:40:54 UTC] Hello, errors!
+[30-May-2018 17:41:14 UTC] Hello, errors!
+[30-May-2018 17:44:38 UTC] Hello, errors!
+[30-May-2018 17:51:25 UTC] Hello, errors!
+[30-May-2018 17:51:25 UTC] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\wamp64\www\pos1\modelos\item.modelo.php on line 21
+[30-May-2018 17:51:25 UTC] PHP Stack trace:
+[30-May-2018 17:51:25 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[30-May-2018 17:51:25 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[30-May-2018 17:51:25 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[30-May-2018 17:51:25 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[30-May-2018 17:51:25 UTC] PHP   5. ControladorItem::ctrCrearItem() C:\wamp64\www\pos1\vistas\modulos\item.php:231
+[30-May-2018 17:51:25 UTC] PHP   6. ModeloItem::mdlIngresarItem() C:\wamp64\www\pos1\controladores\item.controlador.php:24
+[30-May-2018 17:51:25 UTC] PHP   7. PDOStatement->execute() C:\wamp64\www\pos1\modelos\item.modelo.php:21
+[30-May-2018 17:51:35 UTC] Hello, errors!
+[30-May-2018 17:51:35 UTC] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\wamp64\www\pos1\modelos\item.modelo.php on line 21
+[30-May-2018 17:51:35 UTC] PHP Stack trace:
+[30-May-2018 17:51:35 UTC] PHP   1. {main}() C:\wamp64\www\pos1\index.php:0
+[30-May-2018 17:51:35 UTC] PHP   2. ControladorPlantilla::ctrPlantilla() C:\wamp64\www\pos1\index.php:55
+[30-May-2018 17:51:35 UTC] PHP   3. include() C:\wamp64\www\pos1\controladores\plantilla.controlador.php:7
+[30-May-2018 17:51:35 UTC] PHP   4. include() C:\wamp64\www\pos1\vistas\plantilla.php:183
+[30-May-2018 17:51:35 UTC] PHP   5. ControladorItem::ctrCrearItem() C:\wamp64\www\pos1\vistas\modulos\item.php:231
+[30-May-2018 17:51:35 UTC] PHP   6. ModeloItem::mdlIngresarItem() C:\wamp64\www\pos1\controladores\item.controlador.php:24
+[30-May-2018 17:51:35 UTC] PHP   7. PDOStatement->execute() C:\wamp64\www\pos1\modelos\item.modelo.php:21
+[30-May-2018 17:54:40 UTC] Hello, errors!
+[30-May-2018 17:54:42 UTC] Hello, errors!
+[30-May-2018 17:56:50 UTC] Hello, errors!

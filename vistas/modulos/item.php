@@ -49,7 +49,7 @@
            <th style="width:10px">#</th>
            <th>Item</th>
            <th>Centro Costo</th>
-           <th>Valor (UTM)</th>
+           <th>Valor</th>
            <th>Opciones</th>
          </tr> 
 
@@ -59,11 +59,10 @@
 
         <?php
 
-          $item = null;
+          $item = 'null';
           $valor = null;
 
           $itemcc = ControladorItem::ctrMostrarItem($item, $valor);
-
           foreach ($itemcc as $key => $value) {
            
             echo ' <tr>

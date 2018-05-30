@@ -17,7 +17,7 @@ $(".tablas").on("click", ".btnEditarItem", function(){
      	processData: false,
      	dataType:"json",
      	success: function(respuesta){
-
+			alert(respuesta);
      		$("#editarItem").val(respuesta["nombre"]);
      		$("#editarCcosto").val(respuesta["id_centro_costo"]);
      		$("#editarPrecio").val(respuesta["precio"]);

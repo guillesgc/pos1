@@ -135,7 +135,7 @@ $bloque2 = <<<EOF
 		</tr>
         <tr>
 			<td style="border: 1px solid #666; background-color:white; width:90px"><strong>Rut</strong></td>
-			<td style="border: 1px solid #666; background-color:white; width:270px">$respuestaCliente[documentof]</td>
+			<td style="border: 1px solid #666; background-color:white; width:270px">$respuestaCliente[documento]</td>
             <td style="border: 1px solid #666; background-color:white; width:70px; text-align:right"><strong>Teléfono</strong></td>
             <td style="border: 1px solid #666; background-color:white; width:110px; text-align:right">$respuestaCliente[telefono]</td>
 		</tr>
@@ -279,12 +279,6 @@ $bloque5 = <<<EOF
 			<td style="color:#333; background-color:white; width:340px; text-align:center"></td>
 			<td style="border-bottom: 1px solid #666; background-color:white; width:100px; text-align:center"></td>
 			<td style="border-bottom: 1px solid #666; color:#333; background-color:white; width:100px; text-align:center"></td>
-		</tr>
-		<tr>
-		
-			<td style="border-right: 1px solid #666; color:#333; background-color:white; width:340px; text-align:center"></td>
-			<td style="border: 1px solid #666;  background-color:white; width:100px; text-align:center"><strong>Neto</strong></td>
-			<td style="border: 1px solid #666; color:#333; background-color:white; width:100px; text-align:center">$ $neto</td>
 		</tr>
 		<tr>
 			<td style="border-right: 1px solid #666; color:#333; background-color:white; width:340px; text-align:center"></td>
