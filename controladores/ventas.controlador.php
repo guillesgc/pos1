@@ -94,8 +94,8 @@ class ControladorVentas{
 						   "info_adicional"=>$_POST["infoAdicionalVenta"],
 						   "neto"=>$_POST["totalVenta"],
 						   "total"=>$_POST["totalVenta"],
-						   "metodo_pago"=>$_POST["listaMetodoPago"]);
-            //var_dump($datos);
+						   "metodo_pago"=>$_POST["nuevoMetodoPago"]);
+            var_dump($datos);
 			$respuesta = ModeloVentas::mdlIngresarVenta($tabla, $datos);
 
 			if($respuesta == "ok"){

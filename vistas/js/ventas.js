@@ -498,7 +498,7 @@ $(document).ready(function () {
                 data:{query:query},
                 dataType:"json",
                 success: function(data){
-                    console.log("respuesta", data);
+                    //console.log("respuesta", data);
                     var len = data.length;
                     var send = [];
                     //console.log("largo array",len)
@@ -517,16 +517,17 @@ $(document).ready(function () {
         }
     });
 });
+
 /*=============================================
 CUANDO CAMBIA EL IMPUESTO
 =============================================*/
-
+/*
 $("#nuevoImpuestoVenta").change(function(){
 
 	//agregarImpuesto();
 
 });
-
+*/
 /*=============================================
 FORMATO AL PRECIO FINAL
 =============================================*/
@@ -537,6 +538,7 @@ $("#nuevoTotalVenta").number(true, 0);
 SELECCIONAR MÉTODO DE PAGO
 =============================================*/
 
+/*
 $("#nuevoMetodoPago").change(function(){
 
 	var metodo = $(this).val();
@@ -589,10 +591,12 @@ $("#nuevoMetodoPago").change(function(){
 	
 
 })
-
+*/
 /*=============================================
 CAMBIO EN EFECTIVO
 =============================================*/
+
+/*
 $(".formularioVenta").on("change", "input#nuevoValorEfectivo", function(){
 
 	var efectivo = $(this).val();
@@ -604,10 +608,12 @@ $(".formularioVenta").on("change", "input#nuevoValorEfectivo", function(){
 	nuevoCambioEfectivo.val(cambio);
 
 })
+*/
 
 /*=============================================
 CAMBIO TRANSACCIÓN
 =============================================*/
+/*
 $(".formularioVenta").on("change", "input#nuevoCodigoTransaccion", function(){
 
 	// Listar método en la entrada
@@ -615,6 +621,8 @@ $(".formularioVenta").on("change", "input#nuevoCodigoTransaccion", function(){
 
 
 })
+*/
+
 
 
 /*=============================================
@@ -658,22 +666,22 @@ function listarProductos() {
 LISTAR MÉTODO DE PAGO
 =============================================*/
 
-function listarMetodos(){
+//function listarMetodos(){
 
-	var listaMetodos = "";
+//	var listaMetodos = "";
 
-	if($("#nuevoMetodoPago").val() == "Efectivo"){
+//	if($("#nuevoMetodoPago").val() == "Efectivo"){
 
-		$("#listaMetodoPago").val("Efectivo");
+//		$("#listaMetodoPago").val("Efectivo");
 
-	}else{
+//	}else{
 
-		$("#listaMetodoPago").val($("#nuevoMetodoPago").val());
+//		$("#listaMetodoPago").val($("#nuevoMetodoPago").val());
 		//$("#listaMetodoPago").val($("#nuevoMetodoPago").val()+"-"+$("#nuevoCodigoTransaccion").val());
 
-	}
+//	}
 
-}
+//}
 
 /*=============================================
 BOTON EDITAR VENTA
