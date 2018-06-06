@@ -41,7 +41,7 @@ class ModeloVentas{
 	=============================================*/
 
 	static public function mdlIngresarVenta($tabla, $datos){
-        var_dump($datos);
+        //var_dump($datos);
 		$stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(codigo, id_cliente, id_vendedor, productos, glosa, info_adicional, neto, total, metodo_pago)
                                                                     VALUES (:codigo, :id_cliente, :id_vendedor, :productos, :glosa, :info_adicional, :neto, :total, :metodo_pago)");
 
@@ -129,9 +129,28 @@ class ModeloVentas{
 
 	}
 
-	/*=============================================
-	RANGO FECHAS
-	=============================================*/	
+    /*=============================================
+   MOSTRAR BOLETIN
+   =============================================*/
+
+    static public function mdlMostrarUltimoBoletin($tabla){
+
+        $stmt = Conexion::conectar()->prepare("SELECT codigo FROM $tabla ORDER BY codigo DESC");
+
+        $stmt -> execute();
+
+        return $stmt -> fetch();
+
+        $stmt -> close();
+
+        $stmt = null;
+
+    }
+
+
+    /*=============================================
+    RANGO FECHAS
+    =============================================*/
 
 	static public function mdlRangoFechasVentas($tabla, $fechaInicial, $fechaFinal){
 

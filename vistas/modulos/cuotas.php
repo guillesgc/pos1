@@ -71,7 +71,8 @@ ini_set('display_errors', '1');
 
                     echo '<div class="box-header with-border">
 
-             <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregaCuota">
+             <button class="btn btn-primary btnUltimoBoletin" id="btnUltimoBoletin" data-toggle="modal" data-target="#modalAgregaCuota">
+             
           
              Agregar Cuota Cliente
 
@@ -235,7 +236,7 @@ ini_set('display_errors', '1');
 
 
 
-                            <!-- ENTRADA PARA NUMERO DE CUOTAS -->
+                            <!-- ENTRADA PARA BOLETÍN -->
 
 
                             <div class="form-group">
@@ -244,7 +245,7 @@ ini_set('display_errors', '1');
 
                                     <span class="input-group-addon"><i class="fa fa-th"></i></span>
 
-                                    <input type="number" class="form-control input-lg" name="nuevoBoletin" min="1" placeholder="Boletin" required>
+                                    <input type="number" id="nuevoBoletin"  class="form-control input-lgv nuevoBoletin" name="nuevoBoletin" min="1" placeholder="Boletin" required>
 
                                 </div>
 

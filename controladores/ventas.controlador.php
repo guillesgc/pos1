@@ -25,7 +25,6 @@ class ControladorVentas{
 	static public function ctrCrearVenta(){
 
 		if(isset($_POST["nuevaVenta"])){
-            var_dump($_POST);
 			/*=============================================
 			ACTUALIZAR LAS COMPRAS DEL CLIENTE Y REDUCIR EL STOCK Y AUMENTAR LAS VENTAS DE LOS PRODUCTOS
 			=============================================*/
@@ -95,7 +94,7 @@ class ControladorVentas{
 						   "neto"=>$_POST["totalVenta"],
 						   "total"=>$_POST["totalVenta"],
 						   "metodo_pago"=>$_POST["nuevoMetodoPago"]);
-            var_dump($datos);
+            //var_dump($datos);
 			$respuesta = ModeloVentas::mdlIngresarVenta($tabla, $datos);
 
 			if($respuesta == "ok"){
@@ -240,7 +239,7 @@ class ControladorVentas{
 			/*=============================================
 			GUARDAR CAMBIOS DE LA COMPRA
 			=============================================*/	
-            var_dump($_POST);
+            //var_dump($_POST);
 			$datos = array("id_vendedor"=>$_POST["idVendedor"],
 						   "id_cliente"=>$_POST["seleccionarCliente"],
 						   "codigo"=>$_POST["editarVenta"],
@@ -424,6 +423,20 @@ class ControladorVentas{
 
 	}
 
+    /*=============================================
+    ULTIMO BOLETIN
+    =============================================*/
+
+    static public function ctrMostrarUltimoBoletin(){
+
+        $tabla = "ventas";
+
+        $respuesta = ModeloVentas::mdlMostrarUltimoBoletin($tabla);
+
+        return $respuesta;
+
+    }
+
 	/*=============================================
 	RANGO FECHAS
 	=============================================*/	
@@ -489,7 +502,7 @@ class ControladorVentas{
 					<td style='font-weight:bold; border:1px solid #eee;'>IMPUESTO</td>
 					<td style='font-weight:bold; border:1px solid #eee;'>NETO</td>		
 					<td style='font-weight:bold; border:1px solid #eee;'>TOTAL</td>		
-					<td style='font-weight:bold; border:1px solid #eee;'>METODO DE PAGO</td	
+					<td style='font-weight:bold; border:1px solid #eee;'>METODO DE PAGO</td>	
 					<td style='font-weight:bold; border:1px solid #eee;'>FECHA</td>		
 					</tr>");
 

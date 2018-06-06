@@ -39,7 +39,8 @@ $fecha = substr($respuestaVenta["fecha"],0,-8);
 $productos = json_decode($respuestaVenta["productos"], true);
 $neto = number_format($respuestaVenta["neto"],2);
 //$impuesto = number_format($respuestaVenta["impuesto"],2);
-$total = number_format($respuestaVenta["total"],2);
+$total = number_format($respuestaVenta["total"],0);
+$total = number_format($respuestaVenta["total"],0);
 
 
 
@@ -87,6 +88,7 @@ $pdf->AddPage();
 $bloque1 = <<<EOF
 
 	<table>
+	
 	    <br>
 		<tr>
 		<br>    
@@ -237,10 +239,13 @@ $valorUtm = "null";
 $respuestaUtm = ControladorUtm::ctrMostrarUtmActual($itemUtm,$valorUtm);
 //var_dump($respuestaItem);
 //var_dump($respuestaUtm);
-
-$valorUnitario = number_format($respuestaItem["precio"]*$respuestaUtm["valor"],0);
-$precioTotal = number_format($item["total"], 2);
-
+if(strcmp($item["descripcion"],"PIE") == 0 || strcmp($item["descripcion"],"PEAJE") == 0){
+    $valorUnitario = number_format($item["cantidad"],0);
+    $item["cantidad"] =1 ;
+}else {
+    $valorUnitario = number_format($respuestaItem["precio"], 0);
+}
+    $precioTotal = number_format($item["total"], 0);
 $bloque4 = <<<EOF
 
 	<table style="font-size:10px; padding:5px 10px;">
@@ -253,7 +258,7 @@ $bloque4 = <<<EOF
 
 			<td style="border: 1px solid #666; color:#333; background-color:white; width:80px; text-align:center">$ $valorUnitario</td>
 
-			<td style="border: 1px solid #666; color:#333; background-color:white; width:50px; text-align:center"> $item[descuento]</td>
+			<td style="border: 1px solid #666; color:#333; background-color:white; width:50px; text-align:center"> $item[descuento]%</td>
 			
 			<td style="border: 1px solid #666; color:#333; background-color:white; width:100px; text-align:center">$$precioTotal</td>
 
@@ -310,7 +315,9 @@ $pdf->writeHTML($bloque5, false, false, false, false, '');
 	    <br>C) RESPALDO DE 90 CMS DE ALTO POR 60 CMS DE ANCHO. 
 	</div>
 EOF;
-    $pdf->writeHTML($bloque6, false, false, false, false, '');
+
+$pdf->writeHTML($bloque6, false, false, false, false, '');
+
 // ---------------------------------------------------------
 //SALIDA DEL ARCHIVO 
 

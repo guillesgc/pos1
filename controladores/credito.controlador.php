@@ -102,6 +102,21 @@ class ControladorCreditos{
 
     }
 
+    /*=============================================
+    ÚLTIMO BOLETÍN
+    =============================================*/
+
+    static public function ctrMostrarUltimoBoletin(){
+
+        $tabla = "creditos";
+
+        $respuesta = ModeloCredito::mdlMostrarUltimoBoletin($tabla);
+
+        return $respuesta;
+
+
+    }
+
 
     /*=============================================
     EDITAR CREDITO
@@ -125,7 +140,7 @@ class ControladorCreditos{
                                 "valor_credito"=>$_POST["editarVcredito"],
                                 "valor_cuota"=>$_POST["editarCuota"],
                                 "estado"=>1);
-                var_dump($_POST);
+                //var_dump($_POST);
                
                 $respuesta = ModeloCredito::mdlEditarCredito($tabla, $datos);
 

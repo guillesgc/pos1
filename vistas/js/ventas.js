@@ -476,7 +476,13 @@ function sumarTotalPrecios(){
 	}
 
 	var sumaTotalPrecio = arraySumaPrecio.reduce(sumaArrayPrecios);
-	
+	//console.log("sumaTotalPrecio", sumaTotalPrecio);
+	aux = sumaTotalPrecio/10;
+	//console.log ("aux", aux);
+	aux = Math.round(aux);
+	sumaTotalPrecio = aux * 10;
+	//console.log("precio final",sumaTotalPrecio);
+
 	$("#nuevoTotalVenta").val(sumaTotalPrecio);
 	$("#totalVenta").val(sumaTotalPrecio);
 	$("#nuevoTotalVenta").attr("total",sumaTotalPrecio);

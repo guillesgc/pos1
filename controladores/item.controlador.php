@@ -92,7 +92,6 @@ class ControladorItem{
         $tabla = "items";
 
         $respuesta = ModeloItem::mdlMostrarItemYCategoria($tabla, $item, $valor);
-
         return $respuesta;
 
     }

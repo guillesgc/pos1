@@ -17,12 +17,13 @@ class TablaProductos{
 
 
     $items = ControladorItem::ctrMostrarItemYCategoria($item,$valor,$orden);
+
     echo '{
 			"data": [';
 			for($i = 0; $i < count($items)-1; $i++){
 
 				 echo '[
-			      "'.($i+1).'",
+			      "'.$items[$i]["id_item"].'",
 			      "'.$items[$i]["nombre"].'",
 			      "'.$items[$i]["categoria"].'",
 			      "'.$items[$i]["precio"].'"
@@ -31,7 +32,7 @@ class TablaProductos{
 			}
 
 		   echo'[
-			      "'.count($items).'",
+			      "'.$items[count($items)-1]["id_item"].'",
 			      "'.$items[count($items)-1]["nombre"].'",
 			      "'.$items[count($items)-1]["categoria"].'",
 			      "'.$items[count($items)-1]["precio"].'"

@@ -78,3 +78,30 @@ $(".tablaCreditos").on("click", ".btnMostrarCuotas", function (){
 
     window.location = "index.php?ruta=cuotas&idCliente="+idCliente+"&idCredito="+idCredito;
 })
+
+
+/*=============================================
+BUSCAR ÚLTIMO BOLETÍN
+=============================================*/
+
+$(".btnUltimoBoletin").on("click", function(){
+
+    var datos = new FormData();
+    datos.append("ultimoBoletin","ok");;
+    $.ajax({
+
+        url:"ajax/credito.ajax.php",
+        method: "POST",
+        data: datos,
+        cache: false,
+        contentType: false,
+        processData: false,
+        dataType:"json",
+        success:function(respuesta){
+
+            $(".nuevoBoletin").val(respuesta[0]);
+        }
+
+    })
+
+});
