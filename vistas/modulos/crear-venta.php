@@ -66,8 +66,9 @@
                     
                     <span class="input-group-addon"><i class="fa fa-key"></i></span>
 
+                      <input type="text" class="form-control nuevaVenta" id="nuevaVenta" name="nuevaVenta"  readonly>
                     <?php
-
+                    /*
                     $item = null;
                     $valor = null;
 
@@ -94,7 +95,7 @@
                   
 
                     }
-
+                    */
                     ?>
                     
                     
