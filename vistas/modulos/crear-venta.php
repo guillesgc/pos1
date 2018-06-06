@@ -75,7 +75,7 @@
 
                     if(!$ventas){
 
-                      echo '<input type="text" class="form-control" id="nuevaVenta" name="nuevaVenta" value="200000" readonly>';
+                      echo '<input type="text" class="form-control nuevaVenta" id="nuevaVenta" name="nuevaVenta" value="200000" readonly>';
                   
 
                     }else{
@@ -90,7 +90,7 @@
 
 
 
-                      echo '<input type="text" class="form-control" id="nuevaVenta" name="nuevaVenta" value="'.$codigo.'" readonly>';
+                      echo '<input type="text" class="form-control nuevaVenta" id="nuevaVenta" name="nuevaVenta" value="'.$codigo.'" readonly>';
                   
 
                     }

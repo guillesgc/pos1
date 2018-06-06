@@ -494,6 +494,32 @@ function sumarTotalPrecios(){
 /*=============================================
 AUTOCOMPLETAR CLIENTES
 =============================================*/
+$(document).ready(function () {
+    var datos = new FormData();
+    datos.append("ultimoBoletin","ok");;
+    $.ajax({
+
+        url:"ajax/credito.ajax.php",
+        method: "POST",
+        data: datos,
+        cache: false,
+        contentType: false,
+        processData: false,
+        dataType:"json",
+        success:function(respuesta){
+
+            $(".nuevaVenta").val(respuesta[0]);
+        }
+
+    })
+
+});
+
+
+
+/*=============================================
+AUTOCOMPLETAR CLIENTES
+=============================================*/
 
 $(document).ready(function () {
     $(".seleccionarCliente").typeahead({
