@@ -138,6 +138,24 @@ class ModeloCuota{
 
     }
 
+    /*=============================================
+    MOSTRAR BOLETIN
+    =============================================*/
+
+    static public function mdlMostrarUltimoBoletin($tabla){
+
+        $stmt = Conexion::conectar()->prepare("SELECT boletin FROM $tabla ORDER BY boletin DESC");
+
+        $stmt -> execute();
+
+        return $stmt -> fetch();
+
+        $stmt -> close();
+
+        $stmt = null;
+
+    }
+
 
     /*=============================================
     EDITAR CUOTA

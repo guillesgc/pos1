@@ -131,6 +131,21 @@ class ControladorCuota{
 
     }
 
+    /*=============================================
+    ÚLTIMO BOLETÍN
+    =============================================*/
+
+    static public function ctrMostrarUltimoBoletin(){
+
+        $tabla = "cuotas";
+
+        $respuesta = ModeloCuota::mdlMostrarUltimoBoletin($tabla);
+
+        return $respuesta;
+
+
+    }
+
 
     /*=============================================
     EDITAR CUOTA

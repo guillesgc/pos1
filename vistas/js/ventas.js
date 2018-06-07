@@ -499,7 +499,7 @@ $(document).ready(function () {
     datos.append("ultimoBoletin","ok");;
     $.ajax({
 
-        url:"ajax/credito.ajax.php",
+        url:"ajax/cuota.ajax.php",
         method: "POST",
         data: datos,
         cache: false,
