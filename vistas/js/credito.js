@@ -99,7 +99,7 @@ $(".btnUltimoBoletin").on("click", function(){
         dataType:"json",
         success:function(respuesta){
             var res;
-            if(respuesta["boletin"] > respuesta["codigo"]){
+            if(parseInt(respuesta["boletin"]) > parseInt(respuesta["codigo"])){
                 console.log("boletin")
                 res = parseInt(respuesta["boletin"])+ 1;
                 $(".nuevoBoletin").val(res);

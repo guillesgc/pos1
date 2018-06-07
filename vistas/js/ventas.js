@@ -509,7 +509,7 @@ $(document).ready(function () {
         success:function(respuesta){
 			console.log("respuesta");
 			var res;
-			if(respuesta["boletin"] > respuesta["codigo"]){
+			if(parseInt(respuesta["boletin"]) > parseInt(respuesta["codigo"])){
 				console.log("boletin")
 				res = parseInt(respuesta["boletin"])+ 1;
 				$(".nuevaVenta").val(res);
