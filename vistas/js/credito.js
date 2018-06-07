@@ -87,7 +87,7 @@ BUSCAR ÚLTIMO BOLETÍN
 $(".btnUltimoBoletin").on("click", function(){
 
     var datos = new FormData();
-    datos.append("ultimoBoletin","ok");;
+    datos.append("ultimoBoletin","ok");
     $.ajax({
 
         url:"ajax/credito.ajax.php",
@@ -98,8 +98,16 @@ $(".btnUltimoBoletin").on("click", function(){
         processData: false,
         dataType:"json",
         success:function(respuesta){
-
-            $(".nuevoBoletin").val(respuesta[0]);
+            var res;
+            if(respuesta["boletin"] > respuesta["codigo"]){
+                console.log("boletin")
+                res = parseInt(respuesta["boletin"])+ 1;
+                $(".nuevoBoletin").val(res);
+            }else{
+                console.log("codigo")
+                res = parseInt(respuesta["codigo"])+ 1;
+                $(".nuevoBoletin").val(res);
+            }
         }
 
     })

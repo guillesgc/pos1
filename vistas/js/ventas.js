@@ -507,8 +507,18 @@ $(document).ready(function () {
         processData: false,
         dataType:"json",
         success:function(respuesta){
+			console.log("respuesta");
+			var res;
+			if(respuesta["boletin"] > respuesta["codigo"]){
+				console.log("boletin")
+				res = parseInt(respuesta["boletin"])+ 1;
+				$(".nuevaVenta").val(res);
+			}else{
+				console.log("codigo")
+				res = parseInt(respuesta["codigo"])+ 1;
+                $(".nuevaVenta").val(res);
+            }
 
-            $(".nuevaVenta").val(respuesta[0]);
         }
 
     })

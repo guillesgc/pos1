@@ -27,17 +27,10 @@ class AjaxCreditos{
             $res_creditos = ControladorCreditos::ctrMostrarUltimoBoletin();
 
             $res_ventas = ControladorVentas::ctrMostrarUltimoBoletin();
-            if($res_creditos['boletin'] >= $res_ventas['codigo']) {
+            $respuesta = array_merge($res_creditos,$res_ventas);
 
-                $res_creditos[0] = $res_creditos[0] + 1;
+            echo json_encode($respuesta);
 
-                echo json_encode($res_creditos);
-            }else{
-
-                $res_creditos[0] = $res_creditos[0] + 1;
-
-                echo json_encode($res_ventas);
-            }
 
         }
 
