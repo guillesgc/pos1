@@ -6,6 +6,9 @@ require_once "../modelos/cuota.modelo.php";
 require_once "../controladores/ventas.controlador.php";
 require_once "../modelos/ventas.modelo.php";
 
+require_once "../controladores/credito.controlador.php";
+require_once "../modelos/credito.modelo.php";
+
 class AjaxCuotas{
 
     /*=============================================
@@ -24,11 +27,15 @@ class AjaxCuotas{
 
         }else if($this->boletin){
 
-            $res_creditos = ControladorCuota::ctrMostrarUltimoBoletin();
+            $res_cuotas = ControladorCuota::ctrMostrarUltimoBoletin();
 
             $res_ventas = ControladorVentas::ctrMostrarUltimoBoletin();
 
-            $respuesta = array_merge($res_creditos,$res_ventas);
+            $res_creditos = ControladorCreditos::ctrMostrarUltimoBoletin();
+
+            $aux = array_merge($res_creditos,$res_ventas);
+
+            $respuesta = array_merge($aux, $res_cuotas);
 
             echo json_encode($respuesta);
 

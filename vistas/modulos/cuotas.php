@@ -123,9 +123,9 @@ ini_set('display_errors', '1');
 
                                         <div class="btn-group">
                           
-                                            <button class="btn btn-warning btnEditarCuota" idCuota="'.$value["id_cuota"].'" idCredito="'.$value["id_credito"].'" idCliente="'.$_GET["idCliente"].'" data-toggle="modal" data-target="#modalEditarCuota"><i class="fa fa-pencil"></i></button>';
-       
-
+                                            <button class="btn btn-warning btnEditarCuota" idCuota="'.$value["id_cuota"].'" idCredito="'.$value["id_credito"].'" idCliente="'.$_GET["idCliente"].'" data-toggle="modal" data-target="#modalEditarCuota"><i class="fa fa-pencil"></i></button>
+                                            
+                                            <button class="btn btn-success btnImprimirCuota" idCuota="'.$value["id_cuota"].'" idCredito="'.$value["id_credito"].'" idCliente="'.$_GET["idCliente"].'"><i class="fa fa-print"></i></button>';
                                             if($_SESSION["perfil"] == "Administrador"){
 
                                         echo '<button class="btn btn-danger btnEliminarCuotas" idCredito="'.$_GET["idCredito"].'" idCuota="'.$value["id_cuota"].'" idCliente="'.$_GET["idCliente"].'"><i class="fa fa-times"></i></button>';

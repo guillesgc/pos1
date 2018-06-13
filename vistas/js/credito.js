@@ -99,14 +99,20 @@ $(".btnUltimoBoletin").on("click", function(){
         dataType:"json",
         success:function(respuesta){
             var res;
-            if(parseInt(respuesta["boletin"]) > parseInt(respuesta["codigo"])){
-                console.log("boletin")
-                res = parseInt(respuesta["boletin"])+ 1;
-                $(".nuevoBoletin").val(res);
-            }else{
-                console.log("codigo")
-                res = parseInt(respuesta["codigo"])+ 1;
-                $(".nuevoBoletin").val(res);
+            if (parseInt(respuesta[0]) > parseInt(respuesta[1])) {
+                if (parseInt(respuesta[0]) > parseInt(respuesta[2])) {
+                    res = parseInt(respuesta[0]) + 1;
+                    $(".nuevaVenta").val(res);
+                } else {
+                    res = parseInt(respuesta[2]) + 1;
+                    $(".nuevaVenta").val(res);
+                }
+            } else if (parseInt(respuesta[1]) > parseInt(respuesta[2])) {
+                res = parseInt(respuesta[1]) + 1;
+                $(".nuevaVenta").val(res);
+            } else {
+                res = parseInt(respuesta[2]) + 1;
+                $(".nuevaVenta").val(res);
             }
         }
 

@@ -506,16 +506,22 @@ $(document).ready(function () {
         contentType: false,
         processData: false,
         dataType:"json",
-        success:function(respuesta){
-			console.log("respuesta");
-			var res;
-			if(parseInt(respuesta["boletin"]) > parseInt(respuesta["codigo"])){
-				console.log("boletin")
-				res = parseInt(respuesta["boletin"])+ 1;
-				$(".nuevaVenta").val(res);
-			}else{
-				console.log("codigo")
-				res = parseInt(respuesta["codigo"])+ 1;
+        success:function(respuesta) {
+            //console.log("respuesta", respuesta);
+            var res;
+            if (parseInt(respuesta[0]) > parseInt(respuesta[1])) {
+                if (parseInt(respuesta[0]) > parseInt(respuesta[2])) {
+                    res = parseInt(respuesta[0]) + 1;
+                    $(".nuevaVenta").val(res);
+                } else {
+                    res = parseInt(respuesta[2]) + 1;
+                    $(".nuevaVenta").val(res);
+                }
+            } else if (parseInt(respuesta[1]) > parseInt(respuesta[2])) {
+                res = parseInt(respuesta[1]) + 1;
+                $(".nuevaVenta").val(res);
+            } else {
+                res = parseInt(respuesta[2]) + 1;
                 $(".nuevaVenta").val(res);
             }
 
@@ -525,6 +531,15 @@ $(document).ready(function () {
 
 });
 
+
+$(".btnImprimirCuota").on("click", function(){
+
+    var codigoCuota = $(this).attr("idCuota");
+    var codigoCredito = $(this).attr("idCredito");
+
+    window.open("extensiones/tcpdf/pdf/credito.php?codigo="+codigoCredito, "_blank");
+
+});
 
 
 /*=============================================
