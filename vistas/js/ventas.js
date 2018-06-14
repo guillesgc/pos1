@@ -537,7 +537,7 @@ $(".btnImprimirCuota").on("click", function(){
     var codigoCuota = $(this).attr("idCuota");
     var codigoCredito = $(this).attr("idCredito");
 
-    window.open("extensiones/tcpdf/pdf/credito.php?codigo="+codigoCredito, "_blank");
+    window.open("extensiones/tcpdf/pdf/credito.php?codigo="+codigoCuota, "_blank");
 
 });
 

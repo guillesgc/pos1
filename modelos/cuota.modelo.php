@@ -58,6 +58,28 @@ class ModeloCuota{
 
     }
 
+    static public function mdlMostrarCuota2($tabla, $item, $valor){
+
+        if($item != null){
+
+            $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
+
+            $stmt -> bindParam(":".$item, $valor, PDO::PARAM_INT);
+
+            $stmt -> execute();
+
+
+            return $stmt -> fetchAll();
+
+        }
+
+        $stmt -> close();
+
+        $stmt = null;
+
+    }
+
+
 
     /*=============================================
     MOSTRAR CUOTA CON ID DE CREDITO

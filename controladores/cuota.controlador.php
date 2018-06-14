@@ -101,6 +101,17 @@ class ControladorCuota{
 
     }
 
+    static public function ctrMostrarCuota2($item, $valor){
+
+        $tabla = "cuotas";
+
+        $respuesta = ModeloCuota::mdlMostrarCuota2($tabla, $item, $valor);
+
+        return $respuesta;
+
+    }
+
+
 
     /*=============================================
     CUOTAS PAGADAS

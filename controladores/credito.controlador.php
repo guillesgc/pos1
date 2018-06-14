@@ -87,6 +87,15 @@ class ControladorCreditos{
 
     }
 
+    static public function ctrMostrarCredito2($item, $valor){
+
+        $tabla = "creditos";
+
+        $respuesta = ModeloCredito::mdlMostrarCredito2($tabla, $item, $valor);
+
+        return $respuesta;
+
+    }
 
     /*=============================================
     MOSTRAR CREDITOE
