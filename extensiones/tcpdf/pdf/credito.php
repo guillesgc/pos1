@@ -252,9 +252,9 @@ EOF;
 			<td style="border-bottom: 1px solid #666; color:#333; background-color:white; width:100px; text-align:center"></td>
 		</tr>
 		<tr>
-			<td style="border-right: 1px solid #666; color:#333; background-color:white; width:320px; text-align:center"></td>
-			<td style="border: 1px solid #666; background-color:white; width:110px; text-align:center"><strong>Monto</strong></td>
-			<td style="border: 1px solid #666; color:#333; background-color:white; width:110px; text-align:center">$$pagado</td>
+			<td style="border-right: 1px solid #666; color:#333; background-color:white; width:340px; text-align:center;"></td>
+			<td style="border: 1px solid #666; background-color:white; width:100px; text-align:center"><strong>Monto</strong></td>
+			<td style="border: 1px solid #666; color:#333; background-color:white; width:100px; text-align:center">$$pagado</td>
 		</tr>
 
     <br>
