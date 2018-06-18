@@ -189,8 +189,8 @@ EOF;
 	<table style="font-size:10px; padding:5px 10px;">
 	    <tr>
 		
-		<td style="border: 1px solid #666; background-color:white; width:430px; text-align:center">$respuestaCredito[detalle]</td>
-		<td style="border: 1px solid #666; background-color:white; width:110px; text-align:center">Monto</td>
+		<td style="border: 1px solid #666; background-color:white; width:540px; text-align:center">$respuestaCredito[detalle]</td>
+		<!--<td style="border: 1px solid #666; background-color:white; width:110px; text-align:center">Monto</td>-->
 		
 
 		</tr>
@@ -216,9 +216,9 @@ EOF;
 
 		<tr>
 			
-			<td style="border: 1px solid #666; color:#333; background-color:white; width:430px; text-align:center">Cuota #$i - $$item[monto_cancelado] -  Boletín $item[boletin] - $item[fecha_pago]</td>
+			<td style="border: 1px solid #666; color:#333; background-color:white; width:540px; text-align:center">Cuota #$i - $$item[monto_cancelado] -  Boletín $item[boletin] - $item[fecha_pago]</td>
 
-			<td style="border: 1px solid #666; color:#333; background-color:white; width:110px; text-align:center"></td>
+			<!--<td style="border: 1px solid #666; color:#333; background-color:white; width:110px; text-align:center"></td> -->
 
 
 
