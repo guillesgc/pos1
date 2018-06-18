@@ -492,7 +492,7 @@ function sumarTotalPrecios(){
 
 
 /*=============================================
-AUTOCOMPLETAR CLIENTES
+ÚLYIMO BOLETIN
 =============================================*/
 $(document).ready(function () {
     var datos = new FormData();

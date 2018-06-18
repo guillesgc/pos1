@@ -79,3 +79,47 @@ $(".tablaCreditos").on("click", ".btnMostrarCuotas", function (){
  
     window.location = "index.php?ruta=cuotas&idCliente="+idCliente+"&idCredito="+idCredito;
 })
+
+/*=============================================
+BUSCAR ÚLTIMO BOLETÍN
+=============================================*/
+
+$(".btnUltimoBoletin").on("click", function(){
+
+    var datos = new FormData();
+    datos.append("ultimoBoletin","ok");
+    $.ajax({
+
+        url:"ajax/cuota.ajax.php",
+        method: "POST",
+        data: datos,
+        cache: false,
+        contentType: false,
+        processData: false,
+        dataType:"json",
+        success:function(respuesta){
+            var res;
+            if (parseInt(respuesta[0]) > parseInt(respuesta[1])) {
+                if (parseInt(respuesta[0]) > parseInt(respuesta[2])) {
+                    console.log("0");
+                    res = parseInt(respuesta[0]) + 1;
+                    $(".nuevoBoletin").val(res);
+                } else {
+                    console.log("2");
+                    res = parseInt(respuesta[2]) + 1;
+                    $(".nuevoBoletin").val(res);
+                }
+            } else if (parseInt(respuesta[1]) > parseInt(respuesta[2])) {
+                console.log("1");
+                res = parseInt(respuesta[1]) + 1;
+                $(".nuevoBoletin").val(res);
+            } else {
+                console.log(2);
+                res = parseInt(respuesta[2]) + 1;
+                $(".nuevoBoletin").val(res);
+            }
+        }
+
+    })
+
+});

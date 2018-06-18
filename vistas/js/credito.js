@@ -84,7 +84,7 @@ $(".tablaCreditos").on("click", ".btnMostrarCuotas", function (){
 BUSCAR ÚLTIMO BOLETÍN
 =============================================*/
 
-$(".btnUltimoBoletin").on("click", function(){
+$(".btnAgregarCredito").on("click", function(){
 
     var datos = new FormData();
     datos.append("ultimoBoletin","ok");
@@ -101,18 +101,22 @@ $(".btnUltimoBoletin").on("click", function(){
             var res;
             if (parseInt(respuesta[0]) > parseInt(respuesta[1])) {
                 if (parseInt(respuesta[0]) > parseInt(respuesta[2])) {
+                    console.log("0");
                     res = parseInt(respuesta[0]) + 1;
-                    $(".nuevaVenta").val(res);
+                    $(".nuevoBoletinCredito").val(res);
                 } else {
+                    console.log("2");
                     res = parseInt(respuesta[2]) + 1;
-                    $(".nuevaVenta").val(res);
+                    $(".nuevoBoletinCredito").val(res);
                 }
             } else if (parseInt(respuesta[1]) > parseInt(respuesta[2])) {
+                console.log("1");
                 res = parseInt(respuesta[1]) + 1;
-                $(".nuevaVenta").val(res);
+                $(".nuevoBoletinCredito").val(res);
             } else {
+                console.log(2);
                 res = parseInt(respuesta[2]) + 1;
-                $(".nuevaVenta").val(res);
+                $(".nuevoBoletinCredito").val(res);
             }
         }
 

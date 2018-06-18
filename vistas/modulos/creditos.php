@@ -67,7 +67,7 @@ ini_set('display_errors', '1');
 
                     echo '<div class="box-header with-border">
 
-             <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregaCredito">
+             <button id="btnAgregarCredito" class="btn btn-primary btnAgregarCredito" data-toggle="modal" data-target="#modalAgregaCredito">
           
              Crear Nuevo Crédito
 
@@ -280,7 +280,7 @@ ini_set('display_errors', '1');
 
                                     <span class="input-group-addon"><i class="fa fa-file-text-o"></i></span>
 
-                                    <input type="number" class="form-control input-lg" name="nuevoBoletin" min="1" placeholder="Boletin" required>
+                                    <input type="number" id="nuevoBoletinCredito" class="form-control input-lg nuevoBoletinCredito" name="nuevoBoletin" min="1" placeholder="Boletin" required>
 
                                 </div>
 

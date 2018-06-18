@@ -191,8 +191,10 @@ EOF;
 		
 		<td style="border: 1px solid #666; background-color:white; width:540px; text-align:center">$respuestaCredito[detalle]</td>
 		<!--<td style="border: 1px solid #666; background-color:white; width:110px; text-align:center">Monto</td>-->
+		</tr>
+		<tr>
 		
-
+		<td style="border: 1px solid #666; background-color:white; width:540px; text-align:center">Pie - $respuestaCredito[pie]</td>    
 		</tr>
 
 	</table>
