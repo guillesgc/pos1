@@ -47,7 +47,7 @@ class imprimirCredito{
 
         $respuestaCredito = ControladorCreditos::ctrMostrarCredito2($itemCredito,$valorCredito);
 
-        //var_dump($respuestaCreditos);
+        //var_dump($respuestaCredito);
 
         //BUSCAR CLIENTE
         $itemCliente = "id";
@@ -64,6 +64,14 @@ class imprimirCredito{
         $respuestaCuotas = ControladorCuota::ctrMostrarCuota2($itemCredito,$valorCredito);
 
         //var_dump($respuestaCuotas);
+
+        //BUASCAR VENTA ASOCIADA
+        //$itemVenta = "codigo";
+        //$valorVenta = $respuestaCredito['boletin'];
+
+        //$respuestaVenta = ControladorVentas::ctrMostrarVentas($itemVenta, $valorVenta);
+
+        //var_dump($respuestaVenta);
 
 
 //REQUERIMOS LA CLASE TCPDF
@@ -196,11 +204,12 @@ EOF;
 // ---------------------------------------------------------
 //var_dump($productos);
         $i=0;
-        $pagado=0;
+        $pagado=$respuestaCredito['pie'];
         $saldo=0;
         foreach ($respuestaCuotas as $key => $item) {
             $i++;
             $pagado = $pagado + $item['monto_cancelado'];
+
             $bloque4 = <<<EOF
 
 	<table style="font-size:10px; padding:5px 10px;">
@@ -216,12 +225,16 @@ EOF;
 		</tr>
 
 	</table>
-
+        
+             
 
 EOF;
-        $saldo = $respuestaCredito['valor_credito'] - $pagado;
-            $pdf->writeHTML($bloque4, false, false, false, false, '');
 
+            $saldo = $respuestaCredito['valor_credito'] - $pagado;
+            $pdf->writeHTML($bloque4, false, false, false, false, '');
+            if(strcmp($respuestaCuota['boletin'],$item['boletin']) == 0){
+                break;
+            }
         }
 
 // ---------------------------------------------------------
@@ -240,8 +253,8 @@ EOF;
 		</tr>
 		<tr>
 			<td style="border-right: 1px solid #666; color:#333; background-color:white; width:320px; text-align:center"></td>
-			<td style="border: 1px solid #666; background-color:white; width:110px; text-align:center"><strong>Saldo</strong></td>
-			<td style="border: 1px solid #666; color:#333; background-color:white; width:110px; text-align:center">$$saldo</td>
+			<td style="border: 1px solid #666; background-color:white; width:110px; text-align:center"><strong>Monto</strong></td>
+			<td style="border: 1px solid #666; color:#333; background-color:white; width:110px; text-align:center">$$pagado</td>
 		</tr>
 
     <br>
